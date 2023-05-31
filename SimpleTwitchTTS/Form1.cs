@@ -216,8 +216,6 @@ namespace SimpleTwitchTTS
             }
             catch
             {
-„r
-
             }
 
         }
