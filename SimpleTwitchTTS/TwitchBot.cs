@@ -76,17 +76,8 @@ namespace SimpleTwitchTTS
                     return;
                 }
 
-                //TTS will read long link as one word "link" instead of every letter
-                Message = e.ChatMessage.Message;
-                for (int i = 0; i < Message.Length - 1; i++)
-                {
-                    if (Message[i] == '.' && Message[i + 1] == '.')
-                    {
-                        Message = Message.Replace(Message[i], ' ');
-                    }
+                Message = Message.Replace("..", "");
 
-                }
-                //Message = Regex.Replace(Message, "..", "");
                 Message = Regex.Replace(Message, @"(?:http(s)?:\/\/)?[\w.-]+\D(?:\.[\w\.-]+)+[\w\-\._~:/?%#[\]@!\$&'\(\)\*\+,;=.]+", "link");
 
 
