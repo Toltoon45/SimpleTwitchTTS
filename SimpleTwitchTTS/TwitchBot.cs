@@ -76,10 +76,8 @@ namespace SimpleTwitchTTS
                     return;
                 }
 
-                Message = Message.Replace("..", "");
-
+                Message = Regex.Replace(e.ChatMessage.Message, @"\.{2,}", ". ");
                 Message = Regex.Replace(Message, @"(?:http(s)?:\/\/)?[\w.-]+\D(?:\.[\w\.-]+)+[\w\-\._~:/?%#[\]@!\$&'\(\)\*\+,;=.]+", "link");
-
 
                 //Russian TTS yuri crash the programm because of emoji.
                 //Replace emoji
