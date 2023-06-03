@@ -68,36 +68,16 @@ namespace SimpleTwitchTTS
                     SynthText.SpeakAsyncCancelAll();
                     return;
                 }
-
-                
                 if (ViewerSkipCurrentMessage != "" && e.ChatMessage.Message == ViewerSkipCurrentMessage)
                 {
                     SpeakCancell();
                     return;
                 }
 
-                //TTS will read long link as one word "link" instead of every letter
-                Message = e.ChatMessage.Message;
-
-                if(Message.Contains(".."))
-                    Message = Message.Replace('.', ' ');
-                TClient.SendMessage("toltoon45", Message);
-                //for (int i = 0; i < Message.Length - 1; i++)
-                //{
-                //    if (Message[i] == '.' && Message[i + 1] == '.')
-                //    {
-                //        Message = Message.Replace(Message[i], ' ');
-                //    }
-                string Message2 = ".........adasd..................... .d . dddd . .d. d. .d ..asd";
-                Message2 = Regex.Replace(Message2, "..", " ");
-                TClient.SendMessage("toltoon45", Message2);
-                //Console.WriteLine(Message2);
-                //}
-                Message = Regex.Replace(Message, "..", "");
-
-                //replace any link with word "link"
+                //replace multiple dots with single dot so next regex will not replace two or more dots wit word "link"
+                Message = Regex.Replace(e.ChatMessage.Message, @"\.{2,}", ". ");
+                //replace actual links with single word "link"
                 Message = Regex.Replace(Message, @"(?:http(s)?:\/\/)?[\w.-]+\D(?:\.[\w\.-]+)+[\w\-\._~:/?%#[\]@!\$&'\(\)\*\+,;=.]+", "link");
-
 
                 //for example russian TTS yuri crash the programm because of emoji.
                 //Replace emoji
@@ -113,7 +93,7 @@ namespace SimpleTwitchTTS
         {
             try
             {
-                TClient.SendMessage(TwitchNick, "gotovo");
+                TClient.SendMessage(TwitchNick, "Connected!");
             }
             catch
             {
@@ -123,7 +103,7 @@ namespace SimpleTwitchTTS
         }
 
 
-
+        //this methods and below needed to get information from main window
         internal void ClearEmoji(bool @checked)
         {
             TtsClearEmoji = @checked;
