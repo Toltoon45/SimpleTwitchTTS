@@ -78,19 +78,28 @@ namespace SimpleTwitchTTS
 
                 //TTS will read long link as one word "link" instead of every letter
                 Message = e.ChatMessage.Message;
-                for (int i = 0; i < Message.Length - 1; i++)
-                {
-                    if (Message[i] == '.' && Message[i + 1] == '.')
-                    {
-                        Message = Message.Replace(Message[i], ' ');
-                    }
 
-                }
-                //Message = Regex.Replace(Message, "..", "");
+                if(Message.Contains(".."))
+                    Message = Message.Replace('.', ' ');
+                TClient.SendMessage("toltoon45", Message);
+                //for (int i = 0; i < Message.Length - 1; i++)
+                //{
+                //    if (Message[i] == '.' && Message[i + 1] == '.')
+                //    {
+                //        Message = Message.Replace(Message[i], ' ');
+                //    }
+                string Message2 = ".........adasd..................... .d . dddd . .d. d. .d ..asd";
+                Message2 = Regex.Replace(Message2, "..", " ");
+                TClient.SendMessage("toltoon45", Message2);
+                //Console.WriteLine(Message2);
+                //}
+                Message = Regex.Replace(Message, "..", "");
+
+                //replace any link with word "link"
                 Message = Regex.Replace(Message, @"(?:http(s)?:\/\/)?[\w.-]+\D(?:\.[\w\.-]+)+[\w\-\._~:/?%#[\]@!\$&'\(\)\*\+,;=.]+", "link");
 
 
-                //Russian TTS yuri crash the programm because of emoji.
+                //for example russian TTS yuri crash the programm because of emoji.
                 //Replace emoji
                 if (TtsClearEmoji)
                 {
