@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             buttonTwitchConnect = new Button();
             textBoxTwitchApi = new TextBox();
             textBoxTwitchNick = new TextBox();
@@ -65,53 +66,44 @@
             labelDoNotTtsIfStartWith = new Label();
             labelTtsTest = new Label();
             buttonTestTts = new Button();
-            buttonProfileAdd = new Button();
             buttonProfileLoad = new Button();
-            button = new Button();
+            buttonProfileDeleteEN = new Button();
             labelProfileAdd = new Label();
             labelProfileDelete = new Label();
+            buttonLanguageChange = new Button();
+            buttonOpenFolderRU = new Button();
+            buttonProfileSave = new Button();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).BeginInit();
             SuspendLayout();
             // 
             // buttonTwitchConnect
             // 
-            buttonTwitchConnect.Location = new Point(12, 12);
+            resources.ApplyResources(buttonTwitchConnect, "buttonTwitchConnect");
             buttonTwitchConnect.Name = "buttonTwitchConnect";
-            buttonTwitchConnect.Size = new Size(60, 23);
-            buttonTwitchConnect.TabIndex = 0;
-            buttonTwitchConnect.Text = "Connect";
+            toolTipInfoForConnection.SetToolTip(buttonTwitchConnect, resources.GetString("buttonTwitchConnect.ToolTip"));
             buttonTwitchConnect.UseVisualStyleBackColor = true;
             buttonTwitchConnect.Click += buttonTwitchConnect_Click;
             // 
             // textBoxTwitchApi
             // 
-            textBoxTwitchApi.Location = new Point(78, 12);
+            resources.ApplyResources(textBoxTwitchApi, "textBoxTwitchApi");
             textBoxTwitchApi.Name = "textBoxTwitchApi";
-            textBoxTwitchApi.PasswordChar = '*';
-            textBoxTwitchApi.Size = new Size(100, 23);
-            textBoxTwitchApi.TabIndex = 1;
-            toolTipInfoForConnection.SetToolTip(textBoxTwitchApi, "NEVER SHOW THIS ANYONE");
+            toolTipInfoForConnection.SetToolTip(textBoxTwitchApi, resources.GetString("textBoxTwitchApi.ToolTip"));
             textBoxTwitchApi.TextChanged += textBoxTwitchApi_TextChanged;
             // 
             // textBoxTwitchNick
             // 
-            textBoxTwitchNick.Location = new Point(78, 41);
+            resources.ApplyResources(textBoxTwitchNick, "textBoxTwitchNick");
             textBoxTwitchNick.Name = "textBoxTwitchNick";
-            textBoxTwitchNick.Size = new Size(100, 23);
-            textBoxTwitchNick.TabIndex = 2;
-            toolTipInfoForConnection.SetToolTip(textBoxTwitchNick, "nickname of the channel to connect to");
+            toolTipInfoForConnection.SetToolTip(textBoxTwitchNick, resources.GetString("textBoxTwitchNick.ToolTip"));
             // 
             // linkLabelTwitchApi
             // 
-            linkLabelTwitchApi.AutoSize = true;
-            linkLabelTwitchApi.Location = new Point(184, 16);
+            resources.ApplyResources(linkLabelTwitchApi, "linkLabelTwitchApi");
             linkLabelTwitchApi.Name = "linkLabelTwitchApi";
-            linkLabelTwitchApi.Size = new Size(62, 15);
-            linkLabelTwitchApi.TabIndex = 3;
             linkLabelTwitchApi.TabStop = true;
-            linkLabelTwitchApi.Text = "Twitch Api";
-            toolTipInfoForConnection.SetToolTip(linkLabelTwitchApi, "Please give all permissions");
+            toolTipInfoForConnection.SetToolTip(linkLabelTwitchApi, resources.GetString("linkLabelTwitchApi.ToolTip"));
             linkLabelTwitchApi.LinkClicked += linkLabelTwitchApi_LinkClicked;
             // 
             // toolTipInfoForConnection
@@ -123,345 +115,278 @@
             // 
             // labelNickOfChannelToConnect
             // 
-            labelNickOfChannelToConnect.AutoSize = true;
-            labelNickOfChannelToConnect.Location = new Point(184, 41);
+            resources.ApplyResources(labelNickOfChannelToConnect, "labelNickOfChannelToConnect");
             labelNickOfChannelToConnect.Name = "labelNickOfChannelToConnect";
-            labelNickOfChannelToConnect.Size = new Size(61, 15);
-            labelNickOfChannelToConnect.TabIndex = 21;
-            labelNickOfChannelToConnect.Text = "Nickname";
-            toolTipInfoForConnection.SetToolTip(labelNickOfChannelToConnect, "nickname of the channel to connect to");
+            toolTipInfoForConnection.SetToolTip(labelNickOfChannelToConnect, resources.GetString("labelNickOfChannelToConnect.ToolTip"));
             // 
             // textBoxDoNotTtsIfStartWith
             // 
-            textBoxDoNotTtsIfStartWith.Location = new Point(12, 518);
+            resources.ApplyResources(textBoxDoNotTtsIfStartWith, "textBoxDoNotTtsIfStartWith");
             textBoxDoNotTtsIfStartWith.Name = "textBoxDoNotTtsIfStartWith";
-            textBoxDoNotTtsIfStartWith.Size = new Size(65, 23);
-            textBoxDoNotTtsIfStartWith.TabIndex = 29;
-            toolTipInfoForConnection.SetToolTip(textBoxDoNotTtsIfStartWith, "Only ONE letter!");
+            toolTipInfoForConnection.SetToolTip(textBoxDoNotTtsIfStartWith, resources.GetString("textBoxDoNotTtsIfStartWith.ToolTip"));
             textBoxDoNotTtsIfStartWith.TextChanged += textBoxDoNotTtsIfStartWith_TextChanged;
             // 
             // textBoxViewerSkipCurrentTtsMessage
             // 
-            textBoxViewerSkipCurrentTtsMessage.Location = new Point(12, 440);
+            resources.ApplyResources(textBoxViewerSkipCurrentTtsMessage, "textBoxViewerSkipCurrentTtsMessage");
             textBoxViewerSkipCurrentTtsMessage.Name = "textBoxViewerSkipCurrentTtsMessage";
-            textBoxViewerSkipCurrentTtsMessage.Size = new Size(65, 23);
-            textBoxViewerSkipCurrentTtsMessage.TabIndex = 24;
-            toolTipInfoForConnection.SetToolTip(textBoxViewerSkipCurrentTtsMessage, "With \"!\" or without");
+            toolTipInfoForConnection.SetToolTip(textBoxViewerSkipCurrentTtsMessage, resources.GetString("textBoxViewerSkipCurrentTtsMessage.ToolTip"));
             textBoxViewerSkipCurrentTtsMessage.TextChanged += textBoxViewerSkipCurrentTtsMessage_TextChanged;
             // 
             // textBoxViewerSkipAllQueueMessage
             // 
-            textBoxViewerSkipAllQueueMessage.Location = new Point(140, 440);
+            resources.ApplyResources(textBoxViewerSkipAllQueueMessage, "textBoxViewerSkipAllQueueMessage");
             textBoxViewerSkipAllQueueMessage.Name = "textBoxViewerSkipAllQueueMessage";
-            textBoxViewerSkipAllQueueMessage.Size = new Size(100, 23);
-            textBoxViewerSkipAllQueueMessage.TabIndex = 28;
-            toolTipInfoForConnection.SetToolTip(textBoxViewerSkipAllQueueMessage, "With \"!\" or without");
+            toolTipInfoForConnection.SetToolTip(textBoxViewerSkipAllQueueMessage, resources.GetString("textBoxViewerSkipAllQueueMessage.ToolTip"));
             textBoxViewerSkipAllQueueMessage.TextChanged += textBoxViewerSkipAllQueueMessage_TextChanged;
             // 
             // textBoxTestTts
             // 
-            textBoxTestTts.Location = new Point(140, 496);
+            resources.ApplyResources(textBoxTestTts, "textBoxTestTts");
             textBoxTestTts.Name = "textBoxTestTts";
-            textBoxTestTts.Size = new Size(100, 23);
-            textBoxTestTts.TabIndex = 34;
-            toolTipInfoForConnection.SetToolTip(textBoxTestTts, "Test");
+            toolTipInfoForConnection.SetToolTip(textBoxTestTts, resources.GetString("textBoxTestTts.ToolTip"));
             // 
             // textBoxProfileAdd
             // 
-            textBoxProfileAdd.Location = new Point(309, 47);
+            resources.ApplyResources(textBoxProfileAdd, "textBoxProfileAdd");
             textBoxProfileAdd.Name = "textBoxProfileAdd";
-            textBoxProfileAdd.Size = new Size(100, 23);
-            textBoxProfileAdd.TabIndex = 35;
-            toolTipInfoForConnection.SetToolTip(textBoxProfileAdd, "NEVER SHOW THIS ANYONE");
+            toolTipInfoForConnection.SetToolTip(textBoxProfileAdd, resources.GetString("textBoxProfileAdd.ToolTip"));
             // 
             // comboBoxProfileSelect
             // 
+            resources.ApplyResources(comboBoxProfileSelect, "comboBoxProfileSelect");
             comboBoxProfileSelect.FormattingEnabled = true;
-            comboBoxProfileSelect.Location = new Point(309, 17);
             comboBoxProfileSelect.Name = "comboBoxProfileSelect";
-            comboBoxProfileSelect.Size = new Size(100, 23);
-            comboBoxProfileSelect.TabIndex = 36;
-            toolTipInfoForConnection.SetToolTip(comboBoxProfileSelect, "Profile name");
+            toolTipInfoForConnection.SetToolTip(comboBoxProfileSelect, resources.GetString("comboBoxProfileSelect.ToolTip"));
             // 
             // labelConnectionStatus
             // 
-            labelConnectionStatus.AutoSize = true;
-            labelConnectionStatus.Location = new Point(12, 44);
+            resources.ApplyResources(labelConnectionStatus, "labelConnectionStatus");
             labelConnectionStatus.Name = "labelConnectionStatus";
-            labelConnectionStatus.Size = new Size(0, 15);
-            labelConnectionStatus.TabIndex = 4;
+            toolTipInfoForConnection.SetToolTip(labelConnectionStatus, resources.GetString("labelConnectionStatus.ToolTip"));
             // 
             // checkBoxClearEmoji
             // 
-            checkBoxClearEmoji.AutoSize = true;
-            checkBoxClearEmoji.Location = new Point(78, 102);
+            resources.ApplyResources(checkBoxClearEmoji, "checkBoxClearEmoji");
             checkBoxClearEmoji.Name = "checkBoxClearEmoji";
-            checkBoxClearEmoji.Size = new Size(152, 19);
-            checkBoxClearEmoji.TabIndex = 5;
-            checkBoxClearEmoji.Text = "Remove emoji from TTS";
+            toolTipInfoForConnection.SetToolTip(checkBoxClearEmoji, resources.GetString("checkBoxClearEmoji.ToolTip"));
             checkBoxClearEmoji.UseVisualStyleBackColor = true;
             checkBoxClearEmoji.CheckedChanged += checkBoxClearEmoji_CheckedChanged;
             // 
             // comboBoxInstalledVoices
             // 
+            resources.ApplyResources(comboBoxInstalledVoices, "comboBoxInstalledVoices");
             comboBoxInstalledVoices.FormattingEnabled = true;
-            comboBoxInstalledVoices.Location = new Point(78, 70);
             comboBoxInstalledVoices.Name = "comboBoxInstalledVoices";
-            comboBoxInstalledVoices.Size = new Size(100, 23);
-            comboBoxInstalledVoices.TabIndex = 6;
+            toolTipInfoForConnection.SetToolTip(comboBoxInstalledVoices, resources.GetString("comboBoxInstalledVoices.ToolTip"));
             comboBoxInstalledVoices.SelectedIndexChanged += comboBoxInstalledVoices_SelectedIndexChanged;
             // 
             // trackBarTtsVolume
             // 
-            trackBarTtsVolume.Location = new Point(12, 124);
+            resources.ApplyResources(trackBarTtsVolume, "trackBarTtsVolume");
             trackBarTtsVolume.Maximum = 100;
             trackBarTtsVolume.Name = "trackBarTtsVolume";
-            trackBarTtsVolume.Size = new Size(166, 45);
-            trackBarTtsVolume.TabIndex = 7;
+            toolTipInfoForConnection.SetToolTip(trackBarTtsVolume, resources.GetString("trackBarTtsVolume.ToolTip"));
             trackBarTtsVolume.Scroll += trackBarTtsVolume_Scroll;
             trackBarTtsVolume.ValueChanged += trackBarTtsVolume_ValueChanged;
             // 
             // trackBarTtsSpeed
             // 
+            resources.ApplyResources(trackBarTtsSpeed, "trackBarTtsSpeed");
             trackBarTtsSpeed.LargeChange = 1;
-            trackBarTtsSpeed.Location = new Point(12, 175);
             trackBarTtsSpeed.Minimum = -10;
             trackBarTtsSpeed.Name = "trackBarTtsSpeed";
-            trackBarTtsSpeed.Size = new Size(166, 45);
-            trackBarTtsSpeed.TabIndex = 8;
+            toolTipInfoForConnection.SetToolTip(trackBarTtsSpeed, resources.GetString("trackBarTtsSpeed.ToolTip"));
             trackBarTtsSpeed.ValueChanged += trackBarTtsSpeed_ValueChanged;
             // 
             // labelTtsVolume
             // 
-            labelTtsVolume.AutoSize = true;
-            labelTtsVolume.Location = new Point(184, 124);
+            resources.ApplyResources(labelTtsVolume, "labelTtsVolume");
             labelTtsVolume.Name = "labelTtsVolume";
-            labelTtsVolume.Size = new Size(0, 15);
-            labelTtsVolume.TabIndex = 9;
+            toolTipInfoForConnection.SetToolTip(labelTtsVolume, resources.GetString("labelTtsVolume.ToolTip"));
             // 
             // labelTtsSpeed
             // 
-            labelTtsSpeed.AutoSize = true;
-            labelTtsSpeed.Location = new Point(184, 175);
+            resources.ApplyResources(labelTtsSpeed, "labelTtsSpeed");
             labelTtsSpeed.Name = "labelTtsSpeed";
-            labelTtsSpeed.Size = new Size(0, 15);
-            labelTtsSpeed.TabIndex = 10;
+            toolTipInfoForConnection.SetToolTip(labelTtsSpeed, resources.GetString("labelTtsSpeed.ToolTip"));
             // 
             // labelBlackList
             // 
-            labelBlackList.AutoSize = true;
-            labelBlackList.Location = new Point(12, 205);
+            resources.ApplyResources(labelBlackList, "labelBlackList");
             labelBlackList.Name = "labelBlackList";
-            labelBlackList.Size = new Size(74, 15);
-            labelBlackList.TabIndex = 11;
-            labelBlackList.Text = "TTS black list";
+            toolTipInfoForConnection.SetToolTip(labelBlackList, resources.GetString("labelBlackList.ToolTip"));
             // 
             // textBoxBlackList
             // 
-            textBoxBlackList.Location = new Point(12, 226);
+            resources.ApplyResources(textBoxBlackList, "textBoxBlackList");
             textBoxBlackList.Name = "textBoxBlackList";
-            textBoxBlackList.Size = new Size(100, 23);
-            textBoxBlackList.TabIndex = 12;
+            toolTipInfoForConnection.SetToolTip(textBoxBlackList, resources.GetString("textBoxBlackList.ToolTip"));
             // 
             // listBoxBlackList
             // 
+            resources.ApplyResources(listBoxBlackList, "listBoxBlackList");
             listBoxBlackList.FormattingEnabled = true;
-            listBoxBlackList.ItemHeight = 15;
-            listBoxBlackList.Location = new Point(12, 255);
             listBoxBlackList.Name = "listBoxBlackList";
-            listBoxBlackList.Size = new Size(100, 49);
-            listBoxBlackList.TabIndex = 13;
+            toolTipInfoForConnection.SetToolTip(listBoxBlackList, resources.GetString("listBoxBlackList.ToolTip"));
             // 
             // buttonAddToBlackList
             // 
-            buttonAddToBlackList.Location = new Point(118, 225);
+            resources.ApplyResources(buttonAddToBlackList, "buttonAddToBlackList");
             buttonAddToBlackList.Name = "buttonAddToBlackList";
-            buttonAddToBlackList.Size = new Size(75, 23);
-            buttonAddToBlackList.TabIndex = 14;
-            buttonAddToBlackList.Text = "Add";
+            toolTipInfoForConnection.SetToolTip(buttonAddToBlackList, resources.GetString("buttonAddToBlackList.ToolTip"));
             buttonAddToBlackList.UseVisualStyleBackColor = true;
             buttonAddToBlackList.Click += buttonAddToBlackList_Click;
             // 
             // buttonRemoveFromBlackList
             // 
-            buttonRemoveFromBlackList.Location = new Point(118, 254);
+            resources.ApplyResources(buttonRemoveFromBlackList, "buttonRemoveFromBlackList");
             buttonRemoveFromBlackList.Name = "buttonRemoveFromBlackList";
-            buttonRemoveFromBlackList.Size = new Size(75, 50);
-            buttonRemoveFromBlackList.TabIndex = 15;
-            buttonRemoveFromBlackList.Text = "Remove selected";
+            toolTipInfoForConnection.SetToolTip(buttonRemoveFromBlackList, resources.GetString("buttonRemoveFromBlackList.ToolTip"));
             buttonRemoveFromBlackList.UseVisualStyleBackColor = true;
             buttonRemoveFromBlackList.Click += buttonRemoveFromBlackList_Click;
             // 
             // labelTtsVolumeName
             // 
-            labelTtsVolumeName.AutoSize = true;
-            labelTtsVolumeName.Location = new Point(205, 124);
+            resources.ApplyResources(labelTtsVolumeName, "labelTtsVolumeName");
             labelTtsVolumeName.Name = "labelTtsVolumeName";
-            labelTtsVolumeName.Size = new Size(47, 15);
-            labelTtsVolumeName.TabIndex = 16;
-            labelTtsVolumeName.Text = "Volume";
+            toolTipInfoForConnection.SetToolTip(labelTtsVolumeName, resources.GetString("labelTtsVolumeName.ToolTip"));
             // 
             // labelTtsSpeedName
             // 
-            labelTtsSpeedName.AutoSize = true;
-            labelTtsSpeedName.Location = new Point(205, 175);
+            resources.ApplyResources(labelTtsSpeedName, "labelTtsSpeedName");
             labelTtsSpeedName.Name = "labelTtsSpeedName";
-            labelTtsSpeedName.Size = new Size(56, 15);
-            labelTtsSpeedName.TabIndex = 17;
-            labelTtsSpeedName.Text = "Tts speed";
+            toolTipInfoForConnection.SetToolTip(labelTtsSpeedName, resources.GetString("labelTtsSpeedName.ToolTip"));
             // 
             // labelSkipMessage
             // 
-            labelSkipMessage.AutoSize = true;
-            labelSkipMessage.Location = new Point(12, 323);
+            resources.ApplyResources(labelSkipMessage, "labelSkipMessage");
             labelSkipMessage.Name = "labelSkipMessage";
-            labelSkipMessage.Size = new Size(78, 15);
-            labelSkipMessage.TabIndex = 18;
-            labelSkipMessage.Text = "Skip message";
+            toolTipInfoForConnection.SetToolTip(labelSkipMessage, resources.GetString("labelSkipMessage.ToolTip"));
             // 
             // buttonSkipCurrentMessage
             // 
-            buttonSkipCurrentMessage.Location = new Point(12, 341);
+            resources.ApplyResources(buttonSkipCurrentMessage, "buttonSkipCurrentMessage");
             buttonSkipCurrentMessage.Name = "buttonSkipCurrentMessage";
-            buttonSkipCurrentMessage.Size = new Size(100, 23);
-            buttonSkipCurrentMessage.TabIndex = 19;
-            buttonSkipCurrentMessage.Text = "Skip current tts";
+            toolTipInfoForConnection.SetToolTip(buttonSkipCurrentMessage, resources.GetString("buttonSkipCurrentMessage.ToolTip"));
             buttonSkipCurrentMessage.UseVisualStyleBackColor = true;
             buttonSkipCurrentMessage.Click += buttonSkipCurrentMessage_Click;
             // 
             // buttonClearEntireQueue
             // 
-            buttonClearEntireQueue.Location = new Point(118, 341);
+            resources.ApplyResources(buttonClearEntireQueue, "buttonClearEntireQueue");
             buttonClearEntireQueue.Name = "buttonClearEntireQueue";
-            buttonClearEntireQueue.Size = new Size(55, 23);
-            buttonClearEntireQueue.TabIndex = 20;
-            buttonClearEntireQueue.Text = "Skip all";
+            toolTipInfoForConnection.SetToolTip(buttonClearEntireQueue, resources.GetString("buttonClearEntireQueue.ToolTip"));
             buttonClearEntireQueue.UseVisualStyleBackColor = true;
             buttonClearEntireQueue.Click += buttonClearEntireQueue_Click;
             // 
             // labelAllowViewerToSkip
             // 
-            labelAllowViewerToSkip.AutoSize = true;
-            labelAllowViewerToSkip.Location = new Point(12, 367);
+            resources.ApplyResources(labelAllowViewerToSkip, "labelAllowViewerToSkip");
             labelAllowViewerToSkip.Name = "labelAllowViewerToSkip";
-            labelAllowViewerToSkip.Size = new Size(128, 15);
-            labelAllowViewerToSkip.TabIndex = 22;
-            labelAllowViewerToSkip.Text = "Allow viewer to skip tts";
+            toolTipInfoForConnection.SetToolTip(labelAllowViewerToSkip, resources.GetString("labelAllowViewerToSkip.ToolTip"));
             // 
             // labelViewerSkipCurrent
             // 
-            labelViewerSkipCurrent.AutoSize = true;
-            labelViewerSkipCurrent.Location = new Point(78, 391);
+            resources.ApplyResources(labelViewerSkipCurrent, "labelViewerSkipCurrent");
             labelViewerSkipCurrent.Name = "labelViewerSkipCurrent";
-            labelViewerSkipCurrent.Size = new Size(145, 15);
-            labelViewerSkipCurrent.TabIndex = 25;
-            labelViewerSkipCurrent.Text = "leave blank if not skipping";
+            toolTipInfoForConnection.SetToolTip(labelViewerSkipCurrent, resources.GetString("labelViewerSkipCurrent.ToolTip"));
             // 
             // labelViewerSkipCurrentMessage
             // 
-            labelViewerSkipCurrentMessage.AutoSize = true;
-            labelViewerSkipCurrentMessage.Location = new Point(12, 422);
+            resources.ApplyResources(labelViewerSkipCurrentMessage, "labelViewerSkipCurrentMessage");
             labelViewerSkipCurrentMessage.Name = "labelViewerSkipCurrentMessage";
-            labelViewerSkipCurrentMessage.Size = new Size(65, 15);
-            labelViewerSkipCurrentMessage.TabIndex = 26;
-            labelViewerSkipCurrentMessage.Text = "Current Tts";
+            toolTipInfoForConnection.SetToolTip(labelViewerSkipCurrentMessage, resources.GetString("labelViewerSkipCurrentMessage.ToolTip"));
             // 
             // labelViewerSkipAllQueue
             // 
-            labelViewerSkipAllQueue.AutoSize = true;
-            labelViewerSkipAllQueue.Location = new Point(140, 422);
+            resources.ApplyResources(labelViewerSkipAllQueue, "labelViewerSkipAllQueue");
             labelViewerSkipAllQueue.Name = "labelViewerSkipAllQueue";
-            labelViewerSkipAllQueue.Size = new Size(121, 15);
-            labelViewerSkipAllQueue.TabIndex = 27;
-            labelViewerSkipAllQueue.Text = "Current and all queue";
+            toolTipInfoForConnection.SetToolTip(labelViewerSkipAllQueue, resources.GetString("labelViewerSkipAllQueue.ToolTip"));
             // 
             // labelDoNotTtsIfStartWith
             // 
-            labelDoNotTtsIfStartWith.AutoSize = true;
-            labelDoNotTtsIfStartWith.Location = new Point(12, 500);
+            resources.ApplyResources(labelDoNotTtsIfStartWith, "labelDoNotTtsIfStartWith");
             labelDoNotTtsIfStartWith.Name = "labelDoNotTtsIfStartWith";
-            labelDoNotTtsIfStartWith.Size = new Size(121, 15);
-            labelDoNotTtsIfStartWith.TabIndex = 30;
-            labelDoNotTtsIfStartWith.Text = "Do not tts if start with";
+            toolTipInfoForConnection.SetToolTip(labelDoNotTtsIfStartWith, resources.GetString("labelDoNotTtsIfStartWith.ToolTip"));
             // 
             // labelTtsTest
             // 
-            labelTtsTest.AutoSize = true;
-            labelTtsTest.Location = new Point(140, 478);
+            resources.ApplyResources(labelTtsTest, "labelTtsTest");
             labelTtsTest.Name = "labelTtsTest";
-            labelTtsTest.Size = new Size(44, 15);
-            labelTtsTest.TabIndex = 32;
-            labelTtsTest.Text = "Tts test";
+            toolTipInfoForConnection.SetToolTip(labelTtsTest, resources.GetString("labelTtsTest.ToolTip"));
             // 
             // buttonTestTts
             // 
-            buttonTestTts.Location = new Point(140, 522);
+            resources.ApplyResources(buttonTestTts, "buttonTestTts");
             buttonTestTts.Name = "buttonTestTts";
-            buttonTestTts.Size = new Size(44, 23);
-            buttonTestTts.TabIndex = 33;
-            buttonTestTts.Text = "Say it";
+            toolTipInfoForConnection.SetToolTip(buttonTestTts, resources.GetString("buttonTestTts.ToolTip"));
             buttonTestTts.UseVisualStyleBackColor = true;
             buttonTestTts.Click += buttonTestTts_Click;
             // 
-            // buttonProfileAdd
-            // 
-            buttonProfileAdd.Location = new Point(309, 76);
-            buttonProfileAdd.Name = "buttonProfileAdd";
-            buttonProfileAdd.Size = new Size(100, 23);
-            buttonProfileAdd.TabIndex = 37;
-            buttonProfileAdd.Text = "Save profile";
-            buttonProfileAdd.UseVisualStyleBackColor = true;
-            buttonProfileAdd.Click += buttonProfileAdd_Click;
-            // 
             // buttonProfileLoad
             // 
-            buttonProfileLoad.Location = new Point(415, 16);
+            resources.ApplyResources(buttonProfileLoad, "buttonProfileLoad");
             buttonProfileLoad.Name = "buttonProfileLoad";
-            buttonProfileLoad.Size = new Size(78, 23);
-            buttonProfileLoad.TabIndex = 38;
-            buttonProfileLoad.Text = "Load profile";
+            toolTipInfoForConnection.SetToolTip(buttonProfileLoad, resources.GetString("buttonProfileLoad.ToolTip"));
             buttonProfileLoad.UseVisualStyleBackColor = true;
             buttonProfileLoad.Click += buttonProfileLoad_Click;
             // 
-            // button
+            // buttonProfileDeleteEN
             // 
-            button.Location = new Point(309, 111);
-            button.Name = "button";
-            button.Size = new Size(100, 23);
-            button.TabIndex = 39;
-            button.Text = "Delete profile";
-            button.UseVisualStyleBackColor = true;
-            button.Click += button_Click;
+            resources.ApplyResources(buttonProfileDeleteEN, "buttonProfileDeleteEN");
+            buttonProfileDeleteEN.Name = "buttonProfileDeleteEN";
+            toolTipInfoForConnection.SetToolTip(buttonProfileDeleteEN, resources.GetString("buttonProfileDeleteEN.ToolTip"));
+            buttonProfileDeleteEN.UseVisualStyleBackColor = true;
+            buttonProfileDeleteEN.Click += buttonProfileDelete;
             // 
             // labelProfileAdd
             // 
-            labelProfileAdd.AutoSize = true;
-            labelProfileAdd.Location = new Point(257, 16);
+            resources.ApplyResources(labelProfileAdd, "labelProfileAdd");
             labelProfileAdd.Name = "labelProfileAdd";
-            labelProfileAdd.Size = new Size(46, 15);
-            labelProfileAdd.TabIndex = 40;
-            labelProfileAdd.Text = "Profiles";
+            toolTipInfoForConnection.SetToolTip(labelProfileAdd, resources.GetString("labelProfileAdd.ToolTip"));
             // 
             // labelProfileDelete
             // 
-            labelProfileDelete.AutoSize = true;
-            labelProfileDelete.Location = new Point(254, 46);
-            labelProfileDelete.MaximumSize = new Size(50, 0);
+            resources.ApplyResources(labelProfileDelete, "labelProfileDelete");
             labelProfileDelete.Name = "labelProfileDelete";
-            labelProfileDelete.Size = new Size(49, 45);
-            labelProfileDelete.TabIndex = 41;
-            labelProfileDelete.Text = "Profiles add or delete";
+            toolTipInfoForConnection.SetToolTip(labelProfileDelete, resources.GetString("labelProfileDelete.ToolTip"));
+            // 
+            // buttonLanguageChange
+            // 
+            resources.ApplyResources(buttonLanguageChange, "buttonLanguageChange");
+            buttonLanguageChange.Name = "buttonLanguageChange";
+            toolTipInfoForConnection.SetToolTip(buttonLanguageChange, resources.GetString("buttonLanguageChange.ToolTip"));
+            buttonLanguageChange.UseVisualStyleBackColor = true;
+            buttonLanguageChange.Click += buttonLanguageChange_Click;
+            // 
+            // buttonOpenFolderRU
+            // 
+            resources.ApplyResources(buttonOpenFolderRU, "buttonOpenFolderRU");
+            buttonOpenFolderRU.Name = "buttonOpenFolderRU";
+            toolTipInfoForConnection.SetToolTip(buttonOpenFolderRU, resources.GetString("buttonOpenFolderRU.ToolTip"));
+            buttonOpenFolderRU.UseVisualStyleBackColor = true;
+            buttonOpenFolderRU.Click += buttonProfileOpenFolder;
+            // 
+            // buttonProfileSave
+            // 
+            resources.ApplyResources(buttonProfileSave, "buttonProfileSave");
+            buttonProfileSave.Name = "buttonProfileSave";
+            toolTipInfoForConnection.SetToolTip(buttonProfileSave, resources.GetString("buttonProfileSave.ToolTip"));
+            buttonProfileSave.UseVisualStyleBackColor = true;
+            buttonProfileSave.Click += buttonProfileAddClick;
             // 
             // MainWindow
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(500, 549);
+            Controls.Add(buttonProfileSave);
+            Controls.Add(buttonOpenFolderRU);
+            Controls.Add(buttonLanguageChange);
             Controls.Add(labelProfileDelete);
             Controls.Add(labelProfileAdd);
-            Controls.Add(button);
+            Controls.Add(buttonProfileDeleteEN);
             Controls.Add(buttonProfileLoad);
-            Controls.Add(buttonProfileAdd);
             Controls.Add(comboBoxProfileSelect);
             Controls.Add(textBoxProfileAdd);
             Controls.Add(textBoxTestTts);
@@ -498,9 +423,8 @@
             Controls.Add(textBoxTwitchApi);
             Controls.Add(buttonTwitchConnect);
             Name = "MainWindow";
-            Text = "SimpleTwitchTts v1.0";
+            toolTipInfoForConnection.SetToolTip(this, resources.GetString("$this.ToolTip"));
             FormClosing += MainWindow_FormClosing;
-            Load += MainWindow_Load;
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).EndInit();
             ResumeLayout(false);
@@ -545,10 +469,13 @@
         private TextBox textBoxTestTts;
         private TextBox textBoxProfileAdd;
         private ComboBox comboBoxProfileSelect;
-        private Button buttonProfileAdd;
         private Button buttonProfileLoad;
-        private Button button;
+        private Button buttonProfileDeleteEN;
         private Label labelProfileAdd;
         private Label labelProfileDelete;
+        private Button buttonLanguageChange;
+        //private Button buttonProfileOpenFolder;
+        private Button buttonOpenFolderRU;
+        private Button buttonProfileSave;
     }
 }

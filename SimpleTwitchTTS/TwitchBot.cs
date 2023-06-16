@@ -59,8 +59,6 @@ namespace SimpleTwitchTTS
 
         private void TClientOnChatCommandReceived(object? sender, OnChatCommandReceivedArgs e)
         {
-            string testss = e.Command.ChatMessage.Message;
-            TClient.SendMessage("toltoon45", testss);
             if (!BlackList.Contains(e.Command.ChatMessage.Username))
             {
                 if (ViewerSkipAllQueueMessage != "" && e.Command.ChatMessage.Message == ViewerSkipAllQueueMessage)

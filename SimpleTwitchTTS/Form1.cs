@@ -2,7 +2,10 @@ using System.Speech.Synthesis;
 using TwitchLib.Client;
 using TwitchLib.Communication.Events;
 using System.Text.Json;
+using System.Threading;
 using Newtonsoft.Json;
+using System.Globalization;
+using System.Diagnostics;
 
 namespace SimpleTwitchTTS
 {
@@ -12,42 +15,62 @@ namespace SimpleTwitchTTS
         public MainWindow()
         {
             InitializeComponent();
+            LoadComponents();
+
+        }
+
+        private void LoadComponents()
+        {
             //load all
-            string profilesDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "profiles");
-            string[] jsonFiles = Directory.GetFiles(profilesDirectory, "*.json");
-
-            foreach (string filePath in jsonFiles)
+            try
             {
-                string fileName = Path.GetFileName(filePath);
-                comboBoxProfileSelect.Items.Add(fileName);
-            }
-
-            //load last used settings
-            textBoxTwitchApi.Text = Properties.Settings.Default.TextBoxTwitchApi;
-            textBoxTwitchNick.Text = Properties.Settings.Default.TextBoxTwitchNick;
-            checkBoxClearEmoji.Checked = Properties.Settings.Default.CheckBoxClearEmoji;
-            comboBoxInstalledVoices.Text = Properties.Settings.Default.ComboBoxInstalledVoiceSelect;
-            toolTipInfoForConnection.SetToolTip(comboBoxInstalledVoices, comboBoxInstalledVoices.Text);
-            trackBarTtsVolume.Value = Properties.Settings.Default.TtsVolume;
-            trackBarTtsSpeed.Value = Properties.Settings.Default.TtsSpeed;
-            textBoxViewerSkipAllQueueMessage.Text = Properties.Settings.Default.TtsSkipAll;
-            textBoxViewerSkipCurrentTtsMessage.Text = Properties.Settings.Default.TtsSkipCurrent;
-            textBoxDoNotTtsIfStartWith.Text = Properties.Settings.Default.TtsIgnore;
-            comboBoxProfileSelect.Text = Properties.Settings.Default.ProfileName;
-
-            foreach (InstalledVoice voice in Synth.GetInstalledVoices())
-            {
-                comboBoxInstalledVoices.Items.Add(voice.VoiceInfo.Name);
-            }
-
-            if (!File.Exists("BlackList.txt"))
-                using (System.IO.FileStream fs = System.IO.File.Create("BlackList.txt")) ;
-            using (System.IO.StreamReader sr = new System.IO.StreamReader("BlackList.txt"))
-            {
-                while (!sr.EndOfStream)
+                if (!Directory.Exists("profiles"))
                 {
-                    listBoxBlackList.Items.Add(sr.ReadLine());
+                    Directory.CreateDirectory("profiles");
                 }
+                textBoxTwitchApi.Text = Properties.Settings.Default.TextBoxTwitchApi;
+                textBoxTwitchNick.Text = Properties.Settings.Default.TextBoxTwitchNick;
+                checkBoxClearEmoji.Checked = Properties.Settings.Default.CheckBoxClearEmoji;
+                comboBoxInstalledVoices.Text = Properties.Settings.Default.ComboBoxInstalledVoiceSelect;
+                toolTipInfoForConnection.SetToolTip(comboBoxInstalledVoices, comboBoxInstalledVoices.Text);
+                trackBarTtsVolume.Value = Properties.Settings.Default.TtsVolume;
+                trackBarTtsSpeed.Value = Properties.Settings.Default.TtsSpeed;
+                textBoxViewerSkipAllQueueMessage.Text = Properties.Settings.Default.TtsSkipAll;
+                textBoxViewerSkipCurrentTtsMessage.Text = Properties.Settings.Default.TtsSkipCurrent;
+                textBoxDoNotTtsIfStartWith.Text = Properties.Settings.Default.TtsIgnore;
+                comboBoxProfileSelect.Text = Properties.Settings.Default.ProfileName;
+
+
+                string profilesDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "profiles");
+                string[] jsonFiles = Directory.GetFiles(profilesDirectory, "*.json");
+
+                foreach (string filePath in jsonFiles)
+                {
+                    string fileName = Path.GetFileName(filePath);
+                    comboBoxProfileSelect.Items.Add(fileName);
+                }
+
+
+
+                foreach (InstalledVoice voice in Synth.GetInstalledVoices())
+                {
+                    comboBoxInstalledVoices.Items.Add(voice.VoiceInfo.Name);
+                }
+
+                if (!File.Exists("BlackList.txt"))
+                    using (System.IO.FileStream fs = System.IO.File.Create("BlackList.txt")) ;
+                using (System.IO.StreamReader sr = new System.IO.StreamReader("BlackList.txt"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        listBoxBlackList.Items.Add(sr.ReadLine());
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -85,7 +108,6 @@ namespace SimpleTwitchTTS
             Properties.Settings.Default.TtsIgnore = textBoxDoNotTtsIfStartWith.Text;
             Properties.Settings.Default.ProfileName = comboBoxProfileSelect.Text;
             Properties.Settings.Default.Save();
-
 
             using (System.IO.StreamWriter sw = new System.IO.StreamWriter("BlackList.txt"))
             {
@@ -256,7 +278,7 @@ namespace SimpleTwitchTTS
         }
 
         //save and load from json
-        private void buttonProfileAdd_Click(object sender, EventArgs e)
+        private void buttonProfileAddClick(object sender, EventArgs e)
         {
             var data = new
             {
@@ -271,18 +293,17 @@ namespace SimpleTwitchTTS
                 textBoxViewerSkipAllQueueMessage = textBoxViewerSkipAllQueueMessage.Text,
                 textBoxDoNotTtsIfStartWith = textBoxDoNotTtsIfStartWith.Text
             };
-            var jsonData = System.Text.Json.JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+            try
+            {
+                var jsonData = System.Text.Json.JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText($@"profiles//{textBoxProfileAdd.Text}.json", jsonData);
+                if (!comboBoxProfileSelect.Items.Contains($"{textBoxProfileAdd.Text}.json"))
+                    comboBoxProfileSelect.Items.Add($"{textBoxProfileAdd.Text}.json");
 
-            File.WriteAllText($@"profiles//{textBoxProfileAdd.Text}.json", jsonData);
-        }
-
-        private void buttonProfileDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
+            }
+            catch (Exception)
+            {
+            }
 
         }
 
@@ -305,7 +326,28 @@ namespace SimpleTwitchTTS
             }
         }
 
-        private void button_Click(object sender, EventArgs e)
+        CultureInfo LanguageRUS = new CultureInfo("ru-RU");
+        CultureInfo LanguageENG = new CultureInfo("en-US");
+        private void buttonLanguageChange_Click(object sender, EventArgs e)
+        {//код снизу всё равно выдаёт ru-RU даже когда не ру ру
+            CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
+            if (Convert.ToString(currentCulture) == "ru-RU")
+            {
+                Thread.CurrentThread.CurrentCulture = LanguageENG;
+                Thread.CurrentThread.CurrentUICulture = LanguageENG;
+            }
+            else 
+            {
+                Thread.CurrentThread.CurrentCulture = LanguageRUS;
+                Thread.CurrentThread.CurrentUICulture = LanguageRUS;
+            }
+            Controls.Clear();
+            InitializeComponent();
+            LoadComponents();
+
+        }
+
+        private void buttonProfileDelete(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Sure", "Some Title", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -313,16 +355,20 @@ namespace SimpleTwitchTTS
                 try
                 {
                     File.Delete($@"profiles//{comboBoxProfileSelect.Text}");
-                    comboBoxProfileSelect.Items.Remove(comboBoxProfileSelect);
+                    comboBoxProfileSelect.Items.Remove(comboBoxProfileSelect.SelectedItem);
                 }
                 catch
                 {
-
                 }
             }
             else if (dialogResult == DialogResult.No)
             {
             }
+        }
+
+        private void buttonProfileOpenFolder(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", "profiles");
         }
     }
 }
