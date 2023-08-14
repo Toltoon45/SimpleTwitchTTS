@@ -39,6 +39,7 @@ namespace SimpleTwitchTTS
                 textBoxViewerSkipCurrentTtsMessage.Text = Properties.Settings.Default.TtsSkipCurrent;
                 textBoxDoNotTtsIfStartWith.Text = Properties.Settings.Default.TtsIgnore;
                 comboBoxProfileSelect.Text = Properties.Settings.Default.ProfileName;
+                labelConnectionStatus.Text = "";
 
 
                 string profilesDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "profiles");
@@ -198,14 +199,13 @@ namespace SimpleTwitchTTS
             }
             catch
             {
-                Synth.Speak("test 1 2 3 test");
+                Synth.SpeakAsync(textBoxTestTts.Text);
             }
-
         }
 
-        private void trackBarTtsVolume_Scroll(object sender, EventArgs e)
+        private void buttonTestTtsSkip_Click(object sender, EventArgs e)
         {
-
+            Synth.SpeakAsyncCancelAll();
         }
 
         private void trackBarTtsVolume_ValueChanged(object sender, EventArgs e)
@@ -336,7 +336,7 @@ namespace SimpleTwitchTTS
                 Thread.CurrentThread.CurrentCulture = LanguageENG;
                 Thread.CurrentThread.CurrentUICulture = LanguageENG;
             }
-            else 
+            else
             {
                 Thread.CurrentThread.CurrentCulture = LanguageRUS;
                 Thread.CurrentThread.CurrentUICulture = LanguageRUS;

@@ -73,6 +73,7 @@
             buttonLanguageChange = new Button();
             buttonOpenFolderRU = new Button();
             buttonProfileSave = new Button();
+            buttonTestTtsSkip = new Button();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).BeginInit();
             SuspendLayout();
@@ -187,7 +188,6 @@
             trackBarTtsVolume.Maximum = 100;
             trackBarTtsVolume.Name = "trackBarTtsVolume";
             toolTipInfoForConnection.SetToolTip(trackBarTtsVolume, resources.GetString("trackBarTtsVolume.ToolTip"));
-            trackBarTtsVolume.Scroll += trackBarTtsVolume_Scroll;
             trackBarTtsVolume.ValueChanged += trackBarTtsVolume_ValueChanged;
             // 
             // trackBarTtsSpeed
@@ -376,10 +376,19 @@
             buttonProfileSave.UseVisualStyleBackColor = true;
             buttonProfileSave.Click += buttonProfileAddClick;
             // 
+            // buttonTestTtsSkip
+            // 
+            resources.ApplyResources(buttonTestTtsSkip, "buttonTestTtsSkip");
+            buttonTestTtsSkip.Name = "buttonTestTtsSkip";
+            toolTipInfoForConnection.SetToolTip(buttonTestTtsSkip, resources.GetString("buttonTestTtsSkip.ToolTip"));
+            buttonTestTtsSkip.UseVisualStyleBackColor = true;
+            buttonTestTtsSkip.Click += buttonTestTtsSkip_Click;
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonTestTtsSkip);
             Controls.Add(buttonProfileSave);
             Controls.Add(buttonOpenFolderRU);
             Controls.Add(buttonLanguageChange);
@@ -477,5 +486,6 @@
         //private Button buttonProfileOpenFolder;
         private Button buttonOpenFolderRU;
         private Button buttonProfileSave;
+        private Button buttonTestTtsSkip;
     }
 }

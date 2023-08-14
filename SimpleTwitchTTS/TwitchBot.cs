@@ -3,6 +3,8 @@ using TwitchLib.Client.Events;
 using TwitchLib.Client.Models;
 using System.Text.RegularExpressions;
 using System.Speech.Synthesis;
+using TwitchLib.Client.Extensions;
+using TwitchLib.Api.Core.Enums;
 
 namespace SimpleTwitchTTS
 {
@@ -56,21 +58,26 @@ namespace SimpleTwitchTTS
 
             }
         }
-
+        string phrase;
         private void TClientOnChatCommandReceived(object? sender, OnChatCommandReceivedArgs e)
         {
-            if (!BlackList.Contains(e.Command.ChatMessage.Username))
+            if (!BlackList.Contains(e.Command.ChatMessage.Username))     
             {
                 if (ViewerSkipAllQueueMessage != "" && e.Command.ChatMessage.Message == ViewerSkipAllQueueMessage)
                 {
-                    SynthText.SpeakAsyncCancelAll();
-                    return;
+                        SynthText.SpeakAsyncCancelAll();
+                        return;
+
                 }
                 if (ViewerSkipCurrentMessage != "" && e.Command.ChatMessage.Message == ViewerSkipCurrentMessage)
                 {
                     SpeakCancell();
                     return;
                 }
+            }
+            if (Convert.ToString(e.Command.ChatMessage.UserType) == "Broadcaster" && e.Command.ChatMessage.Message == "добавить")
+            {
+                TClient.SendMessage("toltoon45", e.Command.ChatMessage.Message);
             }
         }
         //Part With TTS

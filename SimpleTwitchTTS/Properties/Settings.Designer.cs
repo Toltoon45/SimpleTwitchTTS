@@ -154,5 +154,29 @@ namespace SimpleTwitchTTS.Properties {
                 this["ProfileName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ProgramLanguage {
+            get {
+                return ((string)(this["ProgramLanguage"]));
+            }
+            set {
+                this["ProgramLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Read {
+            get {
+                return ((bool)(this["Read"]));
+            }
+            set {
+                this["Read"] = value;
+            }
+        }
     }
 }
