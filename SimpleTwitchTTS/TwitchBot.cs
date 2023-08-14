@@ -126,10 +126,6 @@ namespace SimpleTwitchTTS
                     return;
                 }
             }
-            if (Convert.ToString(e.Command.ChatMessage.UserType) == "Broadcaster" && e.Command.ChatMessage.Message == "добавить")
-            {
-                TClient.SendMessage("toltoon45", e.Command.ChatMessage.Message);
-            }
         }
         string responseBody;
         string finalAnecdot;
@@ -143,7 +139,7 @@ namespace SimpleTwitchTTS
                 response.EnsureSuccessStatusCode();
                 responseBody = await response.Content.ReadAsStringAsync();
                 finalAnecdot = responseBody.Substring(11, responseBody.Length - 11 - 2);
-                TClient.SendMessage("toltoon45", finalAnecdot);
+                TClient.SendMessage(TwitchNick, finalAnecdot);
                 TTS(finalAnecdot, "");
             }
         }
