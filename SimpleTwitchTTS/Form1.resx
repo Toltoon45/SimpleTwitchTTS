@@ -117,6 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;comboBoxInstalledVoices.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;buttonProfileOpenFolder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="labelHighlightedMessageTts.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
@@ -953,8 +963,8 @@
   <data name="&gt;&gt;labelTEST.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="buttonProfileDeleteEN.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+  <data name="labelViewerSkipCurrent.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="labelAnecdotChannelPoints.TabIndex" type="System.Int32, mscorlib">
     <value>64</value>
@@ -1151,7 +1161,7 @@
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
-  <data name="&gt;&gt;labelProfileAdd.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelConnectionStatus.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
@@ -1259,8 +1269,8 @@
   <data name="labelTtsSpeed.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="buttonProfileLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 16</value>
+  <data name="buttonSkipCurrentMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
   <data name="textBoxTestTts.ToolTip" xml:space="preserve">
     <value>Test</value>
@@ -1400,8 +1410,8 @@
   <data name="&gt;&gt;buttonProfileSaveRU.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelTtsVolumeName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="comboBoxProfileSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
   </data>
   <data name="&gt;&gt;buttonTestTts.Name" xml:space="preserve">
     <value>buttonTestTts</value>
@@ -1421,8 +1431,8 @@
   <data name="&gt;&gt;buttonProfileOpenFolder.Name" xml:space="preserve">
     <value>buttonProfileOpenFolder</value>
   </data>
-  <data name="buttonTestTts.Text" xml:space="preserve">
-    <value>Say it</value>
+  <data name="buttonTestTts.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
   </data>
   <data name="&gt;&gt;buttonOpenFolderReplaceWordData.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1499,8 +1509,8 @@
   <data name="textBoxTwitchToken.ToolTip" xml:space="preserve">
     <value>nickname of the channel to connect to</value>
   </data>
-  <data name="buttonProfileOpenFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 102</value>
+  <data name="&gt;&gt;labelViewerSkipCurrent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="labelTtsVolume.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1706,8 +1716,8 @@
   <data name="labelViewerSkipAllQueue.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 15</value>
   </data>
-  <data name="textBoxBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
+  <data name="&gt;&gt;buttonRemoveFromBlackList.Name" xml:space="preserve">
+    <value>buttonRemoveFromBlackList</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1727,8 +1737,8 @@
   <data name="labelDoNotTtsIfStartWith.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 15</value>
   </data>
-  <data name="labelBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 15</value>
+  <data name="labelSkipMessage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;checkBoxOverAllWindows.Parent" xml:space="preserve">
     <value>$this</value>

@@ -107,7 +107,7 @@ namespace SimpleTwitchTTS
         string s;
         private void TClientOnChatCommandReceived(object? sender, OnChatCommandReceivedArgs e)
         {
-            if (!BlackList.Contains(e.Command.ChatMessage.Username))
+            if (!BlackList.Contains(e.Command.ChatMessage.Username))     
             {
                 if (e.Command.ChatMessage.Message == $"!{AnecdotChatCommand}")
                 {
