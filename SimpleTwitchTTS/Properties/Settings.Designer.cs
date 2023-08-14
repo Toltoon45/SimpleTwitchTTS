@@ -154,5 +154,100 @@ namespace SimpleTwitchTTS.Properties {
                 this["ProfileName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ProgramLanguage {
+            get {
+                return ((string)(this["ProgramLanguage"]));
+            }
+            set {
+                this["ProgramLanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SecondForm {
+            get {
+                return ((bool)(this["SecondForm"]));
+            }
+            set {
+                this["SecondForm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public bool OnlyHighlightedMessagesTts {
+            get {
+                return ((bool)(this["OnlyHighlightedMessagesTts"]));
+            }
+            set {
+                this["OnlyHighlightedMessagesTts"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TwitchToken {
+            get {
+                return ((string)(this["TwitchToken"]));
+            }
+            set {
+                this["TwitchToken"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HighlightedMessageName {
+            get {
+                return ((string)(this["HighlightedMessageName"]));
+            }
+            set {
+                this["HighlightedMessageName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TtsMessageType {
+            get {
+                return ((string)(this["TtsMessageType"]));
+            }
+            set {
+                this["TtsMessageType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AnecdotChatCommand {
+            get {
+                return ((string)(this["AnecdotChatCommand"]));
+            }
+            set {
+                this["AnecdotChatCommand"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AnecdotChannelPoints {
+            get {
+                return ((string)(this["AnecdotChannelPoints"]));
+            }
+            set {
+                this["AnecdotChannelPoints"] = value;
+            }
+        }
     }
 }

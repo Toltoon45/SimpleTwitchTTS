@@ -60,7 +60,6 @@
             buttonSkipCurrentMessage = new Button();
             buttonClearEntireQueue = new Button();
             labelAllowViewerToSkip = new Label();
-            labelViewerSkipCurrent = new Label();
             labelViewerSkipCurrentMessage = new Label();
             labelViewerSkipAllQueue = new Label();
             labelDoNotTtsIfStartWith = new Label();
@@ -73,6 +72,26 @@
             buttonLanguageChange = new Button();
             buttonOpenFolderRU = new Button();
             buttonProfileSave = new Button();
+            buttonTestTtsSkip = new Button();
+            labelTypeOfMessageTts = new Label();
+            comboBoxTypeOfMessageTts = new ComboBox();
+            textBoxHighlightedMessageName = new TextBox();
+            labelHighlightedMessageTts = new Label();
+            textBoxTwitchClientID = new TextBox();
+            textBoxTtsWhatToReplace = new TextBox();
+            textBoxTtsSubstitute = new TextBox();
+            listBoxTtsWhatToReplace = new ListBox();
+            listBoxTtsSubstitute = new ListBox();
+            buttonTtsTextReplace = new Button();
+            buttonDeleteReplaceAndSubstitude = new Button();
+            labelAnecdotChatCommand = new Label();
+            textBoxAnecdotChannelPoints = new TextBox();
+            labelAnecdotChannelPoints = new Label();
+            textBoxAnecdotChatCommand = new TextBox();
+            labelAnecdot = new Label();
+            label1 = new Label();
+            labelTwitchClientId = new Label();
+            checkBoxOverAllWindows = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).BeginInit();
             SuspendLayout();
@@ -187,7 +206,6 @@
             trackBarTtsVolume.Maximum = 100;
             trackBarTtsVolume.Name = "trackBarTtsVolume";
             toolTipInfoForConnection.SetToolTip(trackBarTtsVolume, resources.GetString("trackBarTtsVolume.ToolTip"));
-            trackBarTtsVolume.Scroll += trackBarTtsVolume_Scroll;
             trackBarTtsVolume.ValueChanged += trackBarTtsVolume_ValueChanged;
             // 
             // trackBarTtsSpeed
@@ -286,12 +304,6 @@
             labelAllowViewerToSkip.Name = "labelAllowViewerToSkip";
             toolTipInfoForConnection.SetToolTip(labelAllowViewerToSkip, resources.GetString("labelAllowViewerToSkip.ToolTip"));
             // 
-            // labelViewerSkipCurrent
-            // 
-            resources.ApplyResources(labelViewerSkipCurrent, "labelViewerSkipCurrent");
-            labelViewerSkipCurrent.Name = "labelViewerSkipCurrent";
-            toolTipInfoForConnection.SetToolTip(labelViewerSkipCurrent, resources.GetString("labelViewerSkipCurrent.ToolTip"));
-            // 
             // labelViewerSkipCurrentMessage
             // 
             resources.ApplyResources(labelViewerSkipCurrentMessage, "labelViewerSkipCurrentMessage");
@@ -376,10 +388,169 @@
             buttonProfileSave.UseVisualStyleBackColor = true;
             buttonProfileSave.Click += buttonProfileAddClick;
             // 
+            // buttonTestTtsSkip
+            // 
+            resources.ApplyResources(buttonTestTtsSkip, "buttonTestTtsSkip");
+            buttonTestTtsSkip.Name = "buttonTestTtsSkip";
+            toolTipInfoForConnection.SetToolTip(buttonTestTtsSkip, resources.GetString("buttonTestTtsSkip.ToolTip"));
+            buttonTestTtsSkip.UseVisualStyleBackColor = true;
+            buttonTestTtsSkip.Click += buttonTestTtsSkip_Click;
+            // 
+            // labelTypeOfMessageTts
+            // 
+            resources.ApplyResources(labelTypeOfMessageTts, "labelTypeOfMessageTts");
+            labelTypeOfMessageTts.Name = "labelTypeOfMessageTts";
+            toolTipInfoForConnection.SetToolTip(labelTypeOfMessageTts, resources.GetString("labelTypeOfMessageTts.ToolTip"));
+            // 
+            // comboBoxTypeOfMessageTts
+            // 
+            resources.ApplyResources(comboBoxTypeOfMessageTts, "comboBoxTypeOfMessageTts");
+            comboBoxTypeOfMessageTts.FormattingEnabled = true;
+            comboBoxTypeOfMessageTts.Items.AddRange(new object[] { resources.GetString("comboBoxTypeOfMessageTts.Items"), resources.GetString("comboBoxTypeOfMessageTts.Items1"), resources.GetString("comboBoxTypeOfMessageTts.Items2"), resources.GetString("comboBoxTypeOfMessageTts.Items3") });
+            comboBoxTypeOfMessageTts.Name = "comboBoxTypeOfMessageTts";
+            toolTipInfoForConnection.SetToolTip(comboBoxTypeOfMessageTts, resources.GetString("comboBoxTypeOfMessageTts.ToolTip"));
+            comboBoxTypeOfMessageTts.SelectedIndexChanged += comboBoxTypeOfMessageTts_SelectedIndexChanged;
+            // 
+            // textBoxHighlightedMessageName
+            // 
+            resources.ApplyResources(textBoxHighlightedMessageName, "textBoxHighlightedMessageName");
+            textBoxHighlightedMessageName.Name = "textBoxHighlightedMessageName";
+            toolTipInfoForConnection.SetToolTip(textBoxHighlightedMessageName, resources.GetString("textBoxHighlightedMessageName.ToolTip"));
+            textBoxHighlightedMessageName.TextChanged += textBoxHighlightedMessageName_TextChanged;
+            // 
+            // labelHighlightedMessageTts
+            // 
+            resources.ApplyResources(labelHighlightedMessageTts, "labelHighlightedMessageTts");
+            labelHighlightedMessageTts.Name = "labelHighlightedMessageTts";
+            toolTipInfoForConnection.SetToolTip(labelHighlightedMessageTts, resources.GetString("labelHighlightedMessageTts.ToolTip"));
+            // 
+            // textBoxTwitchClientID
+            // 
+            resources.ApplyResources(textBoxTwitchClientID, "textBoxTwitchClientID");
+            textBoxTwitchClientID.Name = "textBoxTwitchClientID";
+            toolTipInfoForConnection.SetToolTip(textBoxTwitchClientID, resources.GetString("textBoxTwitchClientID.ToolTip"));
+            textBoxTwitchClientID.TextChanged += textBoxTwitchToken_TextChanged;
+            // 
+            // textBoxTtsWhatToReplace
+            // 
+            resources.ApplyResources(textBoxTtsWhatToReplace, "textBoxTtsWhatToReplace");
+            textBoxTtsWhatToReplace.Name = "textBoxTtsWhatToReplace";
+            toolTipInfoForConnection.SetToolTip(textBoxTtsWhatToReplace, resources.GetString("textBoxTtsWhatToReplace.ToolTip"));
+            // 
+            // textBoxTtsSubstitute
+            // 
+            resources.ApplyResources(textBoxTtsSubstitute, "textBoxTtsSubstitute");
+            textBoxTtsSubstitute.Name = "textBoxTtsSubstitute";
+            toolTipInfoForConnection.SetToolTip(textBoxTtsSubstitute, resources.GetString("textBoxTtsSubstitute.ToolTip"));
+            // 
+            // listBoxTtsWhatToReplace
+            // 
+            resources.ApplyResources(listBoxTtsWhatToReplace, "listBoxTtsWhatToReplace");
+            listBoxTtsWhatToReplace.FormattingEnabled = true;
+            listBoxTtsWhatToReplace.Name = "listBoxTtsWhatToReplace";
+            toolTipInfoForConnection.SetToolTip(listBoxTtsWhatToReplace, resources.GetString("listBoxTtsWhatToReplace.ToolTip"));
+            listBoxTtsWhatToReplace.SelectedValueChanged += listBoxTtsWhatToReplace_SelectedValueChanged;
+            // 
+            // listBoxTtsSubstitute
+            // 
+            resources.ApplyResources(listBoxTtsSubstitute, "listBoxTtsSubstitute");
+            listBoxTtsSubstitute.FormattingEnabled = true;
+            listBoxTtsSubstitute.Name = "listBoxTtsSubstitute";
+            toolTipInfoForConnection.SetToolTip(listBoxTtsSubstitute, resources.GetString("listBoxTtsSubstitute.ToolTip"));
+            listBoxTtsSubstitute.SelectedIndexChanged += listBoxTtsSubstitute_SelectedIndexChanged;
+            // 
+            // buttonTtsTextReplace
+            // 
+            resources.ApplyResources(buttonTtsTextReplace, "buttonTtsTextReplace");
+            buttonTtsTextReplace.Name = "buttonTtsTextReplace";
+            toolTipInfoForConnection.SetToolTip(buttonTtsTextReplace, resources.GetString("buttonTtsTextReplace.ToolTip"));
+            buttonTtsTextReplace.UseVisualStyleBackColor = true;
+            buttonTtsTextReplace.Click += buttonTtsTextReplace_Click;
+            // 
+            // buttonDeleteReplaceAndSubstitude
+            // 
+            resources.ApplyResources(buttonDeleteReplaceAndSubstitude, "buttonDeleteReplaceAndSubstitude");
+            buttonDeleteReplaceAndSubstitude.Name = "buttonDeleteReplaceAndSubstitude";
+            toolTipInfoForConnection.SetToolTip(buttonDeleteReplaceAndSubstitude, resources.GetString("buttonDeleteReplaceAndSubstitude.ToolTip"));
+            buttonDeleteReplaceAndSubstitude.UseVisualStyleBackColor = true;
+            buttonDeleteReplaceAndSubstitude.Click += buttonDeleteReplaceAndSubstitude_Click;
+            // 
+            // labelAnecdotChatCommand
+            // 
+            resources.ApplyResources(labelAnecdotChatCommand, "labelAnecdotChatCommand");
+            labelAnecdotChatCommand.Name = "labelAnecdotChatCommand";
+            toolTipInfoForConnection.SetToolTip(labelAnecdotChatCommand, resources.GetString("labelAnecdotChatCommand.ToolTip"));
+            // 
+            // textBoxAnecdotChannelPoints
+            // 
+            resources.ApplyResources(textBoxAnecdotChannelPoints, "textBoxAnecdotChannelPoints");
+            textBoxAnecdotChannelPoints.Name = "textBoxAnecdotChannelPoints";
+            toolTipInfoForConnection.SetToolTip(textBoxAnecdotChannelPoints, resources.GetString("textBoxAnecdotChannelPoints.ToolTip"));
+            textBoxAnecdotChannelPoints.TextChanged += textBoxAnecdotChannelPoints_TextChanged;
+            // 
+            // labelAnecdotChannelPoints
+            // 
+            resources.ApplyResources(labelAnecdotChannelPoints, "labelAnecdotChannelPoints");
+            labelAnecdotChannelPoints.Name = "labelAnecdotChannelPoints";
+            toolTipInfoForConnection.SetToolTip(labelAnecdotChannelPoints, resources.GetString("labelAnecdotChannelPoints.ToolTip"));
+            // 
+            // textBoxAnecdotChatCommand
+            // 
+            resources.ApplyResources(textBoxAnecdotChatCommand, "textBoxAnecdotChatCommand");
+            textBoxAnecdotChatCommand.Name = "textBoxAnecdotChatCommand";
+            toolTipInfoForConnection.SetToolTip(textBoxAnecdotChatCommand, resources.GetString("textBoxAnecdotChatCommand.ToolTip"));
+            textBoxAnecdotChatCommand.TextChanged += textBoxAnecdotChatCommand_TextChanged;
+            // 
+            // labelAnecdot
+            // 
+            resources.ApplyResources(labelAnecdot, "labelAnecdot");
+            labelAnecdot.Name = "labelAnecdot";
+            toolTipInfoForConnection.SetToolTip(labelAnecdot, resources.GetString("labelAnecdot.ToolTip"));
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
+            toolTipInfoForConnection.SetToolTip(label1, resources.GetString("label1.ToolTip"));
+            // 
+            // labelTwitchClientId
+            // 
+            resources.ApplyResources(labelTwitchClientId, "labelTwitchClientId");
+            labelTwitchClientId.Name = "labelTwitchClientId";
+            toolTipInfoForConnection.SetToolTip(labelTwitchClientId, resources.GetString("labelTwitchClientId.ToolTip"));
+            // 
+            // checkBoxOverAllWindows
+            // 
+            resources.ApplyResources(checkBoxOverAllWindows, "checkBoxOverAllWindows");
+            checkBoxOverAllWindows.Name = "checkBoxOverAllWindows";
+            toolTipInfoForConnection.SetToolTip(checkBoxOverAllWindows, resources.GetString("checkBoxOverAllWindows.ToolTip"));
+            checkBoxOverAllWindows.UseVisualStyleBackColor = true;
+            checkBoxOverAllWindows.CheckedChanged += checkBoxOverAllWindows_CheckedChanged;
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(checkBoxOverAllWindows);
+            Controls.Add(labelTwitchClientId);
+            Controls.Add(label1);
+            Controls.Add(labelAnecdot);
+            Controls.Add(textBoxAnecdotChatCommand);
+            Controls.Add(labelAnecdotChannelPoints);
+            Controls.Add(textBoxAnecdotChannelPoints);
+            Controls.Add(labelAnecdotChatCommand);
+            Controls.Add(buttonDeleteReplaceAndSubstitude);
+            Controls.Add(buttonTtsTextReplace);
+            Controls.Add(listBoxTtsSubstitute);
+            Controls.Add(listBoxTtsWhatToReplace);
+            Controls.Add(textBoxTtsSubstitute);
+            Controls.Add(textBoxTtsWhatToReplace);
+            Controls.Add(textBoxTwitchClientID);
+            Controls.Add(labelHighlightedMessageTts);
+            Controls.Add(textBoxHighlightedMessageName);
+            Controls.Add(comboBoxTypeOfMessageTts);
+            Controls.Add(labelTypeOfMessageTts);
+            Controls.Add(buttonTestTtsSkip);
             Controls.Add(buttonProfileSave);
             Controls.Add(buttonOpenFolderRU);
             Controls.Add(buttonLanguageChange);
@@ -397,7 +568,6 @@
             Controls.Add(textBoxViewerSkipAllQueueMessage);
             Controls.Add(labelViewerSkipAllQueue);
             Controls.Add(labelViewerSkipCurrentMessage);
-            Controls.Add(labelViewerSkipCurrent);
             Controls.Add(textBoxViewerSkipCurrentTtsMessage);
             Controls.Add(labelAllowViewerToSkip);
             Controls.Add(labelNickOfChannelToConnect);
@@ -425,6 +595,7 @@
             Name = "MainWindow";
             toolTipInfoForConnection.SetToolTip(this, resources.GetString("$this.ToolTip"));
             FormClosing += MainWindow_FormClosing;
+            Load += MainWindow_Load;
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).EndInit();
             ResumeLayout(false);
@@ -458,7 +629,6 @@
         private Label labelNickOfChannelToConnect;
         private Label labelAllowViewerToSkip;
         private TextBox textBoxViewerSkipCurrentTtsMessage;
-        private Label labelViewerSkipCurrent;
         private Label labelViewerSkipCurrentMessage;
         private Label labelViewerSkipAllQueue;
         private TextBox textBoxViewerSkipAllQueueMessage;
@@ -477,5 +647,25 @@
         //private Button buttonProfileOpenFolder;
         private Button buttonOpenFolderRU;
         private Button buttonProfileSave;
+        private Button buttonTestTtsSkip;
+        private Label labelTypeOfMessageTts;
+        private ComboBox comboBoxTypeOfMessageTts;
+        private TextBox textBoxHighlightedMessageName;
+        private Label labelHighlightedMessageTts;
+        private TextBox textBoxTwitchClientID;
+        private TextBox textBoxTtsWhatToReplace;
+        private TextBox textBoxTtsSubstitute;
+        private ListBox listBoxTtsWhatToReplace;
+        private ListBox listBoxTtsSubstitute;
+        private Button buttonTtsTextReplace;
+        private Button buttonDeleteReplaceAndSubstitude;
+        private Label labelAnecdotChatCommand;
+        private TextBox textBoxAnecdotChannelPoints;
+        private Label labelAnecdotChannelPoints;
+        private TextBox textBoxAnecdotChatCommand;
+        private Label labelAnecdot;
+        private Label label1;
+        private Label labelTwitchClientId;
+        private CheckBox checkBoxOverAllWindows;
     }
 }
