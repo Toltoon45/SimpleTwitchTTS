@@ -164,7 +164,7 @@ namespace SimpleTwitchTTS
             if (Connect == false)
             {
                 labelConnectionStatus.ForeColor = Color.Black;
-                labelConnectionStatus.Text = "Conntecing...";
+                labelConnectionStatus.Text = "Connecting...";
                 try
                 {
                     TClient = TWbot.Connect(textBoxTwitchApi.Text, textBoxTwitchNick.Text, TwitchTokenFromHttpRequest, comboBoxInstalledVoices.Text, TClient, textBoxAnecdotChatCommand.Text, textBoxAnecdotChannelPoints.Text);

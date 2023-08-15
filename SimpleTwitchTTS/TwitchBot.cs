@@ -202,9 +202,12 @@ namespace SimpleTwitchTTS
 
                 //for example russian TTS yuri will crash the programm because of emoji.
                 //Replace emoji
+                string emojiPattern = @"(?:[\u203C-\u3299\u00A9\u00AE\u2000-\u3300\uF000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF])";
                 if (TtsClearEmoji)
                 {
-                    Message = Regex.Replace(Message, @"\p{Cs}", "");
+                    Message = Regex.Replace(Message, emojiPattern, string.Empty);
+                    // this ^ gives me ChatGPT3.5 . this v i found in internet and upper works perfectly fine
+                    //Message = Regex.Replace(Message, @"\p{Cs}", "");
                 }
                 //replace words in messages
                 processedMessage = Message;
