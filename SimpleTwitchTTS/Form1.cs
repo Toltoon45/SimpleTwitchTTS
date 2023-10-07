@@ -144,6 +144,8 @@ namespace SimpleTwitchTTS
 
         private void saveFile(string fileName, string path, ListBox listBox)
         {
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
             using (System.IO.StreamWriter sw = new System.IO.StreamWriter($"{path}\\{fileName}.txt"))
             {
                 for (int i = 0; i < listBox.Items.Count; i++)
