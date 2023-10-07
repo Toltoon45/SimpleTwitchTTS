@@ -481,7 +481,7 @@
     <value>Данные для проги</value>
   </data>
   <data name="buttonOpenFolderRU.ToolTip" xml:space="preserve">
-    <value>В</value>
+    <value>Открыть папку с  данными программы</value>
   </data>
   <data name="buttonProfileSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -807,11 +807,17 @@
   <data name="listBoxAnecdotsFromFilesLoadedFiles.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
   </data>
+  <data name="listBoxAnecdotsFromFilesLoadedFiles.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>296, 381</value>
   </data>
   <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 69</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="labelAnecdotsFromFilesAllFilesFromFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
