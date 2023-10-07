@@ -18,7 +18,7 @@
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
     <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing"">Blue</data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
     <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
         <value>[base64 mime encoded serialized .NET Framework object]</value>
     </data>
@@ -119,91 +119,118 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonTwitchConnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 27</value>
+    <value>10, 23</value>
   </data>
   <data name="buttonTwitchConnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 47</value>
+    <value>51, 41</value>
   </data>
   <data name="buttonTwitchConnect.Text" xml:space="preserve">
     <value>Подключиться</value>
   </data>
   <data name="textBoxTwitchApi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 27</value>
+    <value>67, 23</value>
+  </data>
+  <data name="textBoxTwitchApi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="textBoxTwitchApi.ToolTip" xml:space="preserve">
     <value>НИКОМУ НЕ ПОКАЗЫВАЙ!</value>
   </data>
   <data name="textBoxTwitchNick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 85</value>
+    <value>67, 74</value>
+  </data>
+  <data name="textBoxTwitchNick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="textBoxTwitchNick.ToolTip" xml:space="preserve">
     <value>Канал, к которому подключиться</value>
   </data>
   <data name="linkLabelTwitchApi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 30</value>
+    <value>154, 26</value>
+  </data>
+  <data name="linkLabelTwitchApi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
   </data>
   <data name="linkLabelTwitchApi.Text" xml:space="preserve">
     <value>Твич АПИ</value>
   </data>
   <data name="labelNickOfChannelToConnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 88</value>
+    <value>154, 76</value>
   </data>
   <data name="labelNickOfChannelToConnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 15</value>
+    <value>50, 13</value>
   </data>
   <data name="labelNickOfChannelToConnect.Text" xml:space="preserve">
     <value>Никнейм</value>
   </data>
   <data name="textBoxDoNotTtsIfStartWith.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 450</value>
+    <value>10, 430</value>
+  </data>
+  <data name="textBoxDoNotTtsIfStartWith.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 21</value>
   </data>
   <data name="textBoxDoNotTtsIfStartWith.ToolTip" xml:space="preserve">
     <value>Я обычно ставлю "!" чтобы игнорировать команды</value>
   </data>
   <data name="textBoxViewerSkipCurrentTtsMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 372</value>
+    <value>10, 381</value>
+  </data>
+  <data name="textBoxViewerSkipCurrentTtsMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 21</value>
   </data>
   <data name="textBoxViewerSkipAllQueueMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 372</value>
+    <value>125, 381</value>
+  </data>
+  <data name="textBoxViewerSkipAllQueueMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="textBoxViewerSkipAllQueueMessage.ToolTip" xml:space="preserve">
     <value>Можно и с и без ! в начале</value>
   </data>
   <data name="textBoxTestTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 428</value>
+    <value>125, 430</value>
+  </data>
+  <data name="textBoxTestTts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="textBoxTestTts.ToolTip" xml:space="preserve">
     <value>Протестировать ТТС</value>
   </data>
   <data name="textBoxProfileAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 62</value>
+    <value>264, 54</value>
+  </data>
+  <data name="textBoxProfileAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="textBoxProfileAdd.ToolTip" xml:space="preserve">
     <value>Имя профиля, который добавить</value>
   </data>
   <data name="comboBoxProfileSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 32</value>
+    <value>264, 28</value>
+  </data>
+  <data name="comboBoxProfileSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="comboBoxProfileSelect.ToolTip" xml:space="preserve">
     <value>Имя профиля</value>
   </data>
   <data name="labelConnectionStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 85</value>
+    <value>10, 74</value>
   </data>
   <data name="labelConnectionStatus.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>55, 0</value>
+    <value>47, 0</value>
   </data>
   <data name="labelConnectionStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 30</value>
+    <value>47, 39</value>
   </data>
   <data name="labelConnectionStatus.Text" xml:space="preserve">
     <value>Connection status</value>
   </data>
   <data name="checkBoxClearEmoji.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 145</value>
+    <value>67, 126</value>
   </data>
   <data name="checkBoxClearEmoji.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 19</value>
+    <value>144, 17</value>
   </data>
   <data name="checkBoxClearEmoji.Text" xml:space="preserve">
     <value>Удалить эмодзи из ТТС</value>
@@ -212,163 +239,197 @@
     <value>Например Speech2Go Yuri ломает себя и программу из-за эмодзи</value>
   </data>
   <data name="comboBoxInstalledVoices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 114</value>
+    <value>67, 99</value>
+  </data>
+  <data name="comboBoxInstalledVoices.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="comboBoxInstalledVoices.ToolTip" xml:space="preserve">
     <value>Установленные SAPI голоса на компе</value>
   </data>
   <data name="trackBarTtsVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 167</value>
+    <value>10, 145</value>
+  </data>
+  <data name="trackBarTtsVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 45</value>
   </data>
   <data name="trackBarTtsSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 218</value>
+    <value>10, 189</value>
+  </data>
+  <data name="trackBarTtsSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 45</value>
   </data>
   <data name="labelTtsVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 167</value>
+    <value>158, 145</value>
+  </data>
+  <data name="labelTtsVolume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
   </data>
   <data name="labelTtsSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 218</value>
+    <value>158, 189</value>
+  </data>
+  <data name="labelTtsSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
   </data>
   <data name="labelBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 248</value>
+    <value>10, 215</value>
   </data>
   <data name="labelBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 15</value>
+    <value>94, 13</value>
   </data>
   <data name="labelBlackList.Text" xml:space="preserve">
     <value>Чёрный лист ТТС</value>
   </data>
   <data name="textBoxBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 269</value>
+    <value>10, 233</value>
+  </data>
+  <data name="textBoxBlackList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listBoxBlackList.ItemHeight" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="listBoxBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 298</value>
+    <value>10, 258</value>
+  </data>
+  <data name="listBoxBlackList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 43</value>
   </data>
   <data name="listBoxBlackList.ToolTip" xml:space="preserve">
     <value>Клоун ты в муте</value>
   </data>
   <data name="buttonAddToBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 268</value>
+    <value>101, 232</value>
+  </data>
+  <data name="buttonAddToBlackList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
   </data>
   <data name="buttonAddToBlackList.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
   <data name="buttonRemoveFromBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 297</value>
+    <value>101, 257</value>
   </data>
   <data name="buttonRemoveFromBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 50</value>
+    <value>70, 43</value>
   </data>
   <data name="buttonRemoveFromBlackList.Text" xml:space="preserve">
     <value>Удалить выбранное</value>
   </data>
   <data name="labelTtsVolumeName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 167</value>
+    <value>176, 145</value>
   </data>
   <data name="labelTtsVolumeName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 15</value>
+    <value>60, 13</value>
   </data>
   <data name="labelTtsVolumeName.Text" xml:space="preserve">
     <value>Громкость</value>
   </data>
   <data name="labelTtsSpeedName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>205, 218</value>
+    <value>176, 189</value>
   </data>
   <data name="labelTtsSpeedName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 15</value>
+    <value>77, 13</value>
   </data>
   <data name="labelTtsSpeedName.Text" xml:space="preserve">
     <value>Скорость ТТС</value>
   </data>
   <data name="labelSkipMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 287</value>
+    <value>10, 308</value>
   </data>
   <data name="labelSkipMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 15</value>
+    <value>126, 13</value>
   </data>
   <data name="labelSkipMessage.Text" xml:space="preserve">
     <value>Пропустить сообщение</value>
   </data>
   <data name="buttonSkipCurrentMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 305</value>
+    <value>10, 323</value>
+  </data>
+  <data name="buttonSkipCurrentMessage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
   </data>
   <data name="buttonSkipCurrentMessage.Text" xml:space="preserve">
     <value>Пропустить текущее ТТС</value>
   </data>
   <data name="buttonClearEntireQueue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>455, 305</value>
+    <value>101, 323</value>
   </data>
   <data name="buttonClearEntireQueue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 23</value>
+    <value>91, 20</value>
   </data>
   <data name="buttonClearEntireQueue.Text" xml:space="preserve">
     <value>Пропустить всё</value>
   </data>
   <data name="labelAllowViewerToSkip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 331</value>
+    <value>10, 346</value>
   </data>
   <data name="labelAllowViewerToSkip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 15</value>
+    <value>136, 13</value>
   </data>
   <data name="labelAllowViewerToSkip.Text" xml:space="preserve">
     <value>Зрители пропускают ТТС</value>
   </data>
   <data name="labelViewerSkipCurrentMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 354</value>
+    <value>8, 366</value>
   </data>
   <data name="labelViewerSkipCurrentMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 15</value>
+    <value>74, 13</value>
   </data>
   <data name="labelViewerSkipCurrentMessage.Text" xml:space="preserve">
     <value>Текущий ТТС</value>
   </data>
   <data name="labelViewerSkipAllQueue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 354</value>
+    <value>120, 366</value>
   </data>
   <data name="labelViewerSkipAllQueue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 15</value>
+    <value>79, 13</value>
   </data>
   <data name="labelViewerSkipAllQueue.Text" xml:space="preserve">
     <value>Всё в очереди</value>
   </data>
   <data name="labelDoNotTtsIfStartWith.Location" type="System.Drawing.Point, System.Drawing">
-    <value>349, 432</value>
+    <value>8, 414</value>
   </data>
   <data name="labelDoNotTtsIfStartWith.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 15</value>
+    <value>116, 13</value>
   </data>
   <data name="labelDoNotTtsIfStartWith.Text" xml:space="preserve">
     <value>Не ТТС если в начале</value>
   </data>
   <data name="labelTtsTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 410</value>
+    <value>125, 414</value>
   </data>
   <data name="labelTtsTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 15</value>
+    <value>52, 13</value>
   </data>
   <data name="labelTtsTest.Text" xml:space="preserve">
     <value>Тест ТТС</value>
   </data>
   <data name="buttonTestTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>477, 454</value>
+    <value>125, 452</value>
   </data>
   <data name="buttonTestTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 23</value>
+    <value>51, 20</value>
   </data>
   <data name="buttonTestTts.Text" xml:space="preserve">
     <value>Сказать</value>
   </data>
   <data name="buttonProfileLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 31</value>
+    <value>356, 27</value>
+  </data>
+  <data name="buttonProfileLoad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 20</value>
   </data>
   <data name="buttonProfileLoad.Text" xml:space="preserve">
     <value>Загрузить профиль</value>
   </data>
   <data name="buttonProfileDeleteEN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 62</value>
+    <value>356, 54</value>
   </data>
   <data name="buttonProfileDeleteEN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 23</value>
+    <value>67, 20</value>
   </data>
   <data name="buttonProfileDeleteEN.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -377,28 +438,31 @@
     <value>Выберите из списка наверху</value>
   </data>
   <data name="labelProfileAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 14</value>
+    <value>264, 12</value>
   </data>
   <data name="labelProfileAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 15</value>
+    <value>52, 13</value>
   </data>
   <data name="labelProfileAdd.Text" xml:space="preserve">
     <value>Профили</value>
   </data>
   <data name="labelProfileDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 56</value>
+    <value>209, 49</value>
   </data>
   <data name="labelProfileDelete.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>60, 0</value>
+    <value>51, 0</value>
   </data>
   <data name="labelProfileDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 30</value>
+    <value>51, 39</value>
   </data>
   <data name="labelProfileDelete.Text" xml:space="preserve">
     <value>Добавить профиль</value>
   </data>
   <data name="buttonLanguageChange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>623, 480</value>
+    <value>486, 457</value>
+  </data>
+  <data name="buttonLanguageChange.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
   </data>
   <data name="buttonLanguageChange.Text" xml:space="preserve">
     <value>RUS/ENG</value>
@@ -408,13 +472,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonOpenFolderRU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>604, 210</value>
+    <value>450, 12</value>
   </data>
   <data name="buttonOpenFolderRU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 23</value>
+    <value>69, 41</value>
   </data>
   <data name="buttonOpenFolderRU.Text" xml:space="preserve">
-    <value>Папка профилей</value>
+    <value>Данные для проги</value>
   </data>
   <data name="buttonOpenFolderRU.ToolTip" xml:space="preserve">
     <value>В</value>
@@ -423,10 +487,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonProfileSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 92</value>
+    <value>264, 80</value>
   </data>
   <data name="buttonProfileSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
+    <value>86, 20</value>
   </data>
   <data name="buttonProfileSave.Text" xml:space="preserve">
     <value>Сохранить</value>
@@ -435,10 +499,10 @@
     <value>Сохранить профиль</value>
   </data>
   <data name="buttonTestTtsSkip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>542, 454</value>
+    <value>181, 452</value>
   </data>
   <data name="buttonTestTtsSkip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 23</value>
+    <value>70, 20</value>
   </data>
   <data name="buttonTestTtsSkip.Text" xml:space="preserve">
     <value>Пропустить</value>
@@ -447,10 +511,10 @@
     <value>Пропустить всю очередь теста</value>
   </data>
   <data name="labelTypeOfMessageTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 309</value>
+    <value>177, 268</value>
   </data>
   <data name="labelTypeOfMessageTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
+    <value>104, 17</value>
   </data>
   <data name="labelTypeOfMessageTts.Text" xml:space="preserve">
     <value>Название команды</value>
@@ -459,77 +523,79 @@
     <value>Только твич</value>
   </data>
   <data name="comboBoxTypeOfMessageTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 281</value>
+    <value>177, 244</value>
+  </data>
+  <data name="comboBoxTypeOfMessageTts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 21</value>
   </data>
   <data name="textBoxHighlightedMessageName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 324</value>
+    <value>177, 281</value>
   </data>
   <data name="textBoxHighlightedMessageName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 23</value>
+    <value>107, 21</value>
   </data>
   <data name="labelHighlightedMessageTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 263</value>
+    <value>177, 228</value>
   </data>
   <data name="labelHighlightedMessageTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 15</value>
+    <value>179, 13</value>
   </data>
   <data name="labelHighlightedMessageTts.Text" xml:space="preserve">
     <value>Тип сообщений который будет ТТС</value>
   </data>
   <data name="textBoxTwitchClientID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 56</value>
+    <value>67, 49</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBoxTwitchClientID.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>
+  </data>
+  <data name="textBoxTwitchClientID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
   </data>
   <data name="textBoxTwitchClientID.ToolTip" xml:space="preserve">
     <value>Не показывай никому!</value>
   </data>
   <data name="textBoxTtsWhatToReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 130</value>
+    <value>266, 113</value>
   </data>
   <data name="textBoxTtsWhatToReplace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 23</value>
+    <value>88, 21</value>
   </data>
   <data name="textBoxTtsWhatToReplace.ToolTip" xml:space="preserve">
     <value>Пожалуйста, без пробелов! (Только одно слово, одно число и т.д.)</value>
   </data>
   <data name="textBoxTtsSubstitute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 130</value>
+    <value>431, 113</value>
   </data>
   <data name="textBoxTtsSubstitute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 23</value>
+    <value>88, 21</value>
   </data>
   <data name="textBoxTtsSubstitute.ToolTip" xml:space="preserve">
     <value>а вот тут сколько угодно слов чисел и т.д.</value>
   </data>
-  <data name="listBoxTtsWhatToReplace.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="listBoxTtsWhatToReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>310, 169</value>
+    <value>266, 146</value>
   </data>
   <data name="listBoxTtsWhatToReplace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 94</value>
+    <value>88, 82</value>
   </data>
   <data name="listBoxTtsWhatToReplace.ToolTip" xml:space="preserve">
     <value>я внатури ненавижу эти слова хочу их убрать &gt;:(</value>
   </data>
-  <data name="listBoxTtsSubstitute.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="listBoxTtsSubstitute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 169</value>
+    <value>431, 146</value>
   </data>
   <data name="listBoxTtsSubstitute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 94</value>
+    <value>88, 82</value>
   </data>
   <data name="listBoxTtsSubstitute.ToolTip" xml:space="preserve">
     <value>эти слова меня не бесят :)</value>
   </data>
   <data name="buttonTtsTextReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 130</value>
+    <value>358, 113</value>
+  </data>
+  <data name="buttonTtsTextReplace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
   </data>
   <data name="buttonTtsTextReplace.Text" xml:space="preserve">
     <value>Добавить</value>
@@ -538,7 +604,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonDeleteReplaceAndSubstitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 169</value>
+    <value>358, 146</value>
+  </data>
+  <data name="buttonDeleteReplaceAndSubstitude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
   </data>
   <data name="buttonDeleteReplaceAndSubstitude.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -550,58 +619,58 @@
     <value>NoControl</value>
   </data>
   <data name="labelAnecdotChatCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 30</value>
+    <value>476, 282</value>
   </data>
   <data name="labelAnecdotChatCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 15</value>
+    <value>190, 13</value>
   </data>
   <data name="labelAnecdotChatCommand.Text" xml:space="preserve">
     <value>Название команды для ввода в чат</value>
   </data>
   <data name="textBoxAnecdotChannelPoints.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 85</value>
+    <value>476, 329</value>
   </data>
   <data name="textBoxAnecdotChannelPoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 23</value>
+    <value>100, 21</value>
   </data>
   <data name="labelAnecdotChannelPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelAnecdotChannelPoints.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 70</value>
+    <value>476, 316</value>
   </data>
   <data name="labelAnecdotChannelPoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 15</value>
+    <value>181, 13</value>
   </data>
   <data name="labelAnecdotChannelPoints.Text" xml:space="preserve">
     <value>Название команды за баллы канала</value>
   </data>
   <data name="textBoxAnecdotChatCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 48</value>
+    <value>476, 297</value>
   </data>
   <data name="textBoxAnecdotChatCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 23</value>
+    <value>100, 21</value>
   </data>
   <data name="labelAnecdot.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelAnecdot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>552, 9</value>
+    <value>476, 263</value>
   </data>
   <data name="labelAnecdot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 15</value>
+    <value>177, 13</value>
   </data>
   <data name="labelAnecdot.Text" xml:space="preserve">
-    <value>Анекдоты</value>
+    <value>Рандомные анекдоты с сайта</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 112</value>
+    <value>358, 97</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 15</value>
+    <value>69, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>67</value>
@@ -616,10 +685,10 @@
     <value>NoControl</value>
   </data>
   <data name="labelTwitchClientId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 59</value>
+    <value>154, 51</value>
   </data>
   <data name="labelTwitchClientId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 15</value>
+    <value>48, 13</value>
   </data>
   <data name="labelTwitchClientId.Text" xml:space="preserve">
     <value>Client ID</value>
@@ -627,16 +696,184 @@
   <data name="checkBoxOverAllWindows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="checkBoxOverAllWindows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 457</value>
+  </data>
   <data name="checkBoxOverAllWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 19</value>
+    <value>116, 17</value>
   </data>
   <data name="checkBoxOverAllWindows.Text" xml:space="preserve">
     <value>Поверх всех окон</value>
   </data>
+  <data name="labelAnecdotsFromFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAnecdotsFromFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 256</value>
+  </data>
+  <data name="labelAnecdotsFromFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 13</value>
+  </data>
+  <data name="labelAnecdotsFromFiles.Text" xml:space="preserve">
+    <value>Анекдоты в файлах</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChatCommand.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChatCommand.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChatCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 278</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChatCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChatCommand.Text" xml:space="preserve">
+    <value>Команда чата</value>
+  </data>
+  <data name="textBoxAnecdotsFromFilesChatCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 294</value>
+  </data>
+  <data name="textBoxAnecdotsFromFilesChatCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChannelPointsCommand.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChannelPointsCommand.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 316</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChannelPointsCommand.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChannelPointsCommand.Text" xml:space="preserve">
+    <value>Команда за баллы канала</value>
+  </data>
+  <data name="textBoxAnecdotsFromFilesChannelPoints.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 332</value>
+  </data>
+  <data name="textBoxAnecdotsFromFilesChannelPoints.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 21</value>
+  </data>
+  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>450, 65</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>ВНИМАНИЕ!!!</value>
+  </data>
+  <data name="linkLabel1.ToolTip" xml:space="preserve">
+    <value>Я постарался заменить запретные слова на твиче в рандомных анекдотах и в нейроанекдотах от Хандаготса, но всё же есть ультрасупермега маленький шанс что такое может произойти, да.</value>
+  </data>
+  <data name="labelVersionOfProgram.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelVersionOfProgram.Location" type="System.Drawing.Point, System.Drawing">
+    <value>437, 460</value>
+  </data>
+  <data name="labelVersionOfProgram.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="labelVersionOfProgram.Text" xml:space="preserve">
+    <value>1.0.4.0</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesAddFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesAddFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>390, 380</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesAddFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesAddFile.Text" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesAddFile.ToolTip" xml:space="preserve">
+    <value>Добавляет выбранный СЛЕВА файл. ДОБАВЛЯЯ СВОЙ ТЕКСТ ОБРАТИТЕ ВНИМАНИЕ, ЧТО КАЖДАЯ НОВАЯ ШУТКА РАЗДЕЛЯЕТСЯ ПУСТОЙ СТРОКОЙ!!!!!</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesLoadedFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>462, 381</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesLoadedFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 69</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesLoadedFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 381</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 69</value>
+  </data>
+  <data name="labelAnecdotsFromFilesAllFilesFromFolder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAnecdotsFromFilesAllFilesFromFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAnecdotsFromFilesAllFilesFromFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>296, 358</value>
+  </data>
+  <data name="labelAnecdotsFromFilesAllFilesFromFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="labelAnecdotsFromFilesAllFilesFromFolder.Text" xml:space="preserve">
+    <value>Все текстовые файлы</value>
+  </data>
+  <data name="labelAnecdotsFromFilesLoadedFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelAnecdotsFromFilesLoadedFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelAnecdotsFromFilesLoadedFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>462, 359</value>
+  </data>
+  <data name="labelAnecdotsFromFilesLoadedFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 13</value>
+  </data>
+  <data name="labelAnecdotsFromFilesLoadedFiles.Text" xml:space="preserve">
+    <value>Из которых берётся текст</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesDeleteFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesDeleteFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>390, 406</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesDeleteFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesDeleteFile.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="linkLabelKnownTroubles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabelKnownTroubles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabelKnownTroubles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 13</value>
+  </data>
+  <data name="linkLabelKnownTroubles.Text" xml:space="preserve">
+    <value>Известные проблемы в программе</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>710, 509</value>
+    <value>670, 483</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>SimpleTwitchTts v1.0.3.2</value>
+    <value>SimpleTwitchTts</value>
   </data>
 </root>

@@ -32,7 +32,7 @@ namespace SimpleTwitchTTS
 
 
         //TClient needed to change connection status.
-        internal TwitchClient? Connect(string Api, string Nick, string ClientId, string VoiceName,TwitchClient client, string AnecdotChatCommand, string AnecdotChannelPoints)
+        internal TwitchClient? Connect(string Api, string Nick, string ClientId, string VoiceName, TwitchClient client, string AnecdotChatCommand, string AnecdotChannelPoints)
         {
 
             try
@@ -78,15 +78,18 @@ namespace SimpleTwitchTTS
 
         private void TPubSubServiceConnected(object? sender, EventArgs e)
         {
+            //06.10.2023 18:02
+            //да в пизду оно опять не работает
             TPubSub.ListenToChannelPoints(TwitchClientId);
             //if user gives api with NO FULL ACESS
             //then this part of the code will execute approximately every 3 minutes
             TPubSub.SendTopics(TwitchApi, false);
         }
 
+
         private async void TPubSubChannelPointsRewardRedeemed(object? sender, OnChannelPointsRewardRedeemedArgs e)
         {
-            if (!BlackList.Contains(e.RewardRedeemed.Redemption.User.DisplayName))
+            if (e.RewardRedeemed.Redemption.UserInput == AnecdotChatCommand && !BlackList.Contains(e.RewardRedeemed.Redemption.User.DisplayName))
             {
                 if (e.RewardRedeemed.Redemption.Reward.Title == AnecdotChannelPoints)
                 {
@@ -99,12 +102,18 @@ namespace SimpleTwitchTTS
                     TTS(e.RewardRedeemed.Redemption.UserInput, e.RewardRedeemed.Redemption.User.DisplayName);
                     return;
                 }
+
+                if (e.RewardRedeemed.Redemption.Reward.Title == AnecdotsFromFileChannelPoint)
+                {
+                    AnecdoteFromFiles();
+                }
             }
 
         }
-        string wc;
-        string rofl;
-        string s;
+        string resourceText;
+
+        Random random = new Random();  
+
         private void TClientOnChatCommandReceived(object? sender, OnChatCommandReceivedArgs e)
         {
             if (!BlackList.Contains(e.Command.ChatMessage.Username))     
@@ -118,14 +127,30 @@ namespace SimpleTwitchTTS
                 {
                     SynthText.SpeakAsyncCancelAll();
                     return;
-
                 }
                 if (ViewerSkipCurrentMessage != "" && e.Command.ChatMessage.Message == ViewerSkipCurrentMessage)
                 {
                     SpeakCancell();
                     return;
                 }
+                if (ViewerSkipCurrentMessage != "" && e.Command.ChatMessage.Message == AnecdotChatCommand)
+                {
+                    GetAnecdote(e.Command.ChatMessage.Message, e.Command.ChatMessage.DisplayName);
+                    return;
+                }
+                if(e.Command.ChatMessage.Message == AnecdotsFromFilesCommand)
+                {
+                    AnecdoteFromFiles();
+                }
             }
+        }
+        private void AnecdoteFromFiles()
+        {
+            string[] blocks = resourceText.Split(new[] { Environment.NewLine + Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            int randomIndex = random.Next(0, blocks.Length);
+            string randomBlock = blocks[randomIndex].Trim();
+            TClient.SendMessage(TwitchNick, randomBlock);
+            TTS(randomBlock, "");
         }
         string responseBody;
         string finalAnecdot;
@@ -139,6 +164,10 @@ namespace SimpleTwitchTTS
                 response.EnsureSuccessStatusCode();
                 responseBody = await response.Content.ReadAsStringAsync();
                 finalAnecdot = responseBody.Substring(11, responseBody.Length - 11 - 2);
+                finalAnecdot.Replace("негр", "н-слово");
+                finalAnecdot.Replace("нигер", "н-слово");
+                finalAnecdot.Replace("нига", "н-слово");
+                finalAnecdot.Replace("гомик", "п-слово");
                 TClient.SendMessage(TwitchNick, finalAnecdot);
                 TTS(finalAnecdot, "");
             }
@@ -352,6 +381,27 @@ namespace SimpleTwitchTTS
         internal void AnecdotChatChannelPoints(string text)
         {
             AnecdotChannelPoints = text;
+        }
+        string AnecdotsFromFilesCommand;
+        internal void AnecdotsFromFilesChatCommand(string text)
+        {
+            AnecdotsFromFilesCommand = text;
+        }
+        string AnecdotsFromFileChannelPoint;
+        internal void AnecdotsFromFilesChannelPointsCommand(string text)
+        {
+            AnecdotsFromFileChannelPoint = text;
+        }
+
+        string emptyString = Environment.NewLine;
+        internal void RebuildAnecdotes(string item)
+        {
+            resourceText = $"{resourceText}{emptyString}{emptyString}{File.ReadAllText($"DataForProgram\\Anecdots\\{item}")}";
+        }
+
+        internal void ClearAnecdotes()
+        {
+            resourceText = "";
         }
     }
 }

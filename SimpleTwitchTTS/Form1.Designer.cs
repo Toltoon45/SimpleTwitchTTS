@@ -92,6 +92,20 @@
             label1 = new Label();
             labelTwitchClientId = new Label();
             checkBoxOverAllWindows = new CheckBox();
+            labelAnecdotsFromFiles = new Label();
+            labelAnecdotsFromFilesChatCommand = new Label();
+            textBoxAnecdotsFromFilesChatCommand = new TextBox();
+            labelAnecdotsFromFilesChannelPointsCommand = new Label();
+            textBoxAnecdotsFromFilesChannelPoints = new TextBox();
+            linkLabel1 = new LinkLabel();
+            labelVersionOfProgram = new Label();
+            buttonAnecdotsFromFilesAddFile = new Button();
+            listBoxAnecdotsFromFilesLoadedFiles = new ListBox();
+            listBoxAnecdotsFromFilesAllFilesFromFolder = new ListBox();
+            labelAnecdotsFromFilesAllFilesFromFolder = new Label();
+            labelAnecdotsFromFilesLoadedFiles = new Label();
+            buttonAnecdotsFromFilesDeleteFile = new Button();
+            linkLabelKnownTroubles = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).BeginInit();
             SuspendLayout();
@@ -130,6 +144,7 @@
             toolTipInfoForConnection.AutomaticDelay = 0;
             toolTipInfoForConnection.AutoPopDelay = 0;
             toolTipInfoForConnection.InitialDelay = 1;
+            toolTipInfoForConnection.IsBalloon = true;
             toolTipInfoForConnection.ReshowDelay = 100;
             // 
             // labelNickOfChannelToConnect
@@ -527,10 +542,118 @@
             checkBoxOverAllWindows.UseVisualStyleBackColor = true;
             checkBoxOverAllWindows.CheckedChanged += checkBoxOverAllWindows_CheckedChanged;
             // 
+            // labelAnecdotsFromFiles
+            // 
+            resources.ApplyResources(labelAnecdotsFromFiles, "labelAnecdotsFromFiles");
+            labelAnecdotsFromFiles.Name = "labelAnecdotsFromFiles";
+            toolTipInfoForConnection.SetToolTip(labelAnecdotsFromFiles, resources.GetString("labelAnecdotsFromFiles.ToolTip"));
+            // 
+            // labelAnecdotsFromFilesChatCommand
+            // 
+            resources.ApplyResources(labelAnecdotsFromFilesChatCommand, "labelAnecdotsFromFilesChatCommand");
+            labelAnecdotsFromFilesChatCommand.Name = "labelAnecdotsFromFilesChatCommand";
+            toolTipInfoForConnection.SetToolTip(labelAnecdotsFromFilesChatCommand, resources.GetString("labelAnecdotsFromFilesChatCommand.ToolTip"));
+            // 
+            // textBoxAnecdotsFromFilesChatCommand
+            // 
+            resources.ApplyResources(textBoxAnecdotsFromFilesChatCommand, "textBoxAnecdotsFromFilesChatCommand");
+            textBoxAnecdotsFromFilesChatCommand.Name = "textBoxAnecdotsFromFilesChatCommand";
+            toolTipInfoForConnection.SetToolTip(textBoxAnecdotsFromFilesChatCommand, resources.GetString("textBoxAnecdotsFromFilesChatCommand.ToolTip"));
+            textBoxAnecdotsFromFilesChatCommand.TextChanged += textBoxAnecdotsFromFilesChatCommand_TextChanged;
+            // 
+            // labelAnecdotsFromFilesChannelPointsCommand
+            // 
+            resources.ApplyResources(labelAnecdotsFromFilesChannelPointsCommand, "labelAnecdotsFromFilesChannelPointsCommand");
+            labelAnecdotsFromFilesChannelPointsCommand.Name = "labelAnecdotsFromFilesChannelPointsCommand";
+            toolTipInfoForConnection.SetToolTip(labelAnecdotsFromFilesChannelPointsCommand, resources.GetString("labelAnecdotsFromFilesChannelPointsCommand.ToolTip"));
+            // 
+            // textBoxAnecdotsFromFilesChannelPoints
+            // 
+            resources.ApplyResources(textBoxAnecdotsFromFilesChannelPoints, "textBoxAnecdotsFromFilesChannelPoints");
+            textBoxAnecdotsFromFilesChannelPoints.Name = "textBoxAnecdotsFromFilesChannelPoints";
+            toolTipInfoForConnection.SetToolTip(textBoxAnecdotsFromFilesChannelPoints, resources.GetString("textBoxAnecdotsFromFilesChannelPoints.ToolTip"));
+            textBoxAnecdotsFromFilesChannelPoints.TextChanged += textBoxAnecdotsFromFilesChannelPoints_TextChanged;
+            // 
+            // linkLabel1
+            // 
+            resources.ApplyResources(linkLabel1, "linkLabel1");
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.TabStop = true;
+            toolTipInfoForConnection.SetToolTip(linkLabel1, resources.GetString("linkLabel1.ToolTip"));
+            // 
+            // labelVersionOfProgram
+            // 
+            resources.ApplyResources(labelVersionOfProgram, "labelVersionOfProgram");
+            labelVersionOfProgram.Name = "labelVersionOfProgram";
+            toolTipInfoForConnection.SetToolTip(labelVersionOfProgram, resources.GetString("labelVersionOfProgram.ToolTip"));
+            // 
+            // buttonAnecdotsFromFilesAddFile
+            // 
+            resources.ApplyResources(buttonAnecdotsFromFilesAddFile, "buttonAnecdotsFromFilesAddFile");
+            buttonAnecdotsFromFilesAddFile.Name = "buttonAnecdotsFromFilesAddFile";
+            toolTipInfoForConnection.SetToolTip(buttonAnecdotsFromFilesAddFile, resources.GetString("buttonAnecdotsFromFilesAddFile.ToolTip"));
+            buttonAnecdotsFromFilesAddFile.UseVisualStyleBackColor = true;
+            buttonAnecdotsFromFilesAddFile.Click += buttonAnecdotsFromFilesEnableOrDisableFile_Click;
+            // 
+            // listBoxAnecdotsFromFilesLoadedFiles
+            // 
+            resources.ApplyResources(listBoxAnecdotsFromFilesLoadedFiles, "listBoxAnecdotsFromFilesLoadedFiles");
+            listBoxAnecdotsFromFilesLoadedFiles.FormattingEnabled = true;
+            listBoxAnecdotsFromFilesLoadedFiles.Name = "listBoxAnecdotsFromFilesLoadedFiles";
+            toolTipInfoForConnection.SetToolTip(listBoxAnecdotsFromFilesLoadedFiles, resources.GetString("listBoxAnecdotsFromFilesLoadedFiles.ToolTip"));
+            // 
+            // listBoxAnecdotsFromFilesAllFilesFromFolder
+            // 
+            resources.ApplyResources(listBoxAnecdotsFromFilesAllFilesFromFolder, "listBoxAnecdotsFromFilesAllFilesFromFolder");
+            listBoxAnecdotsFromFilesAllFilesFromFolder.FormattingEnabled = true;
+            listBoxAnecdotsFromFilesAllFilesFromFolder.Name = "listBoxAnecdotsFromFilesAllFilesFromFolder";
+            toolTipInfoForConnection.SetToolTip(listBoxAnecdotsFromFilesAllFilesFromFolder, resources.GetString("listBoxAnecdotsFromFilesAllFilesFromFolder.ToolTip"));
+            // 
+            // labelAnecdotsFromFilesAllFilesFromFolder
+            // 
+            resources.ApplyResources(labelAnecdotsFromFilesAllFilesFromFolder, "labelAnecdotsFromFilesAllFilesFromFolder");
+            labelAnecdotsFromFilesAllFilesFromFolder.Name = "labelAnecdotsFromFilesAllFilesFromFolder";
+            toolTipInfoForConnection.SetToolTip(labelAnecdotsFromFilesAllFilesFromFolder, resources.GetString("labelAnecdotsFromFilesAllFilesFromFolder.ToolTip"));
+            // 
+            // labelAnecdotsFromFilesLoadedFiles
+            // 
+            resources.ApplyResources(labelAnecdotsFromFilesLoadedFiles, "labelAnecdotsFromFilesLoadedFiles");
+            labelAnecdotsFromFilesLoadedFiles.Name = "labelAnecdotsFromFilesLoadedFiles";
+            toolTipInfoForConnection.SetToolTip(labelAnecdotsFromFilesLoadedFiles, resources.GetString("labelAnecdotsFromFilesLoadedFiles.ToolTip"));
+            // 
+            // buttonAnecdotsFromFilesDeleteFile
+            // 
+            resources.ApplyResources(buttonAnecdotsFromFilesDeleteFile, "buttonAnecdotsFromFilesDeleteFile");
+            buttonAnecdotsFromFilesDeleteFile.Name = "buttonAnecdotsFromFilesDeleteFile";
+            toolTipInfoForConnection.SetToolTip(buttonAnecdotsFromFilesDeleteFile, resources.GetString("buttonAnecdotsFromFilesDeleteFile.ToolTip"));
+            buttonAnecdotsFromFilesDeleteFile.UseVisualStyleBackColor = true;
+            buttonAnecdotsFromFilesDeleteFile.Click += buttonAnecdotsFromFilesDeleteFile_Click;
+            // 
+            // linkLabelKnownTroubles
+            // 
+            resources.ApplyResources(linkLabelKnownTroubles, "linkLabelKnownTroubles");
+            linkLabelKnownTroubles.Name = "linkLabelKnownTroubles";
+            linkLabelKnownTroubles.TabStop = true;
+            toolTipInfoForConnection.SetToolTip(linkLabelKnownTroubles, resources.GetString("linkLabelKnownTroubles.ToolTip"));
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(linkLabelKnownTroubles);
+            Controls.Add(buttonAnecdotsFromFilesDeleteFile);
+            Controls.Add(labelAnecdotsFromFilesLoadedFiles);
+            Controls.Add(labelAnecdotsFromFilesAllFilesFromFolder);
+            Controls.Add(listBoxAnecdotsFromFilesAllFilesFromFolder);
+            Controls.Add(listBoxAnecdotsFromFilesLoadedFiles);
+            Controls.Add(buttonAnecdotsFromFilesAddFile);
+            Controls.Add(labelVersionOfProgram);
+            Controls.Add(linkLabel1);
+            Controls.Add(textBoxAnecdotsFromFilesChannelPoints);
+            Controls.Add(labelAnecdotsFromFilesChannelPointsCommand);
+            Controls.Add(textBoxAnecdotsFromFilesChatCommand);
+            Controls.Add(labelAnecdotsFromFilesChatCommand);
+            Controls.Add(labelAnecdotsFromFiles);
             Controls.Add(checkBoxOverAllWindows);
             Controls.Add(labelTwitchClientId);
             Controls.Add(label1);
@@ -667,5 +790,19 @@
         private Label label1;
         private Label labelTwitchClientId;
         private CheckBox checkBoxOverAllWindows;
+        private Label labelAnecdotsFromFiles;
+        private Label labelAnecdotsFromFilesChatCommand;
+        private TextBox textBoxAnecdotsFromFilesChatCommand;
+        private Label labelAnecdotsFromFilesChannelPointsCommand;
+        private TextBox textBoxAnecdotsFromFilesChannelPoints;
+        private LinkLabel linkLabel1;
+        private Label labelVersionOfProgram;
+        private Button buttonAnecdotsFromFilesAddFile;
+        private ListBox listBoxAnecdotsFromFilesLoadedFiles;
+        private ListBox listBoxAnecdotsFromFilesAllFilesFromFolder;
+        private Label labelAnecdotsFromFilesAllFilesFromFolder;
+        private Label labelAnecdotsFromFilesLoadedFiles;
+        private Button buttonAnecdotsFromFilesDeleteFile;
+        private LinkLabel linkLabelKnownTroubles;
     }
 }

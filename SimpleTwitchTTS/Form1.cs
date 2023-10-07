@@ -31,6 +31,8 @@ namespace SimpleTwitchTTS
                     Directory.CreateDirectory("DataForProgram/Profiles");
                 if (!Directory.Exists("DataForProgram/wordReplace"))
                     Directory.CreateDirectory("DataForProgram/wordReplace");
+                if (!Directory.Exists("DataForProgram/Anecdots"))
+                    Directory.CreateDirectory("DataForProgram/Anecdots");
                 textBoxTwitchApi.Text = Properties.Settings.Default.TextBoxTwitchApi;
                 textBoxTwitchNick.Text = Properties.Settings.Default.TextBoxTwitchNick;
                 checkBoxClearEmoji.Checked = Properties.Settings.Default.CheckBoxClearEmoji;
@@ -49,6 +51,8 @@ namespace SimpleTwitchTTS
                 textBoxAnecdotChannelPoints.Text = Properties.Settings.Default.AnecdotChannelPoints;
                 labelConnectionStatus.Text = "";
 
+                if (comboBoxTypeOfMessageTts.Text == "" || comboBoxTypeOfMessageTts.Text == " " || comboBoxTypeOfMessageTts.Text == null)
+                    comboBoxTypeOfMessageTts.Text = "Everything";
 
                 string profilesDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"DataForProgram\\Profiles");
                 string[] jsonFiles = Directory.GetFiles(profilesDirectory, "*.json");
@@ -59,23 +63,26 @@ namespace SimpleTwitchTTS
                     comboBoxProfileSelect.Items.Add(fileName);
                 }
 
-
-
                 foreach (InstalledVoice voice in Synth.GetInstalledVoices())
                 {
                     comboBoxInstalledVoices.Items.Add(voice.VoiceInfo.Name);
                 }
 
+                string[] files = Directory.GetFiles("DataForProgram\\Anecdots");
+                foreach (string fileName in files)
+                {
+                    listBoxAnecdotsFromFilesAllFilesFromFolder.Items.Add(Path.GetFileName(fileName));
+                }
+
                 createAndLoadFile("BlackList", "DataForProgram/BlackList", listBoxBlackList);
                 createAndLoadFile("WhatToReplace", "DataForProgram/wordReplace", listBoxTtsWhatToReplace);
                 createAndLoadFile("Substitute", "DataForProgram/wordReplace", listBoxTtsSubstitute);
+                createAndLoadFile("FileToLoad", "DataForProgram/Anecdots/FileToLoad", listBoxAnecdotsFromFilesLoadedFiles);
 
-
+                updateAnecdotes();
             }
-            catch (Exception)
+            catch
             {
-
-                throw;
             }
         }
 
@@ -100,17 +107,6 @@ namespace SimpleTwitchTTS
                 FormApiGuide FormExperimentalSettings = new FormApiGuide();
                 FormExperimentalSettings.Show();
             }
-            //try
-            //{
-            //    System.Diagnostics.Process.Start("explorer.exe", "https://twitchtokengenerator.com/");
-            //}
-            //catch
-            //{
-            //    linkLabelTwitchApi.Text = "https://twitchtokengenerator.com/";
-            //    Clipboard.SetText(linkLabelTwitchApi.Text);
-            //    toolTipInfoForConnection.SetToolTip(linkLabelTwitchApi, "Copied, go to browser!");
-            //}
-
         }
 
 
@@ -138,9 +134,12 @@ namespace SimpleTwitchTTS
             Properties.Settings.Default.AnecdotChannelPoints = textBoxAnecdotChannelPoints.Text;
             Properties.Settings.Default.Save();
 
+
+
             saveFile("BlackList", "DataForProgram/BlackList", listBoxBlackList);
             saveFile("WhatToReplace", "DataForProgram/wordReplace", listBoxTtsWhatToReplace);
             saveFile("Substitute", "DataForProgram/wordReplace", listBoxTtsSubstitute);
+            saveFile("FileToLoad", "DataForProgram/Anecdots/FileToLoad", listBoxAnecdotsFromFilesLoadedFiles);
         }
 
         private void saveFile(string fileName, string path, ListBox listBox)
@@ -346,7 +345,11 @@ namespace SimpleTwitchTTS
                 textBoxDoNotTtsIfStartWith = textBoxDoNotTtsIfStartWith.Text,
                 textBoxTestTts = textBoxTestTts.Text,
                 textBoxHighlightedMessageName = textBoxHighlightedMessageName.Text,
-                comboBoxTypeOfMessageTts = comboBoxTypeOfMessageTts.Text
+                comboBoxTypeOfMessageTts = comboBoxTypeOfMessageTts.Text,
+                textBoxAnecdotsFromFilesChatCommand = textBoxAnecdotsFromFilesChatCommand.Text,
+                textBoxAnecdotsFromFilesChannelPoints = textBoxAnecdotsFromFilesChannelPoints.Text,
+                textBoxAnecdotChatCommand = textBoxAnecdotChatCommand.Text,
+                textBoxAnecdotChannelPoints = textBoxAnecdotChannelPoints.Text
             };
             try
             {
@@ -381,6 +384,10 @@ namespace SimpleTwitchTTS
                 textBoxTestTts.Text = jsonFile.SelectToken("textBoxTestTts");
                 textBoxHighlightedMessageName.Text = jsonFile.SelectToken("textBoxHighlightedMessageName");
                 comboBoxTypeOfMessageTts.Text = jsonFile.SelectToken("textBoxHighlightedMessageName");
+                textBoxAnecdotsFromFilesChatCommand.Text = jsonFile.SelectToken("textBoxAnecdotsFromFilesChatCommand");
+                textBoxAnecdotsFromFilesChannelPoints.Text = jsonFile.SelectToken("textBoxAnecdotsFromFilesChannelPoints");
+                textBoxAnecdotChatCommand.Text = jsonFile.SelectToken("textBoxAnecdotChatCommand");
+                textBoxAnecdotChannelPoints.Text = jsonFile.SelectToken("textBoxAnecdotChannelPoints");
             }
         }
 
@@ -462,6 +469,11 @@ namespace SimpleTwitchTTS
 
         private void buttonTtsTextReplace_Click(object sender, EventArgs e)
         {
+            if (comboBoxTypeOfMessageTts.Text == "")
+                comboBoxTypeOfMessageTts.Text = "Everything";
+            else if (!comboBoxTypeOfMessageTts.Items.Contains(comboBoxTypeOfMessageTts.Text))
+                comboBoxTypeOfMessageTts.Text = "Everything";
+
             if (textBoxTtsWhatToReplace.Text != "" && textBoxTtsSubstitute.Text != "" && !listBoxTtsWhatToReplace.Items.Contains(textBoxTtsWhatToReplace.Text))
             {
                 listBoxTtsWhatToReplace.Items.Add(textBoxTtsWhatToReplace.Text);
@@ -518,19 +530,6 @@ namespace SimpleTwitchTTS
                 listBoxTtsWhatToReplace.SelectedIndex = -1;
                 listBoxTtsSubstitute.SelectedIndex = -1;
             }
-
-        }
-
-
-        //тест
-        public delegate void UpdateLabelDelegate(string text);
-        public event UpdateLabelDelegate UpdateLabelEvent;
-
-        //method
-        public void UpdateLabel(string text)
-        {
-            labelConnectionStatus.Invoke((MethodInvoker)(() => labelConnectionStatus.Text = text));
-
         }
 
         private void textBoxAnecdotChatCommand_TextChanged(object sender, EventArgs e)
@@ -557,7 +556,6 @@ namespace SimpleTwitchTTS
                 TwitchTokenFromHttpRequest = userId;
                 return "";
             }
-            return "";
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -573,5 +571,41 @@ namespace SimpleTwitchTTS
             }
             else TopMost = false;
         }
+
+        private void buttonAnecdotsFromFilesEnableOrDisableFile_Click(object sender, EventArgs e)
+        {
+            if (!listBoxAnecdotsFromFilesLoadedFiles.Items.Contains(listBoxAnecdotsFromFilesAllFilesFromFolder.Text))
+            {
+                listBoxAnecdotsFromFilesLoadedFiles.Items.Add(listBoxAnecdotsFromFilesAllFilesFromFolder.Text);
+                updateAnecdotes();
+            }
+        }
+
+        private void buttonAnecdotsFromFilesDeleteFile_Click(object sender, EventArgs e)
+        {
+            listBoxAnecdotsFromFilesLoadedFiles.Items.RemoveAt(listBoxAnecdotsFromFilesLoadedFiles.SelectedIndex);
+            updateAnecdotes();
+        }
+
+        public void updateAnecdotes()
+        {
+            TWbot.ClearAnecdotes();
+            foreach (string item in listBoxAnecdotsFromFilesLoadedFiles.Items)
+            {
+                TWbot.RebuildAnecdotes(item);
+            }
+        }
+
+        private void textBoxAnecdotsFromFilesChatCommand_TextChanged(object sender, EventArgs e)
+        {
+            TWbot.AnecdotsFromFilesChannelPointsCommand(labelAnecdotsFromFilesChannelPointsCommand.Text);
+        }
+
+        private void textBoxAnecdotsFromFilesChannelPoints_TextChanged(object sender, EventArgs e)
+        {
+            TWbot.AnecdotsFromFilesChatCommand(textBoxAnecdotsFromFilesChatCommand.Text);
+        }
+
+
     }
 }
