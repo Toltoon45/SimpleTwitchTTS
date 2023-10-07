@@ -168,7 +168,15 @@ namespace SimpleTwitchTTS
                 labelConnectionStatus.Text = "Connecting...";
                 try
                 {
-                    TClient = TWbot.Connect(textBoxTwitchApi.Text, textBoxTwitchNick.Text, TwitchTokenFromHttpRequest, comboBoxInstalledVoices.Text, TClient, textBoxAnecdotChatCommand.Text, textBoxAnecdotChannelPoints.Text);
+                    TClient = TWbot.Connect(textBoxTwitchApi.Text,
+                                            textBoxTwitchNick.Text,
+                                            TwitchTokenFromHttpRequest,
+                                            comboBoxInstalledVoices.Text,
+                                            TClient,
+                                            textBoxAnecdotChatCommand.Text,
+                                            textBoxAnecdotChannelPoints.Text,
+                                            textBoxAnecdotsFromFilesChatCommand.Text,
+                                            textBoxAnecdotsFromFilesChannelPoints.Text);
                     if (TClient != null)
                     {
                         TClient.OnDisconnected += TClientOnDisconnected;
@@ -600,12 +608,12 @@ namespace SimpleTwitchTTS
 
         private void textBoxAnecdotsFromFilesChatCommand_TextChanged(object sender, EventArgs e)
         {
-            TWbot.AnecdotsFromFilesChannelPointsCommand(labelAnecdotsFromFilesChannelPointsCommand.Text);
+            TWbot.AnecdotsFromFilesChatCommand(textBoxAnecdotsFromFilesChatCommand.Text);
         }
 
         private void textBoxAnecdotsFromFilesChannelPoints_TextChanged(object sender, EventArgs e)
         {
-            TWbot.AnecdotsFromFilesChatCommand(textBoxAnecdotsFromFilesChatCommand.Text);
+            TWbot.AnecdotsFromFilesChannelPointsCommand(textBoxAnecdotsFromFilesChannelPoints.Text);
         }
 
 

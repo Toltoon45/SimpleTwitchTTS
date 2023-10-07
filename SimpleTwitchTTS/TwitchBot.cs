@@ -32,13 +32,15 @@ namespace SimpleTwitchTTS
 
 
         //TClient needed to change connection status.
-        internal TwitchClient? Connect(string Api, string Nick, string ClientId, string VoiceName, TwitchClient client, string AnecdotChatCommand, string AnecdotChannelPoints)
+        internal TwitchClient? Connect(string Api, string Nick, string ClientId, string VoiceName, TwitchClient client, string AnecdotChatCommand, string AnecdotChannelPoints, string AnecdotsFromFilesChatCommand, string AnecdotsFromFilesChannelPoints)
         {
 
             try
             {
                 if (client != null)
                 {
+                    this.AnecdotsFromFilesCommand = AnecdotsFromFilesChatCommand;
+                    this.AnecdotsFromFileChannelPoint = AnecdotsFromFilesChannelPoints;
                     this.AnecdotChatCommand = AnecdotChannelPoints;
                     this.AnecdotChatCommand = AnecdotChatCommand;
                     TwitchApi = Api;
@@ -118,7 +120,7 @@ namespace SimpleTwitchTTS
         {
             if (!BlackList.Contains(e.Command.ChatMessage.Username))     
             {
-                if (e.Command.ChatMessage.Message == $"!{AnecdotChatCommand}")
+                if (e.Command.ChatMessage.Message == $"!{AnecdotChatCommand}" && AnecdotChatCommand != "" && AnecdotChatCommand != " ")
                 {
                     GetAnecdote(e.Command.ChatMessage.Message, e.Command.ChatMessage.Username);
                     return;
