@@ -633,11 +633,14 @@
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>450, 65</value>
   </data>
+  <data name="linkLabel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 20</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ATTENTION!!!</value>
+    <value>point it at me</value>
   </data>
   <data name="linkLabel1.ToolTip" xml:space="preserve">
     <value>All jokes were made using the Porfirievich neural network "Порфирьевич" . He gives out anything. I tried to replace the forbidden words on Twitch with “P-word” and “N-word”, BUT I CAN’T BE SURE THAT EVERYTHING HERE IS 100% SAFE!</value>
@@ -649,7 +652,7 @@
     <value>43, 13</value>
   </data>
   <data name="labelVersionOfProgram.Text" xml:space="preserve">
-    <value>1.0.4.0</value>
+    <value>1.0.4.2</value>
   </data>
   <data name="labelVersionOfProgram.ToolTip" xml:space="preserve">
     <value>You can get all profiles by replacing DataForProgram from older version</value>
@@ -712,7 +715,7 @@
     <value>86, 20</value>
   </data>
   <data name="linkLabelKnownTroubles.Text" xml:space="preserve">
-    <value>Known problem</value>
+    <value>and me too</value>
   </data>
   <data name="linkLabelKnownTroubles.ToolTip" xml:space="preserve">
     <value>Rewards for channel points do not work (TWITCH'S BLAME!). After disconnecting, when trying to connect, it says Connected, but nothing connected</value>

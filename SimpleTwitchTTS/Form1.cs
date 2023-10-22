@@ -49,6 +49,8 @@ namespace SimpleTwitchTTS
                 comboBoxTypeOfMessageTts.Text = Properties.Settings.Default.TtsMessageType;
                 textBoxAnecdotChatCommand.Text = Properties.Settings.Default.AnecdotChatCommand;
                 textBoxAnecdotChannelPoints.Text = Properties.Settings.Default.AnecdotChannelPoints;
+                textBoxAnecdotsFromFilesChatCommand.Text = Properties.Settings.Default.NeuroAnecdotChannelPoints;
+                textBoxAnecdotsFromFilesChannelPoints.Text = Properties.Settings.Default.NeuroAnecdotChannelPoints;
                 labelConnectionStatus.Text = "";
 
                 if (comboBoxTypeOfMessageTts.Text == "" || comboBoxTypeOfMessageTts.Text == " " || comboBoxTypeOfMessageTts.Text == null)
@@ -132,6 +134,8 @@ namespace SimpleTwitchTTS
             Properties.Settings.Default.TtsMessageType = comboBoxTypeOfMessageTts.Text;
             Properties.Settings.Default.AnecdotChatCommand = textBoxAnecdotChatCommand.Text;
             Properties.Settings.Default.AnecdotChannelPoints = textBoxAnecdotChannelPoints.Text;
+            Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChatCommand.Text;
+            Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChannelPoints.Text;
             Properties.Settings.Default.Save();
 
 
@@ -479,17 +483,12 @@ namespace SimpleTwitchTTS
 
         private void buttonTtsTextReplace_Click(object sender, EventArgs e)
         {
-            if (comboBoxTypeOfMessageTts.Text == "")
-                comboBoxTypeOfMessageTts.Text = "Everything";
-            else if (!comboBoxTypeOfMessageTts.Items.Contains(comboBoxTypeOfMessageTts.Text))
-                comboBoxTypeOfMessageTts.Text = "Everything";
-
             if (textBoxTtsWhatToReplace.Text != "" && textBoxTtsSubstitute.Text != "" && !listBoxTtsWhatToReplace.Items.Contains(textBoxTtsWhatToReplace.Text))
             {
                 listBoxTtsWhatToReplace.Items.Add(textBoxTtsWhatToReplace.Text);
                 listBoxTtsSubstitute.Items.Add(textBoxTtsSubstitute.Text);
             }
-            TWbot.AddToReplaceAndSubstitude(textBoxTtsWhatToReplace.Text, textBoxTtsSubstitute.Text);
+            TWbot.AddToReplaceAndSubstitude(textBoxTtsWhatToReplace.Text, textBoxTtsSubstitute.Text.ToLower());
         }
 
         int selectedIndex;
@@ -586,6 +585,7 @@ namespace SimpleTwitchTTS
         {
             if (!listBoxAnecdotsFromFilesLoadedFiles.Items.Contains(listBoxAnecdotsFromFilesAllFilesFromFolder.Text))
             {
+
                 listBoxAnecdotsFromFilesLoadedFiles.Items.Add(listBoxAnecdotsFromFilesAllFilesFromFolder.Text);
                 updateAnecdotes();
             }
@@ -615,7 +615,5 @@ namespace SimpleTwitchTTS
         {
             TWbot.AnecdotsFromFilesChannelPointsCommand(textBoxAnecdotsFromFilesChannelPoints.Text);
         }
-
-
     }
 }

@@ -91,7 +91,7 @@ namespace SimpleTwitchTTS
 
         private async void TPubSubChannelPointsRewardRedeemed(object? sender, OnChannelPointsRewardRedeemedArgs e)
         {
-            if (e.RewardRedeemed.Redemption.UserInput == AnecdotChatCommand && !BlackList.Contains(e.RewardRedeemed.Redemption.User.DisplayName))
+            if (e.RewardRedeemed.Redemption.UserInput == AnecdotChatCommand && !BlackList.Contains(e.RewardRedeemed.Redemption.User.DisplayName.ToLower()))
             {
                 if (e.RewardRedeemed.Redemption.Reward.Title == AnecdotChannelPoints)
                 {
@@ -210,7 +210,8 @@ namespace SimpleTwitchTTS
         //TTS part
         string[] words;
         string wordReplacedMessage;
-        string processedMessage;
+        string processedMessage; 
+        string emojiPattern = @"(?:[\u203C-\u3299\u00A9\u00AE\u2000-\u3300\uF000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF])";
         void TTS(string chatMessage, string userName)
         {
             if (!BlackList.Contains(userName) && chatMessage[0] != ttsIgnore)
@@ -246,7 +247,7 @@ namespace SimpleTwitchTTS
                 {
                     processedMessage = "";
                     wordReplacedMessage = "";
-                    words = Message.Split(' ');
+                    words = Message.ToLower().Split(' ');
                     foreach (string word in words)
                     {
                         wordReplacedMessage = word;
@@ -396,9 +397,16 @@ namespace SimpleTwitchTTS
         }
 
         string emptyString = Environment.NewLine;
+
+        //removes all the emojis from the files because they crashing TTS, so its easier to delete them
         internal void RebuildAnecdotes(string item)
         {
-            resourceText = $"{resourceText}{emptyString}{emptyString}{File.ReadAllText($"DataForProgram\\Anecdots\\{item}")}";
+            try
+            {
+                resourceText = $"{resourceText}{emptyString}{emptyString}{File.ReadAllText($"DataForProgram\\Anecdots\\{item}")}";
+                resourceText = Regex.Replace(resourceText, emojiPattern, string.Empty);
+            }
+            catch { }
         }
 
         internal void ClearAnecdotes()

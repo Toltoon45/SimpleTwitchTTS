@@ -303,7 +303,7 @@
     <value>101, 232</value>
   </data>
   <data name="buttonAddToBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+    <value>70, 20</value>
   </data>
   <data name="buttonAddToBlackList.Text" xml:space="preserve">
     <value>Добавить</value>
@@ -595,7 +595,7 @@
     <value>358, 113</value>
   </data>
   <data name="buttonTtsTextReplace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+    <value>69, 20</value>
   </data>
   <data name="buttonTtsTextReplace.Text" xml:space="preserve">
     <value>Добавить</value>
@@ -607,7 +607,7 @@
     <value>358, 146</value>
   </data>
   <data name="buttonDeleteReplaceAndSubstitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+    <value>69, 20</value>
   </data>
   <data name="buttonDeleteReplaceAndSubstitude.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -763,10 +763,10 @@
     <value>450, 65</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
+    <value>153, 13</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>ВНИМАНИЕ!!!</value>
+    <value>наведи на меня, а не кликай</value>
   </data>
   <data name="linkLabel1.ToolTip" xml:space="preserve">
     <value>Я постарался заменить запретные слова на твиче в рандомных анекдотах и в нейроанекдотах от Хандаготса, но всё же есть ультрасупермега маленький шанс что такое может произойти, да.</value>
@@ -781,7 +781,7 @@
     <value>43, 13</value>
   </data>
   <data name="labelVersionOfProgram.Text" xml:space="preserve">
-    <value>1.0.4.0</value>
+    <value>1.0.4.2</value>
   </data>
   <data name="buttonAnecdotsFromFilesAddFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -796,7 +796,7 @@
     <value>Добавить</value>
   </data>
   <data name="buttonAnecdotsFromFilesAddFile.ToolTip" xml:space="preserve">
-    <value>Добавляет выбранный СЛЕВА файл. ДОБАВЛЯЯ СВОЙ ТЕКСТ ОБРАТИТЕ ВНИМАНИЕ, ЧТО КАЖДАЯ НОВАЯ ШУТКА РАЗДЕЛЯЕТСЯ ПУСТОЙ СТРОКОЙ!!!!!</value>
+    <value>Добавляет выбранный СЛЕВА файл. ДОБАВЛЯЯ СВОЙ ТЕКСТ ОБРАТИТЕ ВНИМАНИЕ, ЧТО КАЖДАЯ НОВАЯ ШУТКА РАЗДЕЛЯЕТСЯ ПУСТОЙ СТРОКОЙ и из-за эмодзи ломается говорилка, они удаляются</value>
   </data>
   <data name="listBoxAnecdotsFromFilesLoadedFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>462, 381</value>
@@ -868,10 +868,10 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabelKnownTroubles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 13</value>
+    <value>75, 13</value>
   </data>
   <data name="linkLabelKnownTroubles.Text" xml:space="preserve">
-    <value>Известные проблемы в программе</value>
+    <value>на меня тоже</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
