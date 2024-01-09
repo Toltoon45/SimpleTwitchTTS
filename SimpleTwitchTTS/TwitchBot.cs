@@ -7,12 +7,13 @@ using TwitchLib.PubSub;
 using TwitchLib.PubSub.Events;
 using System.Text;
 using TwitchLib.Communication.Events;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SimpleTwitchTTS
 {
     internal class TwitchBot
     {
-
+        
         string TwitchNick;
         ConnectionCredentials Creds;
         TwitchClient TClient;
@@ -29,7 +30,10 @@ namespace SimpleTwitchTTS
         string AnecdotChatCommand;
         string anecdotUrl = "http://rzhunemogu.ru/RandJSON.aspx?CType=1";
 
+        System.Windows.Forms.Timer timer;
+        List<mutedUsersForTime> mutedUsersForTimeList = new List<mutedUsersForTime>();
 
+        TimeSpan intervalForMutedUsers = new TimeSpan(0, MutedForTimeMinutes, 0); // время жизни строки текста: (часы, минуты, секунды)
 
         //TClient needed to change connection status.
         internal TwitchClient? Connect(string Api, string Nick, string ClientId, string VoiceName, TwitchClient client, string AnecdotChatCommand, string AnecdotChannelPoints, string AnecdotsFromFilesChatCommand, string AnecdotsFromFilesChannelPoints)
@@ -58,6 +62,12 @@ namespace SimpleTwitchTTS
                     TPubSub.OnPubSubServiceConnected += TPubSubServiceConnected;
                     TPubSub.OnChannelPointsRewardRedeemed += TPubSubChannelPointsRewardRedeemed;
                     TPubSub.Connect();
+
+                    timer = new System.Windows.Forms.Timer();
+                    timer.Interval = 1000; // проверка 1 раз в секунду
+                    timer.Tick += Timer_Tick;
+                    timer.Start();
+
                     return TClient;
                 }
                 else { return null; }
@@ -68,11 +78,30 @@ namespace SimpleTwitchTTS
             }
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            for (int i = mutedUsersForTimeList.Count - 1; i >= 0; i--)
+            {
+                if (mutedUsersForTimeList[i].Time + intervalForMutedUsers.Add(TimeSpan.FromMinutes(MutedForTimeMinutes)) < DateTime.Now) // если время истекло
+                {
+                    mutedUsersForTimeList.RemoveAt(i); // удаляем текущую запись строки
+                }
+            }
+        }
+
+        private struct mutedUsersForTime
+        {
+            public string Str;
+            public DateTime Time;
+        }
+
+
         private void TClientOnDisconnected(object? sender, OnDisconnectedEventArgs e)
         {
             try
             {// либо у тебя руки из жопы либо эта шняга не работает
-                TClient.Reconnect();
+             // спойлер это вина разраба. При дисконнекте эта шляпа ВЕЧНО вызывается!
+                //TClient.Reconnect();
             }
             catch { }
 
@@ -80,15 +109,15 @@ namespace SimpleTwitchTTS
 
         private void TPubSubServiceConnected(object? sender, EventArgs e)
         {
-            //06.10.2023 18:02
-            //да в пизду оно опять не работает
+            //06.10.2023 18:02 да в пизду оно опять не работает
+            //05/12/2023 04:24 да в пизду оно опять    работает
             TPubSub.ListenToChannelPoints(TwitchClientId);
             //if user gives api with NO FULL ACESS
             //then this part of the code will execute approximately every 3 minutes
             TPubSub.SendTopics(TwitchApi, false);
         }
 
-
+        string MutedUserName;
         private async void TPubSubChannelPointsRewardRedeemed(object? sender, OnChannelPointsRewardRedeemedArgs e)
         {
             if (e.RewardRedeemed.Redemption.UserInput == AnecdotChatCommand && !BlackList.Contains(e.RewardRedeemed.Redemption.User.DisplayName.ToLower()))
@@ -99,15 +128,25 @@ namespace SimpleTwitchTTS
                     return;
                 }
 
-                if (TypeOfMessageWilTts == "Highlighted (own name)" || TypeOfMessageWilTts == "Highlighted color and own name")
-                {
-                    TTS(e.RewardRedeemed.Redemption.UserInput, e.RewardRedeemed.Redemption.User.DisplayName);
-                    return;
-                }
-
                 if (e.RewardRedeemed.Redemption.Reward.Title == AnecdotsFromFileChannelPoint)
                 {
                     AnecdoteFromFiles();
+                }
+            }
+
+            if (TypeOfMessageWilTts == "Highlighted (own name)" || TypeOfMessageWilTts == "Highlighted color and own name")
+            {
+                TTS(e.RewardRedeemed.Redemption.UserInput, e.RewardRedeemed.Redemption.User.DisplayName);
+                return;
+            }
+
+            if (e.RewardRedeemed.Redemption.Reward.Title == MutedForTimeUserNameChannelPointReward)
+            {
+                if (MutedForTimeMinutes > 0)
+                {
+                    MutedUserName = e.RewardRedeemed.Redemption.UserInput.Replace(" ", "");
+                    MutedUserName = MutedUserName.Replace("@", "");
+                    mutedUsersForTimeList.Insert(0, new mutedUsersForTime { Str = MutedUserName.ToLower(), Time = DateTime.Now });
                 }
             }
 
@@ -214,7 +253,7 @@ namespace SimpleTwitchTTS
         string emojiPattern = @"(?:[\u203C-\u3299\u00A9\u00AE\u2000-\u3300\uF000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF])";
         void TTS(string chatMessage, string userName)
         {
-            if (!BlackList.Contains(userName) && chatMessage[0] != ttsIgnore)
+            if (!BlackList.Contains(userName.ToLower()) && chatMessage[0] != ttsIgnore && !mutedUsersForTimeList.Any(test => test.Str == userName))
             {
                 if (ViewerSkipAllQueueMessage != "" && chatMessage == ViewerSkipAllQueueMessage)
                 {
@@ -412,6 +451,32 @@ namespace SimpleTwitchTTS
         internal void ClearAnecdotes()
         {
             resourceText = "";
+        }
+        string MutedForTimeUserNameChannelPointReward;
+        string MutedForTimeUserName;
+        internal void MutedForTimeChannelPoints(string text)
+        {
+            MutedForTimeUserNameChannelPointReward = text;
+        }
+
+        internal void Disconnect()
+        {
+            TClient.Disconnect();
+        }
+
+        internal void Reconnect()
+        {
+            TClient.Reconnect();
+        }
+        static int MutedForTimeMinutes;
+        internal void MutedForTime(string text)
+        {
+            try
+            {
+                MutedForTimeMinutes = Convert.ToInt16(text); // в обнимку с чатом гпт творю чудеса)
+            }
+            catch { }
+            
         }
     }
 }

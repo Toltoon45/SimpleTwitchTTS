@@ -51,6 +51,9 @@ namespace SimpleTwitchTTS
                 textBoxAnecdotChannelPoints.Text = Properties.Settings.Default.AnecdotChannelPoints;
                 textBoxAnecdotsFromFilesChatCommand.Text = Properties.Settings.Default.NeuroAnecdotChannelPoints;
                 textBoxAnecdotsFromFilesChannelPoints.Text = Properties.Settings.Default.NeuroAnecdotChannelPoints;
+                textBoxMutedForTime.Text = Properties.Settings.Default.MutedForTimeChannelPointsName;
+                textBoxMutedForTimeWhatTime.Text = Convert.ToString(Properties.Settings.Default.MutedForTimeMinute);
+
                 labelConnectionStatus.Text = "";
 
                 if (comboBoxTypeOfMessageTts.Text == "" || comboBoxTypeOfMessageTts.Text == " " || comboBoxTypeOfMessageTts.Text == null)
@@ -136,6 +139,8 @@ namespace SimpleTwitchTTS
             Properties.Settings.Default.AnecdotChannelPoints = textBoxAnecdotChannelPoints.Text;
             Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChatCommand.Text;
             Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChannelPoints.Text;
+            Properties.Settings.Default.MutedForTimeChannelPointsName = textBoxMutedForTime.Text;
+            Properties.Settings.Default.MutedForTimeMinute = Convert.ToInt16(textBoxMutedForTimeWhatTime.Text);
             Properties.Settings.Default.Save();
 
 
@@ -157,7 +162,7 @@ namespace SimpleTwitchTTS
             }
         }
 
-        TwitchClient TClient = new TwitchClient();
+
         TwitchBot TWbot = new TwitchBot();
         bool Connect = false;
 
@@ -165,9 +170,12 @@ namespace SimpleTwitchTTS
         string TwitchTokenFromHttpRequest;
         private async void buttonTwitchConnect_Click(object sender, EventArgs e)
         {
+            TwitchClient TClient = new TwitchClient();
             await GetTwitchUserId();
             if (Connect == false)
             {
+                if (comboBoxInstalledVoices.Text == "" || comboBoxInstalledVoices.Text == null)
+                    comboBoxInstalledVoices.SelectedIndex = 0;
                 labelConnectionStatus.ForeColor = Color.Black;
                 labelConnectionStatus.Text = "Connecting...";
                 try
@@ -184,7 +192,7 @@ namespace SimpleTwitchTTS
                     if (TClient != null)
                     {
                         TClient.OnDisconnected += TClientOnDisconnected;
-                        Connect = true;
+                        Connect = false;
 
                         foreach (var item in listBoxBlackList.Items)
                         {
@@ -363,7 +371,9 @@ namespace SimpleTwitchTTS
                 textBoxAnecdotsFromFilesChatCommand = textBoxAnecdotsFromFilesChatCommand.Text,
                 textBoxAnecdotsFromFilesChannelPoints = textBoxAnecdotsFromFilesChannelPoints.Text,
                 textBoxAnecdotChatCommand = textBoxAnecdotChatCommand.Text,
-                textBoxAnecdotChannelPoints = textBoxAnecdotChannelPoints.Text
+                textBoxAnecdotChannelPoints = textBoxAnecdotChannelPoints.Text,
+                textBoxMutedForTime = textBoxMutedForTime.Text,
+                textBoxMutedForTimeWhatTime = textBoxMutedForTimeWhatTime.Text
             };
             try
             {
@@ -402,6 +412,8 @@ namespace SimpleTwitchTTS
                 textBoxAnecdotsFromFilesChannelPoints.Text = jsonFile.SelectToken("textBoxAnecdotsFromFilesChannelPoints");
                 textBoxAnecdotChatCommand.Text = jsonFile.SelectToken("textBoxAnecdotChatCommand");
                 textBoxAnecdotChannelPoints.Text = jsonFile.SelectToken("textBoxAnecdotChannelPoints");
+                textBoxMutedForTime.Text = jsonFile.SelectToken("textBoxMutedForTime");
+                textBoxMutedForTimeWhatTime.Text = jsonFile.SelectToken("textBoxMutedForTimeWhatTime");
             }
         }
 
@@ -551,20 +563,25 @@ namespace SimpleTwitchTTS
             TWbot.AnecdotChatChannelPoints(textBoxAnecdotChannelPoints.Text);
         }
         //отправить запрос в твич 
+
         private async Task<string> GetTwitchUserId()
         {
-            using (HttpClient twitchToken = new HttpClient())
+            if (TwitchTokenFromHttpRequest == null || TwitchTokenFromHttpRequest == "")
             {
-                twitchToken.DefaultRequestHeaders.Add("Client-ID", textBoxTwitchClientID.Text);
-                twitchToken.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", textBoxTwitchApi.Text);
-                string url = $"https://api.twitch.tv/helix/users?login={textBoxTwitchNick.Text}";
-                HttpResponseMessage response = await twitchToken.GetAsync(url);
-                string responseBody = await response.Content.ReadAsStringAsync();
-                dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(responseBody);
-                string userId = data.data[0].id;
-                TwitchTokenFromHttpRequest = userId;
-                return "";
+                using (HttpClient twitchToken = new HttpClient())
+                {
+                    twitchToken.DefaultRequestHeaders.Add("Client-ID", textBoxTwitchClientID.Text);
+                    twitchToken.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", textBoxTwitchApi.Text);
+                    string url = $"https://api.twitch.tv/helix/users?login={textBoxTwitchNick.Text}";
+                    HttpResponseMessage response = await twitchToken.GetAsync(url);
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(responseBody);
+                    string userId = data.data[0].id;
+                    TwitchTokenFromHttpRequest = userId;
+                    return null;
+                }
             }
+            return null;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -614,6 +631,36 @@ namespace SimpleTwitchTTS
         private void textBoxAnecdotsFromFilesChannelPoints_TextChanged(object sender, EventArgs e)
         {
             TWbot.AnecdotsFromFilesChannelPointsCommand(textBoxAnecdotsFromFilesChannelPoints.Text);
+        }
+
+        private void textBoxMutedForTime_TextChanged(object sender, EventArgs e)
+        {
+            TWbot.MutedForTimeChannelPoints(textBoxMutedForTime.Text);
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TWbot.Reconnect();
+        }
+
+        private void buttonTwitchDisconnect_Click(object sender, EventArgs e)
+        {
+            TWbot.Disconnect();
+        }
+
+        private void textBoxMutedForTimeWhatTime_TextChanged(object sender, EventArgs e)
+        {
+            TWbot.MutedForTime(textBoxMutedForTimeWhatTime.Text);
         }
     }
 }

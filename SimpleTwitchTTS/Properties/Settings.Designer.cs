@@ -273,5 +273,29 @@ namespace SimpleTwitchTTS.Properties {
                 this["NeuroAnecdotChannelPoints"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MutedForTimeChannelPointsName {
+            get {
+                return ((string)(this["MutedForTimeChannelPointsName"]));
+            }
+            set {
+                this["MutedForTimeChannelPointsName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MutedForTimeMinute {
+            get {
+                return ((int)(this["MutedForTimeMinute"]));
+            }
+            set {
+                this["MutedForTimeMinute"] = value;
+            }
+        }
     }
 }

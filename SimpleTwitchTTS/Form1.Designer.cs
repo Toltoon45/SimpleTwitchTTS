@@ -89,7 +89,7 @@
             labelAnecdotChannelPoints = new Label();
             textBoxAnecdotChatCommand = new TextBox();
             labelAnecdot = new Label();
-            label1 = new Label();
+            labelTtsReplaceWords = new Label();
             labelTwitchClientId = new Label();
             checkBoxOverAllWindows = new CheckBox();
             labelAnecdotsFromFiles = new Label();
@@ -97,7 +97,7 @@
             textBoxAnecdotsFromFilesChatCommand = new TextBox();
             labelAnecdotsFromFilesChannelPointsCommand = new Label();
             textBoxAnecdotsFromFilesChannelPoints = new TextBox();
-            linkLabel1 = new LinkLabel();
+            linkLabelAnecdotesAttention = new LinkLabel();
             labelVersionOfProgram = new Label();
             buttonAnecdotsFromFilesAddFile = new Button();
             listBoxAnecdotsFromFilesLoadedFiles = new ListBox();
@@ -106,8 +106,27 @@
             labelAnecdotsFromFilesLoadedFiles = new Label();
             buttonAnecdotsFromFilesDeleteFile = new Button();
             linkLabelKnownTroubles = new LinkLabel();
+            labelMutedForTime = new Label();
+            textBoxMutedForTime = new TextBox();
+            tabControl_Tts_Settings = new TabControl();
+            tabPageConnection = new TabPage();
+            tabPageTTS = new TabPage();
+            labelInstalledVoices = new Label();
+            tabPageSkipMessages = new TabPage();
+            tabPageBlackList = new TabPage();
+            labelMutedForTimeWhatTime = new Label();
+            textBoxMutedForTimeWhatTime = new TextBox();
+            labelMutedForTimeChannelPointName = new Label();
+            tabPageAnecdotes = new TabPage();
+            buttonTwitchDisconnect = new Button();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).BeginInit();
+            tabControl_Tts_Settings.SuspendLayout();
+            tabPageConnection.SuspendLayout();
+            tabPageTTS.SuspendLayout();
+            tabPageSkipMessages.SuspendLayout();
+            tabPageBlackList.SuspendLayout();
+            tabPageAnecdotes.SuspendLayout();
             SuspendLayout();
             // 
             // buttonTwitchConnect
@@ -522,11 +541,11 @@
             labelAnecdot.Name = "labelAnecdot";
             toolTipInfoForConnection.SetToolTip(labelAnecdot, resources.GetString("labelAnecdot.ToolTip"));
             // 
-            // label1
+            // labelTtsReplaceWords
             // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
-            toolTipInfoForConnection.SetToolTip(label1, resources.GetString("label1.ToolTip"));
+            resources.ApplyResources(labelTtsReplaceWords, "labelTtsReplaceWords");
+            labelTtsReplaceWords.Name = "labelTtsReplaceWords";
+            toolTipInfoForConnection.SetToolTip(labelTtsReplaceWords, resources.GetString("labelTtsReplaceWords.ToolTip"));
             // 
             // labelTwitchClientId
             // 
@@ -574,12 +593,12 @@
             toolTipInfoForConnection.SetToolTip(textBoxAnecdotsFromFilesChannelPoints, resources.GetString("textBoxAnecdotsFromFilesChannelPoints.ToolTip"));
             textBoxAnecdotsFromFilesChannelPoints.TextChanged += textBoxAnecdotsFromFilesChannelPoints_TextChanged;
             // 
-            // linkLabel1
+            // linkLabelAnecdotesAttention
             // 
-            resources.ApplyResources(linkLabel1, "linkLabel1");
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.TabStop = true;
-            toolTipInfoForConnection.SetToolTip(linkLabel1, resources.GetString("linkLabel1.ToolTip"));
+            resources.ApplyResources(linkLabelAnecdotesAttention, "linkLabelAnecdotesAttention");
+            linkLabelAnecdotesAttention.Name = "linkLabelAnecdotesAttention";
+            linkLabelAnecdotesAttention.TabStop = true;
+            toolTipInfoForConnection.SetToolTip(linkLabelAnecdotesAttention, resources.GetString("linkLabelAnecdotesAttention.ToolTip"));
             // 
             // labelVersionOfProgram
             // 
@@ -636,44 +655,177 @@
             linkLabelKnownTroubles.TabStop = true;
             toolTipInfoForConnection.SetToolTip(linkLabelKnownTroubles, resources.GetString("linkLabelKnownTroubles.ToolTip"));
             // 
+            // labelMutedForTime
+            // 
+            resources.ApplyResources(labelMutedForTime, "labelMutedForTime");
+            labelMutedForTime.Name = "labelMutedForTime";
+            toolTipInfoForConnection.SetToolTip(labelMutedForTime, resources.GetString("labelMutedForTime.ToolTip"));
+            // 
+            // textBoxMutedForTime
+            // 
+            resources.ApplyResources(textBoxMutedForTime, "textBoxMutedForTime");
+            textBoxMutedForTime.Name = "textBoxMutedForTime";
+            toolTipInfoForConnection.SetToolTip(textBoxMutedForTime, resources.GetString("textBoxMutedForTime.ToolTip"));
+            textBoxMutedForTime.TextChanged += textBoxMutedForTime_TextChanged;
+            // 
+            // tabControl_Tts_Settings
+            // 
+            resources.ApplyResources(tabControl_Tts_Settings, "tabControl_Tts_Settings");
+            tabControl_Tts_Settings.Controls.Add(tabPageConnection);
+            tabControl_Tts_Settings.Controls.Add(tabPageTTS);
+            tabControl_Tts_Settings.Controls.Add(tabPageSkipMessages);
+            tabControl_Tts_Settings.Controls.Add(tabPageBlackList);
+            tabControl_Tts_Settings.Controls.Add(tabPageAnecdotes);
+            tabControl_Tts_Settings.Name = "tabControl_Tts_Settings";
+            tabControl_Tts_Settings.SelectedIndex = 0;
+            toolTipInfoForConnection.SetToolTip(tabControl_Tts_Settings, resources.GetString("tabControl_Tts_Settings.ToolTip"));
+            // 
+            // tabPageConnection
+            // 
+            resources.ApplyResources(tabPageConnection, "tabPageConnection");
+            tabPageConnection.Controls.Add(textBoxTwitchApi);
+            tabPageConnection.Controls.Add(textBoxTwitchNick);
+            tabPageConnection.Controls.Add(linkLabelTwitchApi);
+            tabPageConnection.Controls.Add(labelNickOfChannelToConnect);
+            tabPageConnection.Controls.Add(textBoxTwitchClientID);
+            tabPageConnection.Controls.Add(labelTwitchClientId);
+            tabPageConnection.Name = "tabPageConnection";
+            toolTipInfoForConnection.SetToolTip(tabPageConnection, resources.GetString("tabPageConnection.ToolTip"));
+            tabPageConnection.UseVisualStyleBackColor = true;
+            // 
+            // tabPageTTS
+            // 
+            resources.ApplyResources(tabPageTTS, "tabPageTTS");
+            tabPageTTS.Controls.Add(labelInstalledVoices);
+            tabPageTTS.Controls.Add(comboBoxInstalledVoices);
+            tabPageTTS.Controls.Add(textBoxHighlightedMessageName);
+            tabPageTTS.Controls.Add(checkBoxClearEmoji);
+            tabPageTTS.Controls.Add(trackBarTtsVolume);
+            tabPageTTS.Controls.Add(labelTypeOfMessageTts);
+            tabPageTTS.Controls.Add(trackBarTtsSpeed);
+            tabPageTTS.Controls.Add(labelTtsVolume);
+            tabPageTTS.Controls.Add(comboBoxTypeOfMessageTts);
+            tabPageTTS.Controls.Add(labelTtsSpeed);
+            tabPageTTS.Controls.Add(labelTtsVolumeName);
+            tabPageTTS.Controls.Add(labelHighlightedMessageTts);
+            tabPageTTS.Controls.Add(labelTtsSpeedName);
+            tabPageTTS.Name = "tabPageTTS";
+            toolTipInfoForConnection.SetToolTip(tabPageTTS, resources.GetString("tabPageTTS.ToolTip"));
+            tabPageTTS.UseVisualStyleBackColor = true;
+            // 
+            // labelInstalledVoices
+            // 
+            resources.ApplyResources(labelInstalledVoices, "labelInstalledVoices");
+            labelInstalledVoices.Name = "labelInstalledVoices";
+            toolTipInfoForConnection.SetToolTip(labelInstalledVoices, resources.GetString("labelInstalledVoices.ToolTip"));
+            // 
+            // tabPageSkipMessages
+            // 
+            resources.ApplyResources(tabPageSkipMessages, "tabPageSkipMessages");
+            tabPageSkipMessages.Controls.Add(buttonSkipCurrentMessage);
+            tabPageSkipMessages.Controls.Add(labelSkipMessage);
+            tabPageSkipMessages.Controls.Add(buttonClearEntireQueue);
+            tabPageSkipMessages.Controls.Add(labelAllowViewerToSkip);
+            tabPageSkipMessages.Controls.Add(textBoxViewerSkipCurrentTtsMessage);
+            tabPageSkipMessages.Controls.Add(labelViewerSkipCurrentMessage);
+            tabPageSkipMessages.Controls.Add(labelViewerSkipAllQueue);
+            tabPageSkipMessages.Controls.Add(textBoxViewerSkipAllQueueMessage);
+            tabPageSkipMessages.Controls.Add(buttonTestTtsSkip);
+            tabPageSkipMessages.Controls.Add(textBoxDoNotTtsIfStartWith);
+            tabPageSkipMessages.Controls.Add(labelDoNotTtsIfStartWith);
+            tabPageSkipMessages.Controls.Add(labelTtsTest);
+            tabPageSkipMessages.Controls.Add(buttonTestTts);
+            tabPageSkipMessages.Controls.Add(textBoxTestTts);
+            tabPageSkipMessages.Name = "tabPageSkipMessages";
+            toolTipInfoForConnection.SetToolTip(tabPageSkipMessages, resources.GetString("tabPageSkipMessages.ToolTip"));
+            tabPageSkipMessages.UseVisualStyleBackColor = true;
+            // 
+            // tabPageBlackList
+            // 
+            resources.ApplyResources(tabPageBlackList, "tabPageBlackList");
+            tabPageBlackList.Controls.Add(labelMutedForTimeWhatTime);
+            tabPageBlackList.Controls.Add(textBoxMutedForTimeWhatTime);
+            tabPageBlackList.Controls.Add(labelMutedForTimeChannelPointName);
+            tabPageBlackList.Controls.Add(textBoxBlackList);
+            tabPageBlackList.Controls.Add(labelBlackList);
+            tabPageBlackList.Controls.Add(listBoxBlackList);
+            tabPageBlackList.Controls.Add(textBoxMutedForTime);
+            tabPageBlackList.Controls.Add(buttonAddToBlackList);
+            tabPageBlackList.Controls.Add(buttonRemoveFromBlackList);
+            tabPageBlackList.Controls.Add(labelMutedForTime);
+            tabPageBlackList.Controls.Add(listBoxTtsSubstitute);
+            tabPageBlackList.Controls.Add(textBoxTtsWhatToReplace);
+            tabPageBlackList.Controls.Add(textBoxTtsSubstitute);
+            tabPageBlackList.Controls.Add(listBoxTtsWhatToReplace);
+            tabPageBlackList.Controls.Add(buttonTtsTextReplace);
+            tabPageBlackList.Controls.Add(buttonDeleteReplaceAndSubstitude);
+            tabPageBlackList.Controls.Add(labelTtsReplaceWords);
+            tabPageBlackList.Name = "tabPageBlackList";
+            toolTipInfoForConnection.SetToolTip(tabPageBlackList, resources.GetString("tabPageBlackList.ToolTip"));
+            tabPageBlackList.UseVisualStyleBackColor = true;
+            // 
+            // labelMutedForTimeWhatTime
+            // 
+            resources.ApplyResources(labelMutedForTimeWhatTime, "labelMutedForTimeWhatTime");
+            labelMutedForTimeWhatTime.Name = "labelMutedForTimeWhatTime";
+            toolTipInfoForConnection.SetToolTip(labelMutedForTimeWhatTime, resources.GetString("labelMutedForTimeWhatTime.ToolTip"));
+            // 
+            // textBoxMutedForTimeWhatTime
+            // 
+            resources.ApplyResources(textBoxMutedForTimeWhatTime, "textBoxMutedForTimeWhatTime");
+            textBoxMutedForTimeWhatTime.Name = "textBoxMutedForTimeWhatTime";
+            toolTipInfoForConnection.SetToolTip(textBoxMutedForTimeWhatTime, resources.GetString("textBoxMutedForTimeWhatTime.ToolTip"));
+            textBoxMutedForTimeWhatTime.TextChanged += textBoxMutedForTimeWhatTime_TextChanged;
+            // 
+            // labelMutedForTimeChannelPointName
+            // 
+            resources.ApplyResources(labelMutedForTimeChannelPointName, "labelMutedForTimeChannelPointName");
+            labelMutedForTimeChannelPointName.Name = "labelMutedForTimeChannelPointName";
+            toolTipInfoForConnection.SetToolTip(labelMutedForTimeChannelPointName, resources.GetString("labelMutedForTimeChannelPointName.ToolTip"));
+            // 
+            // tabPageAnecdotes
+            // 
+            resources.ApplyResources(tabPageAnecdotes, "tabPageAnecdotes");
+            tabPageAnecdotes.Controls.Add(textBoxAnecdotsFromFilesChannelPoints);
+            tabPageAnecdotes.Controls.Add(labelAnecdotChatCommand);
+            tabPageAnecdotes.Controls.Add(textBoxAnecdotChannelPoints);
+            tabPageAnecdotes.Controls.Add(labelAnecdotChannelPoints);
+            tabPageAnecdotes.Controls.Add(textBoxAnecdotChatCommand);
+            tabPageAnecdotes.Controls.Add(labelAnecdot);
+            tabPageAnecdotes.Controls.Add(labelAnecdotsFromFiles);
+            tabPageAnecdotes.Controls.Add(labelAnecdotsFromFilesChatCommand);
+            tabPageAnecdotes.Controls.Add(linkLabelKnownTroubles);
+            tabPageAnecdotes.Controls.Add(textBoxAnecdotsFromFilesChatCommand);
+            tabPageAnecdotes.Controls.Add(labelAnecdotsFromFilesChannelPointsCommand);
+            tabPageAnecdotes.Controls.Add(buttonAnecdotsFromFilesAddFile);
+            tabPageAnecdotes.Controls.Add(buttonAnecdotsFromFilesDeleteFile);
+            tabPageAnecdotes.Controls.Add(linkLabelAnecdotesAttention);
+            tabPageAnecdotes.Controls.Add(listBoxAnecdotsFromFilesLoadedFiles);
+            tabPageAnecdotes.Controls.Add(labelAnecdotsFromFilesLoadedFiles);
+            tabPageAnecdotes.Controls.Add(listBoxAnecdotsFromFilesAllFilesFromFolder);
+            tabPageAnecdotes.Controls.Add(labelAnecdotsFromFilesAllFilesFromFolder);
+            tabPageAnecdotes.Name = "tabPageAnecdotes";
+            toolTipInfoForConnection.SetToolTip(tabPageAnecdotes, resources.GetString("tabPageAnecdotes.ToolTip"));
+            tabPageAnecdotes.UseVisualStyleBackColor = true;
+            // 
+            // buttonTwitchDisconnect
+            // 
+            resources.ApplyResources(buttonTwitchDisconnect, "buttonTwitchDisconnect");
+            buttonTwitchDisconnect.Name = "buttonTwitchDisconnect";
+            toolTipInfoForConnection.SetToolTip(buttonTwitchDisconnect, resources.GetString("buttonTwitchDisconnect.ToolTip"));
+            buttonTwitchDisconnect.UseVisualStyleBackColor = true;
+            buttonTwitchDisconnect.Click += buttonTwitchDisconnect_Click;
+            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(linkLabelKnownTroubles);
-            Controls.Add(buttonAnecdotsFromFilesDeleteFile);
-            Controls.Add(labelAnecdotsFromFilesLoadedFiles);
-            Controls.Add(labelAnecdotsFromFilesAllFilesFromFolder);
-            Controls.Add(listBoxAnecdotsFromFilesAllFilesFromFolder);
-            Controls.Add(listBoxAnecdotsFromFilesLoadedFiles);
-            Controls.Add(buttonAnecdotsFromFilesAddFile);
+            Controls.Add(buttonTwitchConnect);
+            Controls.Add(buttonTwitchDisconnect);
+            Controls.Add(tabControl_Tts_Settings);
+            Controls.Add(labelConnectionStatus);
             Controls.Add(labelVersionOfProgram);
-            Controls.Add(linkLabel1);
-            Controls.Add(textBoxAnecdotsFromFilesChannelPoints);
-            Controls.Add(labelAnecdotsFromFilesChannelPointsCommand);
-            Controls.Add(textBoxAnecdotsFromFilesChatCommand);
-            Controls.Add(labelAnecdotsFromFilesChatCommand);
-            Controls.Add(labelAnecdotsFromFiles);
             Controls.Add(checkBoxOverAllWindows);
-            Controls.Add(labelTwitchClientId);
-            Controls.Add(label1);
-            Controls.Add(labelAnecdot);
-            Controls.Add(textBoxAnecdotChatCommand);
-            Controls.Add(labelAnecdotChannelPoints);
-            Controls.Add(textBoxAnecdotChannelPoints);
-            Controls.Add(labelAnecdotChatCommand);
-            Controls.Add(buttonDeleteReplaceAndSubstitude);
-            Controls.Add(buttonTtsTextReplace);
-            Controls.Add(listBoxTtsSubstitute);
-            Controls.Add(listBoxTtsWhatToReplace);
-            Controls.Add(textBoxTtsSubstitute);
-            Controls.Add(textBoxTtsWhatToReplace);
-            Controls.Add(textBoxTwitchClientID);
-            Controls.Add(labelHighlightedMessageTts);
-            Controls.Add(textBoxHighlightedMessageName);
-            Controls.Add(comboBoxTypeOfMessageTts);
-            Controls.Add(labelTypeOfMessageTts);
-            Controls.Add(buttonTestTtsSkip);
             Controls.Add(buttonProfileSave);
             Controls.Add(buttonOpenFolderRU);
             Controls.Add(buttonLanguageChange);
@@ -683,44 +835,23 @@
             Controls.Add(buttonProfileLoad);
             Controls.Add(comboBoxProfileSelect);
             Controls.Add(textBoxProfileAdd);
-            Controls.Add(textBoxTestTts);
-            Controls.Add(buttonTestTts);
-            Controls.Add(labelTtsTest);
-            Controls.Add(labelDoNotTtsIfStartWith);
-            Controls.Add(textBoxDoNotTtsIfStartWith);
-            Controls.Add(textBoxViewerSkipAllQueueMessage);
-            Controls.Add(labelViewerSkipAllQueue);
-            Controls.Add(labelViewerSkipCurrentMessage);
-            Controls.Add(textBoxViewerSkipCurrentTtsMessage);
-            Controls.Add(labelAllowViewerToSkip);
-            Controls.Add(labelNickOfChannelToConnect);
-            Controls.Add(buttonClearEntireQueue);
-            Controls.Add(buttonSkipCurrentMessage);
-            Controls.Add(labelSkipMessage);
-            Controls.Add(labelTtsSpeedName);
-            Controls.Add(labelTtsVolumeName);
-            Controls.Add(buttonRemoveFromBlackList);
-            Controls.Add(buttonAddToBlackList);
-            Controls.Add(listBoxBlackList);
-            Controls.Add(textBoxBlackList);
-            Controls.Add(labelBlackList);
-            Controls.Add(labelTtsSpeed);
-            Controls.Add(labelTtsVolume);
-            Controls.Add(trackBarTtsSpeed);
-            Controls.Add(trackBarTtsVolume);
-            Controls.Add(comboBoxInstalledVoices);
-            Controls.Add(checkBoxClearEmoji);
-            Controls.Add(labelConnectionStatus);
-            Controls.Add(linkLabelTwitchApi);
-            Controls.Add(textBoxTwitchNick);
-            Controls.Add(textBoxTwitchApi);
-            Controls.Add(buttonTwitchConnect);
             Name = "MainWindow";
             toolTipInfoForConnection.SetToolTip(this, resources.GetString("$this.ToolTip"));
             FormClosing += MainWindow_FormClosing;
             Load += MainWindow_Load;
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).EndInit();
+            tabControl_Tts_Settings.ResumeLayout(false);
+            tabPageConnection.ResumeLayout(false);
+            tabPageConnection.PerformLayout();
+            tabPageTTS.ResumeLayout(false);
+            tabPageTTS.PerformLayout();
+            tabPageSkipMessages.ResumeLayout(false);
+            tabPageSkipMessages.PerformLayout();
+            tabPageBlackList.ResumeLayout(false);
+            tabPageBlackList.PerformLayout();
+            tabPageAnecdotes.ResumeLayout(false);
+            tabPageAnecdotes.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -787,7 +918,7 @@
         private Label labelAnecdotChannelPoints;
         private TextBox textBoxAnecdotChatCommand;
         private Label labelAnecdot;
-        private Label label1;
+        private Label labelTtsReplaceWords;
         private Label labelTwitchClientId;
         private CheckBox checkBoxOverAllWindows;
         private Label labelAnecdotsFromFiles;
@@ -795,7 +926,7 @@
         private TextBox textBoxAnecdotsFromFilesChatCommand;
         private Label labelAnecdotsFromFilesChannelPointsCommand;
         private TextBox textBoxAnecdotsFromFilesChannelPoints;
-        private LinkLabel linkLabel1;
+        private LinkLabel linkLabelAnecdotesAttention;
         private Label labelVersionOfProgram;
         private Button buttonAnecdotsFromFilesAddFile;
         private ListBox listBoxAnecdotsFromFilesLoadedFiles;
@@ -804,5 +935,18 @@
         private Label labelAnecdotsFromFilesLoadedFiles;
         private Button buttonAnecdotsFromFilesDeleteFile;
         private LinkLabel linkLabelKnownTroubles;
+        private Label labelMutedForTime;
+        private TextBox textBoxMutedForTime;
+        private TabControl tabControl_Tts_Settings;
+        private TabPage tabPageConnection;
+        private TabPage tabPageBlackList;
+        private Button buttonTwitchDisconnect;
+        private TabPage tabPageAnecdotes;
+        private TabPage tabPageTTS;
+        private Label labelInstalledVoices;
+        private TabPage tabPageSkipMessages;
+        private Label labelMutedForTimeWhatTime;
+        private TextBox textBoxMutedForTimeWhatTime;
+        private Label labelMutedForTimeChannelPointName;
     }
 }
