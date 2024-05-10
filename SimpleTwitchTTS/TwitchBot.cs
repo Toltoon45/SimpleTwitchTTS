@@ -187,11 +187,17 @@ namespace SimpleTwitchTTS
         }
         private void AnecdoteFromFiles()
         {
-            string[] blocks = resourceText.Split(new[] { Environment.NewLine + Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-            int randomIndex = random.Next(0, blocks.Length);
-            string randomBlock = blocks[randomIndex].Trim();
-            TClient.SendMessage(TwitchNick, randomBlock);
-            TTS(randomBlock, "");
+            try
+            {
+                string[] blocks = resourceText.Split(new[] { Environment.NewLine + Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                int randomIndex = random.Next(0, blocks.Length);
+                string randomBlock = blocks[randomIndex].Trim();
+                if(sendAnecdotInChat)
+                    TClient.SendMessage(TwitchNick, randomBlock);
+                TTS(randomBlock, "");
+            }
+            catch { }
+
         }
         string responseBody;
         string finalAnecdot;
@@ -209,7 +215,8 @@ namespace SimpleTwitchTTS
                 finalAnecdot.Replace("нигер", "н-слово");
                 finalAnecdot.Replace("нига", "н-слово");
                 finalAnecdot.Replace("гомик", "п-слово");
-                TClient.SendMessage(TwitchNick, finalAnecdot);
+                if(sendAnecdotInChat)
+                    TClient.SendMessage(TwitchNick, finalAnecdot);
                 TTS(finalAnecdot, "");
             }
         }
@@ -355,7 +362,7 @@ namespace SimpleTwitchTTS
                 BlackList.RemoveAt(v);
         }
 
-        internal void GetDeleteReplaceAndSubstitudeItem(int selectedIndex1, int selectedIndex2)
+        internal void GetDeleteReplaceAndSubstitudeItem(int selectedIndex)
         {
             if (WhatToReplace.Count <= 1)
             {
@@ -365,8 +372,8 @@ namespace SimpleTwitchTTS
 
             else
             { //Индекс не имеет значения т.к. они всегда равны
-                WhatToReplace.RemoveAt(selectedIndex1);
-                WhatToSubstitude.RemoveAt(selectedIndex2);
+                WhatToReplace.RemoveAt(selectedIndex);
+                WhatToSubstitude.RemoveAt(selectedIndex);
             }
         }
 
@@ -477,6 +484,11 @@ namespace SimpleTwitchTTS
             }
             catch { }
             
+        }
+        bool sendAnecdotInChat;
+        internal void AnecdotsDoNotSendInChat(bool v)
+        {
+            sendAnecdotInChat = v;  
         }
     }
 }

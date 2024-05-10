@@ -118,6 +118,7 @@
             textBoxMutedForTimeWhatTime = new TextBox();
             labelMutedForTimeChannelPointName = new Label();
             tabPageAnecdotes = new TabPage();
+            checkBoxAnecdotsDoNotSendInChat = new CheckBox();
             buttonTwitchDisconnect = new Button();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsVolume).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarTtsSpeed).BeginInit();
@@ -156,15 +157,15 @@
             linkLabelTwitchApi.Name = "linkLabelTwitchApi";
             linkLabelTwitchApi.TabStop = true;
             toolTipInfoForConnection.SetToolTip(linkLabelTwitchApi, resources.GetString("linkLabelTwitchApi.ToolTip"));
-            linkLabelTwitchApi.LinkClicked += linkLabelTwitchApi_LinkClicked;
             // 
             // toolTipInfoForConnection
             // 
             toolTipInfoForConnection.AutomaticDelay = 0;
             toolTipInfoForConnection.AutoPopDelay = 0;
             toolTipInfoForConnection.InitialDelay = 1;
-            toolTipInfoForConnection.IsBalloon = true;
             toolTipInfoForConnection.ReshowDelay = 100;
+            toolTipInfoForConnection.UseAnimation = false;
+            toolTipInfoForConnection.UseFading = false;
             // 
             // labelNickOfChannelToConnect
             // 
@@ -211,6 +212,7 @@
             comboBoxProfileSelect.FormattingEnabled = true;
             comboBoxProfileSelect.Name = "comboBoxProfileSelect";
             toolTipInfoForConnection.SetToolTip(comboBoxProfileSelect, resources.GetString("comboBoxProfileSelect.ToolTip"));
+            comboBoxProfileSelect.Click += comboBoxProfileSelect_Click;
             // 
             // labelConnectionStatus
             // 
@@ -377,6 +379,8 @@
             toolTipInfoForConnection.SetToolTip(buttonProfileLoad, resources.GetString("buttonProfileLoad.ToolTip"));
             buttonProfileLoad.UseVisualStyleBackColor = true;
             buttonProfileLoad.Click += buttonProfileLoad_Click;
+            buttonProfileLoad.MouseEnter += buttonProfileLoad_MouseEnter;
+            buttonProfileLoad.MouseLeave += buttonProfileLoad_MouseLeave;
             // 
             // buttonProfileDeleteEN
             // 
@@ -385,6 +389,8 @@
             toolTipInfoForConnection.SetToolTip(buttonProfileDeleteEN, resources.GetString("buttonProfileDeleteEN.ToolTip"));
             buttonProfileDeleteEN.UseVisualStyleBackColor = true;
             buttonProfileDeleteEN.Click += buttonProfileDelete;
+            buttonProfileDeleteEN.MouseEnter += buttonProfileDeleteEN_MouseEnter;
+            buttonProfileDeleteEN.MouseLeave += buttonProfileDeleteEN_MouseLeave;
             // 
             // labelProfileAdd
             // 
@@ -421,6 +427,8 @@
             toolTipInfoForConnection.SetToolTip(buttonProfileSave, resources.GetString("buttonProfileSave.ToolTip"));
             buttonProfileSave.UseVisualStyleBackColor = true;
             buttonProfileSave.Click += buttonProfileAddClick;
+            buttonProfileSave.MouseEnter += buttonProfileSave_MouseEnter;
+            buttonProfileSave.MouseLeave += buttonProfileSave_MouseLeave;
             // 
             // buttonTestTtsSkip
             // 
@@ -652,7 +660,6 @@
             // 
             resources.ApplyResources(linkLabelKnownTroubles, "linkLabelKnownTroubles");
             linkLabelKnownTroubles.Name = "linkLabelKnownTroubles";
-            linkLabelKnownTroubles.TabStop = true;
             toolTipInfoForConnection.SetToolTip(linkLabelKnownTroubles, resources.GetString("linkLabelKnownTroubles.ToolTip"));
             // 
             // labelMutedForTime
@@ -786,6 +793,7 @@
             // tabPageAnecdotes
             // 
             resources.ApplyResources(tabPageAnecdotes, "tabPageAnecdotes");
+            tabPageAnecdotes.Controls.Add(checkBoxAnecdotsDoNotSendInChat);
             tabPageAnecdotes.Controls.Add(textBoxAnecdotsFromFilesChannelPoints);
             tabPageAnecdotes.Controls.Add(labelAnecdotChatCommand);
             tabPageAnecdotes.Controls.Add(textBoxAnecdotChannelPoints);
@@ -808,6 +816,14 @@
             toolTipInfoForConnection.SetToolTip(tabPageAnecdotes, resources.GetString("tabPageAnecdotes.ToolTip"));
             tabPageAnecdotes.UseVisualStyleBackColor = true;
             // 
+            // checkBoxAnecdotsDoNotSendInChat
+            // 
+            resources.ApplyResources(checkBoxAnecdotsDoNotSendInChat, "checkBoxAnecdotsDoNotSendInChat");
+            checkBoxAnecdotsDoNotSendInChat.Name = "checkBoxAnecdotsDoNotSendInChat";
+            toolTipInfoForConnection.SetToolTip(checkBoxAnecdotsDoNotSendInChat, resources.GetString("checkBoxAnecdotsDoNotSendInChat.ToolTip"));
+            checkBoxAnecdotsDoNotSendInChat.UseVisualStyleBackColor = true;
+            checkBoxAnecdotsDoNotSendInChat.CheckedChanged += checkBoxAnecdotsFromFilesDoNotSendInChat_CheckedChanged;
+            // 
             // buttonTwitchDisconnect
             // 
             resources.ApplyResources(buttonTwitchDisconnect, "buttonTwitchDisconnect");
@@ -819,7 +835,7 @@
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(buttonTwitchConnect);
             Controls.Add(buttonTwitchDisconnect);
             Controls.Add(tabControl_Tts_Settings);
@@ -835,6 +851,8 @@
             Controls.Add(buttonProfileLoad);
             Controls.Add(comboBoxProfileSelect);
             Controls.Add(textBoxProfileAdd);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "MainWindow";
             toolTipInfoForConnection.SetToolTip(this, resources.GetString("$this.ToolTip"));
             FormClosing += MainWindow_FormClosing;
@@ -948,5 +966,6 @@
         private Label labelMutedForTimeWhatTime;
         private TextBox textBoxMutedForTimeWhatTime;
         private Label labelMutedForTimeChannelPointName;
+        private CheckBox checkBoxAnecdotsDoNotSendInChat;
     }
 }

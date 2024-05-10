@@ -119,115 +119,128 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonTwitchConnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 88</value>
+    <value>6, 102</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonTwitchConnect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonTwitchConnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 22</value>
+    <value>110, 25</value>
   </data>
   <data name="buttonTwitchConnect.Text" xml:space="preserve">
     <value>Подключиться</value>
   </data>
   <data name="textBoxTwitchApi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 6</value>
+    <value>7, 7</value>
   </data>
-  <data name="textBoxTwitchApi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+  <data name="textBoxTwitchApi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxTwitchApi.ToolTip" xml:space="preserve">
     <value>НИКОМУ НЕ ПОКАЗЫВАЙ!</value>
   </data>
   <data name="textBoxTwitchNick.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 54</value>
+    <value>7, 62</value>
   </data>
-  <data name="textBoxTwitchNick.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+  <data name="textBoxTwitchNick.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxTwitchNick.ToolTip" xml:space="preserve">
     <value>Канал, к которому подключиться</value>
   </data>
   <data name="linkLabelTwitchApi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 6</value>
+    <value>108, 7</value>
   </data>
-  <data name="linkLabelTwitchApi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+  <data name="linkLabelTwitchApi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="linkLabelTwitchApi.Text" xml:space="preserve">
     <value>Твич АПИ</value>
   </data>
   <data name="labelNickOfChannelToConnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 56</value>
+    <value>108, 65</value>
+  </data>
+  <data name="labelNickOfChannelToConnect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelNickOfChannelToConnect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+    <value>58, 15</value>
   </data>
   <data name="labelNickOfChannelToConnect.Text" xml:space="preserve">
     <value>Никнейм</value>
   </data>
   <data name="textBoxDoNotTtsIfStartWith.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 129</value>
+    <value>14, 149</value>
   </data>
-  <data name="textBoxDoNotTtsIfStartWith.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 21</value>
+  <data name="textBoxDoNotTtsIfStartWith.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxDoNotTtsIfStartWith.ToolTip" xml:space="preserve">
     <value>Я обычно ставлю "!" чтобы игнорировать команды</value>
   </data>
   <data name="textBoxViewerSkipCurrentTtsMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 232</value>
+    <value>14, 268</value>
   </data>
-  <data name="textBoxViewerSkipCurrentTtsMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 21</value>
+  <data name="textBoxViewerSkipCurrentTtsMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxViewerSkipAllQueueMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 232</value>
+    <value>148, 268</value>
   </data>
-  <data name="textBoxViewerSkipAllQueueMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+  <data name="textBoxViewerSkipAllQueueMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxViewerSkipAllQueueMessage.ToolTip" xml:space="preserve">
     <value>Можно и с и без ! в начале</value>
   </data>
   <data name="textBoxTestTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 129</value>
+    <value>148, 149</value>
   </data>
-  <data name="textBoxTestTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+  <data name="textBoxTestTts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxTestTts.ToolTip" xml:space="preserve">
     <value>Протестировать ТТС</value>
   </data>
   <data name="textBoxProfileAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 39</value>
+    <value>133, 45</value>
   </data>
-  <data name="textBoxProfileAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+  <data name="textBoxProfileAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxProfileAdd.ToolTip" xml:space="preserve">
     <value>Имя профиля, который добавить</value>
   </data>
   <data name="comboBoxProfileSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 13</value>
+    <value>133, 15</value>
   </data>
-  <data name="comboBoxProfileSelect.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+  <data name="comboBoxProfileSelect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="comboBoxProfileSelect.ToolTip" xml:space="preserve">
     <value>Имя профиля</value>
   </data>
   <data name="labelConnectionStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 116</value>
+    <value>6, 134</value>
+  </data>
+  <data name="labelConnectionStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelConnectionStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 13</value>
+    <value>103, 15</value>
   </data>
   <data name="labelConnectionStatus.Text" xml:space="preserve">
     <value>Connection status</value>
   </data>
   <data name="checkBoxClearEmoji.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 130</value>
+    <value>26, 150</value>
+  </data>
+  <data name="checkBoxClearEmoji.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxClearEmoji.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 17</value>
+    <value>151, 19</value>
   </data>
   <data name="checkBoxClearEmoji.Text" xml:space="preserve">
     <value>Удалить эмодзи из ТТС</value>
@@ -236,197 +249,241 @@
     <value>Например Speech2Go Yuri ломает себя и программу из-за эмодзи</value>
   </data>
   <data name="comboBoxInstalledVoices.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 5</value>
+    <value>5, 6</value>
   </data>
-  <data name="comboBoxInstalledVoices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+  <data name="comboBoxInstalledVoices.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="comboBoxInstalledVoices.ToolTip" xml:space="preserve">
     <value>Установленные SAPI голоса на компе</value>
   </data>
   <data name="trackBarTtsVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 171</value>
+    <value>21, 197</value>
+  </data>
+  <data name="trackBarTtsVolume.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="trackBarTtsVolume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 45</value>
+    <value>320, 45</value>
   </data>
   <data name="trackBarTtsSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 256</value>
+    <value>21, 295</value>
+  </data>
+  <data name="trackBarTtsSpeed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="trackBarTtsSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 45</value>
+    <value>320, 45</value>
   </data>
   <data name="labelTtsVolume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 150</value>
+    <value>349, 213</value>
   </data>
-  <data name="labelTtsVolume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+  <data name="labelTtsVolume.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelTtsSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>166, 194</value>
+    <value>349, 308</value>
   </data>
-  <data name="labelTtsSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
+  <data name="labelTtsSpeed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>7, 22</value>
+  </data>
+  <data name="labelBlackList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 13</value>
+    <value>102, 15</value>
   </data>
   <data name="labelBlackList.Text" xml:space="preserve">
     <value>Чёрный лист ТТС</value>
   </data>
   <data name="textBoxBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 37</value>
+    <value>7, 43</value>
   </data>
-  <data name="textBoxBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listBoxBlackList.ItemHeight" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="textBoxBlackList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 62</value>
+    <value>7, 72</value>
   </data>
-  <data name="listBoxBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 43</value>
+  <data name="listBoxBlackList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxBlackList.ToolTip" xml:space="preserve">
     <value>Клоун ты в муте</value>
   </data>
   <data name="buttonAddToBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 36</value>
+    <value>113, 42</value>
+  </data>
+  <data name="buttonAddToBlackList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonAddToBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
+    <value>82, 23</value>
   </data>
   <data name="buttonAddToBlackList.Text" xml:space="preserve">
     <value>Добавить</value>
   </data>
   <data name="buttonRemoveFromBlackList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 61</value>
+    <value>113, 70</value>
+  </data>
+  <data name="buttonRemoveFromBlackList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonRemoveFromBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 43</value>
+    <value>82, 50</value>
   </data>
   <data name="buttonRemoveFromBlackList.Text" xml:space="preserve">
     <value>Удалить выбранное</value>
   </data>
   <data name="labelTtsVolumeName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 181</value>
+    <value>380, 213</value>
+  </data>
+  <data name="labelTtsVolumeName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelTtsVolumeName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>66, 15</value>
   </data>
   <data name="labelTtsVolumeName.Text" xml:space="preserve">
     <value>Громкость</value>
   </data>
   <data name="labelTtsSpeedName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 267</value>
+    <value>364, 308</value>
+  </data>
+  <data name="labelTtsSpeedName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelTtsSpeedName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 13</value>
+    <value>82, 15</value>
   </data>
   <data name="labelTtsSpeedName.Text" xml:space="preserve">
     <value>Скорость ТТС</value>
   </data>
   <data name="labelSkipMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 7</value>
+    <value>14, 8</value>
+  </data>
+  <data name="labelSkipMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelSkipMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 13</value>
+    <value>139, 15</value>
   </data>
   <data name="labelSkipMessage.Text" xml:space="preserve">
     <value>Пропустить сообщение</value>
   </data>
   <data name="buttonSkipCurrentMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 22</value>
+    <value>14, 25</value>
   </data>
-  <data name="buttonSkipCurrentMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
+  <data name="buttonSkipCurrentMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonSkipCurrentMessage.Text" xml:space="preserve">
     <value>Пропустить текущее ТТС</value>
   </data>
   <data name="buttonClearEntireQueue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 22</value>
+    <value>120, 25</value>
+  </data>
+  <data name="buttonClearEntireQueue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonClearEntireQueue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
+    <value>106, 23</value>
   </data>
   <data name="buttonClearEntireQueue.Text" xml:space="preserve">
     <value>Пропустить всё</value>
   </data>
   <data name="labelAllowViewerToSkip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 195</value>
+    <value>68, 225</value>
+  </data>
+  <data name="labelAllowViewerToSkip.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAllowViewerToSkip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 13</value>
+    <value>146, 15</value>
   </data>
   <data name="labelAllowViewerToSkip.Text" xml:space="preserve">
     <value>Зрители пропускают ТТС</value>
   </data>
   <data name="labelViewerSkipCurrentMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 217</value>
+    <value>12, 250</value>
+  </data>
+  <data name="labelViewerSkipCurrentMessage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelViewerSkipCurrentMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
+    <value>79, 15</value>
   </data>
   <data name="labelViewerSkipCurrentMessage.Text" xml:space="preserve">
     <value>Текущий ТТС</value>
   </data>
   <data name="labelViewerSkipAllQueue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 216</value>
+    <value>148, 249</value>
+  </data>
+  <data name="labelViewerSkipAllQueue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelViewerSkipAllQueue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
+    <value>84, 15</value>
   </data>
   <data name="labelViewerSkipAllQueue.Text" xml:space="preserve">
     <value>Всё в очереди</value>
   </data>
   <data name="labelDoNotTtsIfStartWith.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 113</value>
+    <value>12, 130</value>
+  </data>
+  <data name="labelDoNotTtsIfStartWith.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelDoNotTtsIfStartWith.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 13</value>
+    <value>125, 15</value>
   </data>
   <data name="labelDoNotTtsIfStartWith.Text" xml:space="preserve">
     <value>Не ТТС если в начале</value>
   </data>
   <data name="labelTtsTest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 113</value>
+    <value>148, 130</value>
+  </data>
+  <data name="labelTtsTest.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelTtsTest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
+    <value>53, 15</value>
   </data>
   <data name="labelTtsTest.Text" xml:space="preserve">
     <value>Тест ТТС</value>
   </data>
   <data name="buttonTestTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 156</value>
+    <value>148, 180</value>
+  </data>
+  <data name="buttonTestTts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonTestTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
+    <value>100, 23</value>
   </data>
   <data name="buttonTestTts.Text" xml:space="preserve">
     <value>Сказать</value>
   </data>
   <data name="buttonProfileLoad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 12</value>
+    <value>240, 14</value>
   </data>
-  <data name="buttonProfileLoad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 20</value>
+  <data name="buttonProfileLoad.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonProfileLoad.Text" xml:space="preserve">
     <value>Загрузить профиль</value>
   </data>
   <data name="buttonProfileDeleteEN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 39</value>
+    <value>240, 45</value>
+  </data>
+  <data name="buttonProfileDeleteEN.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonProfileDeleteEN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 20</value>
+    <value>78, 23</value>
   </data>
   <data name="buttonProfileDeleteEN.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -435,31 +492,37 @@
     <value>Выберите из списка наверху</value>
   </data>
   <data name="labelProfileAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 16</value>
+    <value>5, 18</value>
+  </data>
+  <data name="labelProfileAdd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelProfileAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
+    <value>60, 15</value>
   </data>
   <data name="labelProfileAdd.Text" xml:space="preserve">
     <value>Профили</value>
   </data>
   <data name="labelProfileDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 42</value>
+    <value>5, 48</value>
+  </data>
+  <data name="labelProfileDelete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelProfileDelete.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="labelProfileDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
+    <value>112, 15</value>
   </data>
   <data name="labelProfileDelete.Text" xml:space="preserve">
     <value>Добавить профиль</value>
   </data>
   <data name="buttonLanguageChange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 457</value>
+    <value>312, 527</value>
   </data>
-  <data name="buttonLanguageChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+  <data name="buttonLanguageChange.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonLanguageChange.Text" xml:space="preserve">
     <value>RUS/ENG</value>
@@ -469,10 +532,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonOpenFolderRU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>279, 14</value>
+    <value>326, 16</value>
+  </data>
+  <data name="buttonOpenFolderRU.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonOpenFolderRU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 41</value>
+    <value>80, 47</value>
   </data>
   <data name="buttonOpenFolderRU.Text" xml:space="preserve">
     <value>Данные для проги</value>
@@ -484,10 +550,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonProfileSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 65</value>
+    <value>133, 75</value>
+  </data>
+  <data name="buttonProfileSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonProfileSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
+    <value>100, 23</value>
   </data>
   <data name="buttonProfileSave.Text" xml:space="preserve">
     <value>Сохранить</value>
@@ -496,10 +565,13 @@
     <value>Сохранить профиль</value>
   </data>
   <data name="buttonTestTtsSkip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 130</value>
+    <value>255, 150</value>
+  </data>
+  <data name="buttonTestTtsSkip.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonTestTtsSkip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
+    <value>82, 23</value>
   </data>
   <data name="buttonTestTtsSkip.Text" xml:space="preserve">
     <value>Пропустить</value>
@@ -508,10 +580,13 @@
     <value>Пропустить всю очередь теста</value>
   </data>
   <data name="labelTypeOfMessageTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 94</value>
+    <value>135, 108</value>
+  </data>
+  <data name="labelTypeOfMessageTts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelTypeOfMessageTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 17</value>
+    <value>229, 20</value>
   </data>
   <data name="labelTypeOfMessageTts.Text" xml:space="preserve">
     <value>Название команды за баллы канала</value>
@@ -520,79 +595,107 @@
     <value>Только твич</value>
   </data>
   <data name="comboBoxTypeOfMessageTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 41</value>
+    <value>135, 47</value>
   </data>
-  <data name="comboBoxTypeOfMessageTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+  <data name="comboBoxTypeOfMessageTts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxHighlightedMessageName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 70</value>
+    <value>135, 81</value>
+  </data>
+  <data name="textBoxHighlightedMessageName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxHighlightedMessageName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 21</value>
+    <value>121, 23</value>
   </data>
   <data name="labelHighlightedMessageTts.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 25</value>
+    <value>135, 29</value>
+  </data>
+  <data name="labelHighlightedMessageTts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelHighlightedMessageTts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 13</value>
+    <value>219, 15</value>
   </data>
   <data name="labelHighlightedMessageTts.Text" xml:space="preserve">
     <value>Тип сообщений который будет ТТС</value>
   </data>
   <data name="textBoxTwitchClientID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 29</value>
+    <value>7, 33</value>
   </data>
+  <data name="textBoxTwitchClientID.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBoxTwitchClientID.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>
-  </data>
-  <data name="textBoxTwitchClientID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
   </data>
   <data name="textBoxTwitchClientID.ToolTip" xml:space="preserve">
     <value>Не показывай никому!</value>
   </data>
   <data name="textBoxTtsWhatToReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 154</value>
+    <value>9, 178</value>
+  </data>
+  <data name="textBoxTtsWhatToReplace.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxTtsWhatToReplace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 21</value>
+    <value>102, 23</value>
   </data>
   <data name="textBoxTtsWhatToReplace.ToolTip" xml:space="preserve">
     <value>Пожалуйста, без пробелов! (Только одно слово, одно число и т.д.)</value>
   </data>
   <data name="textBoxTtsSubstitute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 154</value>
+    <value>202, 178</value>
+  </data>
+  <data name="textBoxTtsSubstitute.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxTtsSubstitute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 21</value>
+    <value>102, 23</value>
   </data>
   <data name="textBoxTtsSubstitute.ToolTip" xml:space="preserve">
     <value>а вот тут сколько угодно слов чисел и т.д.</value>
   </data>
+  <data name="listBoxTtsWhatToReplace.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
   <data name="listBoxTtsWhatToReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 187</value>
+    <value>9, 216</value>
+  </data>
+  <data name="listBoxTtsWhatToReplace.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxTtsWhatToReplace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 82</value>
+    <value>102, 94</value>
   </data>
   <data name="listBoxTtsWhatToReplace.ToolTip" xml:space="preserve">
     <value>я внатури ненавижу эти слова хочу их убрать &gt;:(</value>
   </data>
+  <data name="listBoxTtsSubstitute.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
   <data name="listBoxTtsSubstitute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 187</value>
+    <value>202, 216</value>
+  </data>
+  <data name="listBoxTtsSubstitute.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxTtsSubstitute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 82</value>
+    <value>102, 94</value>
   </data>
   <data name="listBoxTtsSubstitute.ToolTip" xml:space="preserve">
     <value>эти слова меня не бесят :)</value>
   </data>
   <data name="buttonTtsTextReplace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 154</value>
+    <value>117, 178</value>
+  </data>
+  <data name="buttonTtsTextReplace.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonTtsTextReplace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
+    <value>80, 23</value>
   </data>
   <data name="buttonTtsTextReplace.Text" xml:space="preserve">
     <value>Добавить</value>
@@ -601,10 +704,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonDeleteReplaceAndSubstitude.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 187</value>
+    <value>117, 216</value>
+  </data>
+  <data name="buttonDeleteReplaceAndSubstitude.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonDeleteReplaceAndSubstitude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
+    <value>80, 23</value>
   </data>
   <data name="buttonDeleteReplaceAndSubstitude.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -616,49 +722,73 @@
     <value>NoControl</value>
   </data>
   <data name="labelAnecdotChatCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 28</value>
+    <value>216, 32</value>
+  </data>
+  <data name="labelAnecdotChatCommand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdotChatCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
+    <value>222, 15</value>
   </data>
   <data name="labelAnecdotChatCommand.Text" xml:space="preserve">
     <value>Название команды для ввода в чат</value>
   </data>
   <data name="textBoxAnecdotChannelPoints.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 79</value>
+    <value>216, 91</value>
+  </data>
+  <data name="textBoxAnecdotChannelPoints.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxAnecdotChannelPoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 21</value>
+    <value>116, 23</value>
   </data>
   <data name="labelAnecdotChannelPoints.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelAnecdotChannelPoints.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 66</value>
+    <value>216, 76</value>
+  </data>
+  <data name="labelAnecdotChannelPoints.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdotChannelPoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 13</value>
+    <value>211, 15</value>
   </data>
   <data name="labelAnecdotChannelPoints.Text" xml:space="preserve">
     <value>Название команды за баллы канала</value>
   </data>
   <data name="textBoxAnecdotChatCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 42</value>
+    <value>216, 48</value>
+  </data>
+  <data name="textBoxAnecdotChatCommand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxAnecdotChatCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 21</value>
+    <value>116, 23</value>
   </data>
   <data name="labelAnecdot.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelAnecdot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 6</value>
+    <value>216, 7</value>
+  </data>
+  <data name="labelAnecdot.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 13</value>
+    <value>206, 15</value>
   </data>
   <data name="labelAnecdot.Text" xml:space="preserve">
     <value>Рандомные анекдоты с сайта</value>
+  </data>
+  <data name="labelTtsReplaceWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 159</value>
+  </data>
+  <data name="labelTtsReplaceWords.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="labelTtsReplaceWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 27</value>
   </data>
   <data name="labelTwitchClientId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -667,10 +797,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelTwitchClientId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 31</value>
+    <value>108, 36</value>
+  </data>
+  <data name="labelTwitchClientId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelTwitchClientId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+    <value>52, 15</value>
   </data>
   <data name="labelTwitchClientId.Text" xml:space="preserve">
     <value>Client ID</value>
@@ -679,10 +812,13 @@
     <value>True</value>
   </data>
   <data name="checkBoxOverAllWindows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 457</value>
+    <value>9, 527</value>
+  </data>
+  <data name="checkBoxOverAllWindows.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="checkBoxOverAllWindows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 17</value>
+    <value>124, 19</value>
   </data>
   <data name="checkBoxOverAllWindows.Text" xml:space="preserve">
     <value>Поверх всех окон</value>
@@ -691,10 +827,13 @@
     <value>True</value>
   </data>
   <data name="labelAnecdotsFromFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 6</value>
+    <value>2, 7</value>
+  </data>
+  <data name="labelAnecdotsFromFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdotsFromFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 13</value>
+    <value>114, 15</value>
   </data>
   <data name="labelAnecdotsFromFiles.Text" xml:space="preserve">
     <value>Анекдоты в файлах</value>
@@ -706,58 +845,85 @@
     <value>NoControl</value>
   </data>
   <data name="labelAnecdotsFromFilesChatCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 28</value>
+    <value>2, 32</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChatCommand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdotsFromFilesChatCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+    <value>82, 15</value>
   </data>
   <data name="labelAnecdotsFromFilesChatCommand.Text" xml:space="preserve">
     <value>Команда чата</value>
   </data>
   <data name="textBoxAnecdotsFromFilesChatCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 44</value>
+    <value>5, 51</value>
+  </data>
+  <data name="textBoxAnecdotsFromFilesChatCommand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxAnecdotsFromFilesChatCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+    <value>100, 23</value>
   </data>
   <data name="labelAnecdotsFromFilesChannelPointsCommand.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="labelAnecdotsFromFilesChannelPointsCommand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 66</value>
+    <value>2, 76</value>
+  </data>
+  <data name="labelAnecdotsFromFilesChannelPointsCommand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdotsFromFilesChannelPointsCommand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 13</value>
+    <value>149, 15</value>
   </data>
   <data name="labelAnecdotsFromFilesChannelPointsCommand.Text" xml:space="preserve">
     <value>Команда за баллы канала</value>
   </data>
   <data name="textBoxAnecdotsFromFilesChannelPoints.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 82</value>
+    <value>5, 95</value>
+  </data>
+  <data name="textBoxAnecdotsFromFilesChannelPoints.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxAnecdotsFromFilesChannelPoints.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+    <value>100, 23</value>
+  </data>
+  <data name="linkLabelAnecdotesAttention.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 234</value>
+  </data>
+  <data name="linkLabelAnecdotesAttention.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="linkLabelAnecdotesAttention.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 27</value>
   </data>
   <data name="labelVersionOfProgram.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="labelVersionOfProgram.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 460</value>
+    <value>254, 531</value>
+  </data>
+  <data name="labelVersionOfProgram.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelVersionOfProgram.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>40, 15</value>
   </data>
   <data name="labelVersionOfProgram.Text" xml:space="preserve">
-    <value>1.0.5.0</value>
+    <value>1.0.5.1</value>
   </data>
   <data name="buttonAnecdotsFromFilesAddFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonAnecdotsFromFilesAddFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 130</value>
+    <value>115, 150</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesAddFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonAnecdotsFromFilesAddFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>77, 23</value>
   </data>
   <data name="buttonAnecdotsFromFilesAddFile.Text" xml:space="preserve">
     <value>Добавить</value>
@@ -765,11 +931,17 @@
   <data name="buttonAnecdotsFromFilesAddFile.ToolTip" xml:space="preserve">
     <value>Добавляет выбранный СЛЕВА файл. ДОБАВЛЯЯ СВОЙ ТЕКСТ ОБРАТИТЕ ВНИМАНИЕ, ЧТО КАЖДАЯ НОВАЯ ШУТКА РАЗДЕЛЯЕТСЯ ПУСТОЙ СТРОКОЙ и из-за эмодзи ломается говорилка, они удаляются</value>
   </data>
+  <data name="listBoxAnecdotsFromFilesLoadedFiles.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
   <data name="listBoxAnecdotsFromFilesLoadedFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 131</value>
+    <value>200, 151</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesLoadedFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxAnecdotsFromFilesLoadedFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 69</value>
+    <value>102, 79</value>
   </data>
   <data name="listBoxAnecdotsFromFilesLoadedFiles.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -777,11 +949,17 @@
   <data name="listBoxAnecdotsFromFilesLoadedFiles.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
   <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 131</value>
+    <value>6, 151</value>
+  </data>
+  <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 69</value>
+    <value>102, 79</value>
   </data>
   <data name="listBoxAnecdotsFromFilesAllFilesFromFolder.ToolTip" xml:space="preserve">
     <value />
@@ -793,10 +971,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelAnecdotsFromFilesAllFilesFromFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 108</value>
+    <value>6, 125</value>
+  </data>
+  <data name="labelAnecdotsFromFilesAllFilesFromFolder.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdotsFromFilesAllFilesFromFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 13</value>
+    <value>126, 15</value>
   </data>
   <data name="labelAnecdotsFromFilesAllFilesFromFolder.Text" xml:space="preserve">
     <value>Все текстовые файлы</value>
@@ -808,10 +989,13 @@
     <value>NoControl</value>
   </data>
   <data name="labelAnecdotsFromFilesLoadedFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 109</value>
+    <value>200, 126</value>
+  </data>
+  <data name="labelAnecdotsFromFilesLoadedFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelAnecdotsFromFilesLoadedFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 13</value>
+    <value>148, 15</value>
   </data>
   <data name="labelAnecdotsFromFilesLoadedFiles.Text" xml:space="preserve">
     <value>Из которых берётся текст</value>
@@ -820,10 +1004,13 @@
     <value>NoControl</value>
   </data>
   <data name="buttonAnecdotsFromFilesDeleteFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 156</value>
+    <value>115, 180</value>
+  </data>
+  <data name="buttonAnecdotsFromFilesDeleteFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="buttonAnecdotsFromFilesDeleteFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>77, 23</value>
   </data>
   <data name="buttonAnecdotsFromFilesDeleteFile.Text" xml:space="preserve">
     <value>Удалить</value>
@@ -835,10 +1022,13 @@
     <value>NoControl</value>
   </data>
   <data name="linkLabelKnownTroubles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 224</value>
+    <value>6, 305</value>
+  </data>
+  <data name="linkLabelKnownTroubles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="linkLabelKnownTroubles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
+    <value>81, 15</value>
   </data>
   <data name="linkLabelKnownTroubles.Text" xml:space="preserve">
     <value>на меня тоже</value>
@@ -847,26 +1037,37 @@
     <value>True</value>
   </data>
   <data name="labelMutedForTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 36</value>
+    <value>227, 42</value>
+  </data>
+  <data name="labelMutedForTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelMutedForTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 13</value>
+    <value>205, 15</value>
   </data>
   <data name="labelMutedForTime.Text" xml:space="preserve">
     <value>Замутить на время за баллы канала</value>
   </data>
   <data name="textBoxMutedForTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 57</value>
+    <value>227, 66</value>
+  </data>
+  <data name="textBoxMutedForTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxMutedForTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 21</value>
+    <value>102, 23</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPageConnection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageConnection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="tabPageConnection.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageConnection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 315</value>
+    <value>459, 365</value>
   </data>
   <data name="tabPageConnection.Text" xml:space="preserve">
     <value>Подключение</value>
@@ -877,20 +1078,38 @@
   <data name="labelInstalledVoices.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="labelInstalledVoices.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 9</value>
+  </data>
+  <data name="labelInstalledVoices.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
   <data name="labelInstalledVoices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
+    <value>134, 15</value>
   </data>
   <data name="labelInstalledVoices.Text" xml:space="preserve">
     <value>Установленные голоса</value>
   </data>
+  <data name="tabPageTTS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageTTS.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="tabPageTTS.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 315</value>
+    <value>459, 365</value>
   </data>
   <data name="tabPageTTS.Text" xml:space="preserve">
     <value>ТТС</value>
   </data>
+  <data name="tabPageSkipMessages.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageSkipMessages.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="tabPageSkipMessages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 315</value>
+    <value>459, 365</value>
   </data>
   <data name="labelMutedForTimeWhatTime.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -899,19 +1118,25 @@
     <value>NoControl</value>
   </data>
   <data name="labelMutedForTimeWhatTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 86</value>
+    <value>259, 99</value>
+  </data>
+  <data name="labelMutedForTimeWhatTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelMutedForTimeWhatTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
+    <value>43, 15</value>
   </data>
   <data name="labelMutedForTimeWhatTime.Text" xml:space="preserve">
     <value>Минут</value>
   </data>
   <data name="textBoxMutedForTimeWhatTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 83</value>
+    <value>227, 96</value>
+  </data>
+  <data name="textBoxMutedForTimeWhatTime.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="textBoxMutedForTimeWhatTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 21</value>
+    <value>24, 23</value>
   </data>
   <data name="labelMutedForTimeChannelPointName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -920,46 +1145,76 @@
     <value>NoControl</value>
   </data>
   <data name="labelMutedForTimeChannelPointName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 8</value>
+    <value>227, 9</value>
+  </data>
+  <data name="labelMutedForTimeChannelPointName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="labelMutedForTimeChannelPointName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
+    <value>108, 15</value>
   </data>
   <data name="labelMutedForTimeChannelPointName.Text" xml:space="preserve">
     <value>Название награды</value>
   </data>
+  <data name="tabPageBlackList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageBlackList.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="tabPageBlackList.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabPageBlackList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 315</value>
+    <value>459, 365</value>
   </data>
   <data name="tabPageBlackList.Text" xml:space="preserve">
     <value>Чёрные листы</value>
   </data>
+  <data name="checkBoxAnecdotsDoNotSendInChat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxAnecdotsDoNotSendInChat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 19</value>
+  </data>
+  <data name="checkBoxAnecdotsDoNotSendInChat.Text" xml:space="preserve">
+    <value>Не отправлять анекдот в чат</value>
+  </data>
+  <data name="tabPageAnecdotes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageAnecdotes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
   <data name="tabPageAnecdotes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 315</value>
+    <value>459, 365</value>
   </data>
   <data name="tabPageAnecdotes.Text" xml:space="preserve">
     <value>Анекдоты</value>
   </data>
   <data name="tabControl_Tts_Settings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 100</value>
+    <value>133, 115</value>
+  </data>
+  <data name="tabControl_Tts_Settings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
   </data>
   <data name="tabControl_Tts_Settings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 341</value>
+    <value>467, 393</value>
   </data>
   <data name="buttonTwitchDisconnect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 418</value>
+    <value>6, 482</value>
+  </data>
+  <data name="buttonTwitchDisconnect.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="buttonTwitchDisconnect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 27</value>
   </data>
   <data name="buttonTwitchDisconnect.Text" xml:space="preserve">
     <value>Отключиться</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>524, 487</value>
+    <value>611, 562</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>SimpleTwitchTts</value>

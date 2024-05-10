@@ -53,6 +53,7 @@ namespace SimpleTwitchTTS
                 textBoxAnecdotsFromFilesChannelPoints.Text = Properties.Settings.Default.NeuroAnecdotChannelPoints;
                 textBoxMutedForTime.Text = Properties.Settings.Default.MutedForTimeChannelPointsName;
                 textBoxMutedForTimeWhatTime.Text = Convert.ToString(Properties.Settings.Default.MutedForTimeMinute);
+                checkBoxAnecdotsDoNotSendInChat.Checked = Properties.Settings.Default.AnecdotsDoNotSendInChat;
 
                 labelConnectionStatus.Text = "";
 
@@ -105,15 +106,6 @@ namespace SimpleTwitchTTS
             }
         }
 
-        private void linkLabelTwitchApi_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (!Application.OpenForms.OfType<FormApiGuide>().Any())
-            {
-                FormApiGuide FormExperimentalSettings = new FormApiGuide();
-                FormExperimentalSettings.Show();
-            }
-        }
-
 
         private void textBoxTwitchApi_TextChanged(object sender, EventArgs e)
         {
@@ -122,26 +114,31 @@ namespace SimpleTwitchTTS
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.TextBoxTwitchApi = textBoxTwitchApi.Text;
-            Properties.Settings.Default.TextBoxTwitchNick = textBoxTwitchNick.Text;
-            Properties.Settings.Default.CheckBoxClearEmoji = checkBoxClearEmoji.Checked;
-            Properties.Settings.Default.ComboBoxInstalledVoiceSelect = comboBoxInstalledVoices.Text;
-            Properties.Settings.Default.TtsVolume = trackBarTtsVolume.Value;
-            Properties.Settings.Default.TtsSpeed = trackBarTtsSpeed.Value;
-            Properties.Settings.Default.TtsSkipAll = textBoxViewerSkipAllQueueMessage.Text;
-            Properties.Settings.Default.TtsSkipCurrent = textBoxViewerSkipCurrentTtsMessage.Text;
-            Properties.Settings.Default.TtsIgnore = textBoxDoNotTtsIfStartWith.Text;
-            Properties.Settings.Default.ProfileName = comboBoxProfileSelect.Text;
-            Properties.Settings.Default.TwitchToken = textBoxTwitchClientID.Text;
-            Properties.Settings.Default.HighlightedMessageName = textBoxHighlightedMessageName.Text;
-            Properties.Settings.Default.TtsMessageType = comboBoxTypeOfMessageTts.Text;
-            Properties.Settings.Default.AnecdotChatCommand = textBoxAnecdotChatCommand.Text;
-            Properties.Settings.Default.AnecdotChannelPoints = textBoxAnecdotChannelPoints.Text;
-            Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChatCommand.Text;
-            Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChannelPoints.Text;
-            Properties.Settings.Default.MutedForTimeChannelPointsName = textBoxMutedForTime.Text;
-            Properties.Settings.Default.MutedForTimeMinute = Convert.ToInt16(textBoxMutedForTimeWhatTime.Text);
-            Properties.Settings.Default.Save();
+            try
+            {
+                Properties.Settings.Default.TextBoxTwitchApi = textBoxTwitchApi.Text;
+                Properties.Settings.Default.TextBoxTwitchNick = textBoxTwitchNick.Text;
+                Properties.Settings.Default.CheckBoxClearEmoji = checkBoxClearEmoji.Checked;
+                Properties.Settings.Default.ComboBoxInstalledVoiceSelect = comboBoxInstalledVoices.Text;
+                Properties.Settings.Default.TtsVolume = trackBarTtsVolume.Value;
+                Properties.Settings.Default.TtsSpeed = trackBarTtsSpeed.Value;
+                Properties.Settings.Default.TtsSkipAll = textBoxViewerSkipAllQueueMessage.Text;
+                Properties.Settings.Default.TtsSkipCurrent = textBoxViewerSkipCurrentTtsMessage.Text;
+                Properties.Settings.Default.TtsIgnore = textBoxDoNotTtsIfStartWith.Text;
+                Properties.Settings.Default.ProfileName = comboBoxProfileSelect.Text;
+                Properties.Settings.Default.TwitchToken = textBoxTwitchClientID.Text;
+                Properties.Settings.Default.HighlightedMessageName = textBoxHighlightedMessageName.Text;
+                Properties.Settings.Default.TtsMessageType = comboBoxTypeOfMessageTts.Text;
+                Properties.Settings.Default.AnecdotChatCommand = textBoxAnecdotChatCommand.Text;
+                Properties.Settings.Default.AnecdotChannelPoints = textBoxAnecdotChannelPoints.Text;
+                Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChatCommand.Text;
+                Properties.Settings.Default.NeuroAnecdotChannelPoints = textBoxAnecdotsFromFilesChannelPoints.Text;
+                Properties.Settings.Default.MutedForTimeChannelPointsName = textBoxMutedForTime.Text;
+                Properties.Settings.Default.MutedForTimeMinute = Convert.ToInt16(textBoxMutedForTimeWhatTime.Text);
+                Properties.Settings.Default.AnecdotsDoNotSendInChat = checkBoxAnecdotsDoNotSendInChat.Checked;
+                Properties.Settings.Default.Save();
+            }
+            catch { }
 
 
 
@@ -180,15 +177,19 @@ namespace SimpleTwitchTTS
                 labelConnectionStatus.Text = "Connecting...";
                 try
                 {
-                    TClient = TWbot.Connect(textBoxTwitchApi.Text,
-                                            textBoxTwitchNick.Text,
-                                            TwitchTokenFromHttpRequest,
-                                            comboBoxInstalledVoices.Text,
-                                            TClient,
-                                            textBoxAnecdotChatCommand.Text,
-                                            textBoxAnecdotChannelPoints.Text,
-                                            textBoxAnecdotsFromFilesChatCommand.Text,
-                                            textBoxAnecdotsFromFilesChannelPoints.Text);
+                    await Task.Run(() =>
+                    {
+                        TClient = TWbot.Connect(textBoxTwitchApi.Text,
+                                                textBoxTwitchNick.Text,
+                                                TwitchTokenFromHttpRequest,
+                                                comboBoxInstalledVoices.Text,
+                                                TClient,
+                                                textBoxAnecdotChatCommand.Text,
+                                                textBoxAnecdotChannelPoints.Text,
+                                                textBoxAnecdotsFromFilesChatCommand.Text,
+                                                textBoxAnecdotsFromFilesChannelPoints.Text);
+                    });
+
                     if (TClient != null)
                     {
                         TClient.OnDisconnected += TClientOnDisconnected;
@@ -218,7 +219,6 @@ namespace SimpleTwitchTTS
                 labelConnectionStatus.Text = (TClient != null) ? "Connected" : "Did not connect";
                 labelConnectionStatus.ForeColor = (TClient != null) ? Color.Green : Color.Purple;
                 Connect = (TClient != null) ? true : false;
-                //Connect = false;
             }
 
         }
@@ -373,7 +373,8 @@ namespace SimpleTwitchTTS
                 textBoxAnecdotChatCommand = textBoxAnecdotChatCommand.Text,
                 textBoxAnecdotChannelPoints = textBoxAnecdotChannelPoints.Text,
                 textBoxMutedForTime = textBoxMutedForTime.Text,
-                textBoxMutedForTimeWhatTime = textBoxMutedForTimeWhatTime.Text
+                textBoxMutedForTimeWhatTime = textBoxMutedForTimeWhatTime.Text,
+                checkBoxAnecdotsDoNotSendInChat = checkBoxAnecdotsDoNotSendInChat.Checked
             };
             try
             {
@@ -414,6 +415,7 @@ namespace SimpleTwitchTTS
                 textBoxAnecdotChannelPoints.Text = jsonFile.SelectToken("textBoxAnecdotChannelPoints");
                 textBoxMutedForTime.Text = jsonFile.SelectToken("textBoxMutedForTime");
                 textBoxMutedForTimeWhatTime.Text = jsonFile.SelectToken("textBoxMutedForTimeWhatTime");
+                checkBoxAnecdotsDoNotSendInChat.Checked = jsonFile.SelectToken("checkBoxAnecdotsDoNotSendInChat");
             }
         }
 
@@ -467,16 +469,6 @@ namespace SimpleTwitchTTS
             System.Diagnostics.Process.Start("explorer.exe", "https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/");
         }
 
-        private void buttonOpenExperimentalSettings_Click(object sender, EventArgs e)
-        {
-            if (!Application.OpenForms.OfType<FormApiGuide>().Any())
-            {
-                FormApiGuide FormExperimentalSettings = new FormApiGuide();
-                FormExperimentalSettings.Show();
-            }
-
-        }
-
         private void comboBoxTypeOfMessageTts_SelectedIndexChanged(object sender, EventArgs e)
         {
             toolTipInfoForConnection.SetToolTip(comboBoxTypeOfMessageTts, comboBoxTypeOfMessageTts.Text);
@@ -500,7 +492,7 @@ namespace SimpleTwitchTTS
                 listBoxTtsWhatToReplace.Items.Add(textBoxTtsWhatToReplace.Text);
                 listBoxTtsSubstitute.Items.Add(textBoxTtsSubstitute.Text);
             }
-            TWbot.AddToReplaceAndSubstitude(textBoxTtsWhatToReplace.Text, textBoxTtsSubstitute.Text.ToLower());
+            TWbot.AddToReplaceAndSubstitude(textBoxTtsWhatToReplace.Text.ToLower(), textBoxTtsSubstitute.Text.ToLower());
         }
 
         int selectedIndex;
@@ -512,15 +504,13 @@ namespace SimpleTwitchTTS
                     selectedIndex = listBoxTtsSubstitute.SelectedIndex;
                 else
                     selectedIndex = listBoxTtsWhatToReplace.SelectedIndex;
-
-                TWbot.GetDeleteReplaceAndSubstitudeItem(listBoxTtsWhatToReplace.SelectedIndex, listBoxTtsSubstitute.SelectedIndex);
                 try
                 { //try is needed because if V is empty then program moved to catch and next remove not working
+                    TWbot.GetDeleteReplaceAndSubstitudeItem(listBoxTtsWhatToReplace.SelectedIndex);
                     listBoxTtsWhatToReplace.Items.RemoveAt(selectedIndex);
+                    listBoxTtsSubstitute.Items.RemoveAt(selectedIndex);
                 }
                 catch { }
-
-                listBoxTtsSubstitute.Items.RemoveAt(selectedIndex);
             }
             catch { }
         }
@@ -661,6 +651,61 @@ namespace SimpleTwitchTTS
         private void textBoxMutedForTimeWhatTime_TextChanged(object sender, EventArgs e)
         {
             TWbot.MutedForTime(textBoxMutedForTimeWhatTime.Text);
+        }
+
+        private void checkBoxAnecdotsFromFilesDoNotSendInChat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAnecdotsDoNotSendInChat.Checked == true)
+                TWbot.AnecdotsDoNotSendInChat(false);
+            else TWbot.AnecdotsDoNotSendInChat(true);
+        }
+        //change the color of combotext better understand which combotext to look at
+        private void buttonProfileLoad_MouseEnter(object sender, EventArgs e)
+        {
+            comboBoxProfileSelect.BackColor = Color.LightPink;
+        }
+
+        private async void buttonProfileLoad_MouseLeave(object sender, EventArgs e)
+        {
+            comboBoxProfileSelect.BackColor = Color.White;
+        }
+
+        private void buttonProfileDeleteEN_MouseEnter(object sender, EventArgs e)
+        {
+            comboBoxProfileSelect.BackColor = Color.LightPink;
+        }
+
+        private async void buttonProfileDeleteEN_MouseLeave(object sender, EventArgs e)
+        {
+            comboBoxProfileSelect.BackColor = Color.White;
+        }
+
+        private void buttonProfileSave_MouseEnter(object sender, EventArgs e)
+        {
+            textBoxProfileAdd.BackColor = Color.LightPink;
+        }
+
+        private async void buttonProfileSave_MouseLeave(object sender, EventArgs e)
+        {
+            textBoxProfileAdd.BackColor = Color.White;
+        }
+        //update all files in the profiles folder
+        string profilesPath = @"DataForProgram\\Profiles";
+        private void UpdateProfilesList()
+        {
+            string[] files = Directory.GetFiles(profilesPath);
+
+            if (files.Count() > 0)
+            {
+                foreach (string file in files)
+                    comboBoxProfileSelect.Items.Add(Path.GetFileName(file));
+            }
+        }
+
+        private void comboBoxProfileSelect_Click(object sender, EventArgs e)
+        {
+            comboBoxProfileSelect.Items.Clear();
+            UpdateProfilesList();
         }
     }
 }
